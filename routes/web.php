@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\controllers\Backend\contentcontroller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/home', function () {
-    return view('admin.index');
-});
+//Route::get('/home', function () {
+    //return view('admin.content');
+//});
+Route::get('/admin', [contentcontroller::class,'admin']);
