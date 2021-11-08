@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\controllers\Backend\contentcontroller;
+use App\Http\Controllers\Backend\contentcontroller;
+use App\Http\Controllers\Backend\PackageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,3 +18,4 @@ use App\Http\controllers\Backend\contentcontroller;
     //return view('admin.content');
 //});
 Route::get('/admin', [contentcontroller::class,'admin']);
+Route::get('/package',[PackageController::class, 'package'])->name('package');

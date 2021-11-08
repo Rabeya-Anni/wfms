@@ -13,16 +13,18 @@
     </head>
     <body class="sb-nav-fixed">
         
-        @include('admin.partial.header') 
-        @yeld('content')
+        @include('admin.partial.header')
+        <div id="layoutSidenav">
+        @yield('content')
+</div>
         @include('admin.partial.footer')
-        
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="Backend/js/scripts.js"></script>
+        <script src="{{url('Backend/js/scripts.js')}}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-        <script src="Backend/assets/demo/chart-area-demo.js"></script>
-        <script src="Backend/assets/demo/chart-bar-demo.js"></script>
+        <script src="{{url('Backend/assets/demo/chart-area-demo.js')}}"></script>
+        <script src="{{url('Backend/assets/demo/chart-bar-demo.js')}}"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
-        <script src="Backend/js/datatables-simple-demo.js"></script>
+        <script src="{{url('Backend/js/datatables-simple-demo.js')}}"></script>
     </body>
 </html>
