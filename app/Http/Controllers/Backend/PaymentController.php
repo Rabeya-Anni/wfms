@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class OrderController extends Controller
+class PaymentController extends Controller
 {
-    public function order()
+    public function payment()
     {
-        return view('admin.layout.order');
+        return view('admin.layout.payment');
     }
 }
