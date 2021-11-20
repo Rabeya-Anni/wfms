@@ -15,7 +15,7 @@
     </div>
 @endif
 
-<a class="btn btn-primary" href="{{route('item.create')}}" role="button">Add new package</a>
+<a class="btn btn-primary" href="{{route('item.create')}}" role="button">Add new item</a>
 <table class="table">
   <thead>
     <tr>

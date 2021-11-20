@@ -68,12 +68,48 @@
                                     </div>
                                 </nav>
                             </div>
-                            <div class="sb-sidenav-menu-heading">Addons</div>
-                            
-                            <a class="nav-link" href="tables.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Tables
+                            <div class="sb-sidenav-menu-heading">Features</div>
+
+                            <a class="nav-link" href="{{route('package')}}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-cube"></i></div>
+                                package
                             </a>
+
+                            <a class="nav-link" href="{{route('item')}}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-utensils"></i></div>
+                                Item
+                            </a>
+
+                            <a class="nav-link" href="{{route('customer')}}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
+                                Customer
+                            </a>
+
+                            <a class="nav-link" href="{{route('order')}}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Order
+                            </a>
+
+                            <a class="nav-link" href="{{route('payment')}}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-credit-card"></i></div>
+                                Payment
+                            </a>
+
+                            <a class="nav-link" href="{{route('request')}}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-bell"></i></div>
+                                Wastage Food Request
+                            </a>
+
+                            <a class="nav-link" href="{{route('organization')}}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-building"></i></div>
+                                organization
+                            </a>
+
+                            <a class="nav-link" href="{{route('distribution')}}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-donate"></i></div>
+                                Distribution
+                            </a>
+
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">

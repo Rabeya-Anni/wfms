@@ -7,12 +7,12 @@ use Illuminate\Http\Request;
 use App\Models\Item;
 use App\Models\Package;
 
-class IteamController extends Controller
+class ItemController extends Controller
 {
-    public function index()
+    public function item()
     {
         $items = Item::with('package')->orderBy('id','desc')->paginate(10);
-        return view('admin.layout.item.index',compact('items'));
+        return view('admin.layout.item.item',compact('items'));
     }
 
 

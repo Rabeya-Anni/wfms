@@ -9,7 +9,7 @@ class RequestController extends Controller
 {
     public function request()
     {
-        return view('admin.layout.request');
+        return view('admin.layout.request.request');
     }
 
 }

@@ -9,7 +9,7 @@ class AddnewpackageController extends Controller
 {
     public function addnewpackage()
     {
-        return view('admin.layout.addnewpackage');
+        return view('admin.layout.package.addnewpackage');
     }
     public function store(Request $request)
     {

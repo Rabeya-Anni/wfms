@@ -9,6 +9,6 @@ class PaymentController extends Controller
 {
     public function payment()
     {
-        return view('admin.layout.payment');
+        return view('admin.layout.payment.payment');
     }
 }

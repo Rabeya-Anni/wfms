@@ -11,6 +11,8 @@ class PackageController extends Controller
     public function package()
     {
         $packages = Package::orderBy('id','desc')->paginate(2);
-        return view('admin.layout.package',compact('packages'));
+        return view('admin.layout.package.package',compact('packages'));
     }
+
+    
 }

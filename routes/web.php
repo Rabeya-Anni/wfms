@@ -3,8 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\contentcontroller;
 use App\Http\Controllers\Backend\PackageController;
-use App\Http\Controllers\Backend\IteamController;
-use App\Http\Controllers\Backend\customerController;
+use App\Http\Controllers\Backend\ItemController;
+use App\Http\Controllers\Backend\CustomerController;
 use App\Http\Controllers\Backend\OrderController;
 use App\Http\Controllers\Backend\PaymentController;
 use App\Http\Controllers\Backend\RequestController;
@@ -29,7 +29,7 @@ use App\Http\Controllers\Backend\AddnewpackageController;
 //});
 Route::get('/admin', [contentcontroller::class,'admin']);
 Route::get('/package',[PackageController::class, 'package'])->name('package');
-Route::get('/iteam',[Iteamcontroller::class, 'iteam'])->name('iteam');
+Route::get('/item',[ItemController::class, 'item'])->name('item');
 Route::get('/customer',[CustomerController::class, 'customer'])->name('customer');
 Route::get('/order',[OrderController::class, 'order'])->name('order');
 Route::get('/payment',[PaymentController::class, 'payment'])->name('payment');
@@ -40,7 +40,7 @@ Route::get('/addnewpackage',[AddnewpackageController::class, 'addnewpackage'])->
 Route::post('/newpackage',[AddnewpackageController::class, 'store'])->name('store');
 
 //item route
-Route::get('/item/list',[IteamController::class,'index'])->name('item.list');
-Route::get('/item/create',[IteamController::class,'create'])->name('item.create');
-Route::post('/item/store',[IteamController::class,'store'])->name('item.store');
+Route::get('/item/list',[ItemController::class,'index'])->name('item.list');
+Route::get('/item/create',[ItemController::class,'create'])->name('item.create');
+Route::post('/item/store',[ItemController::class,'store'])->name('item.store');
 

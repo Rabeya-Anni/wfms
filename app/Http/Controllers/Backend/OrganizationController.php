@@ -9,6 +9,6 @@ class OrganizationController extends Controller
 {
     public function organization()
     {
-        return view('admin.layout.organization'); 
+        return view('admin.layout.organization.organization'); 
     }
 }

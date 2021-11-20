@@ -9,6 +9,6 @@ class DistributionController extends Controller
 {
     public function distribution()
     {
-        return view('admin.layout.distribution');
+        return view('admin.layout.distribution.distribution');
     }
 }

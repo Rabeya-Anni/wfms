@@ -9,6 +9,6 @@ class CustomerController extends Controller
 {
     public function customer()
     {
-        return view('admin.layout.customer');
+        return view('admin.layout.customer.customer');
     }
 }
