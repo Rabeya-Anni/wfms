@@ -10,6 +10,8 @@ use App\Http\Controllers\Backend\PaymentController;
 use App\Http\Controllers\Backend\RequestController;
 use App\Http\Controllers\Backend\OrganizationController;
 use App\Http\Controllers\Backend\DistributionController;
+use App\Http\Controllers\Backend\AddnewpackageController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -34,4 +36,11 @@ Route::get('/payment',[PaymentController::class, 'payment'])->name('payment');
 Route::get('/request',[RequestController::class, 'request'])->name('request');
 Route::get('/organization',[OrganizationController::class, 'organization'])->name('organization');
 Route::get('/distribution',[DistributionController::class, 'distribution'])->name('distribution');
+Route::get('/addnewpackage',[AddnewpackageController::class, 'addnewpackage'])->name('addnewpackage');
+Route::post('/newpackage',[AddnewpackageController::class, 'store'])->name('store');
+
+//item route
+Route::get('/item/list',[IteamController::class,'index'])->name('item.list');
+Route::get('/item/create',[IteamController::class,'create'])->name('item.create');
+Route::post('/item/store',[IteamController::class,'store'])->name('item.store');
 
