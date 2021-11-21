@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Package extends Model
+class Customer extends Model
 {
     use HasFactory;
-    protected $table="packages";
-    protected $fillable=['package_id','name','price_per_person'];
+    protected $table="customers";
+    protected $fillable=['customer_code','name','phone_number','email'];
 }

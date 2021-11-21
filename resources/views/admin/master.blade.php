@@ -20,7 +20,7 @@
                         <div class="nav">
 
                             <div class="sb-sidenav-menu-heading">Core</div>
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="{{url('admin')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
@@ -59,16 +59,16 @@
                                         </nav>
                                     </div>
                                    
-                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                                    <!-- <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                         <nav class="sb-sidenav-menu-nested nav">
                                             <a class="nav-link" href="401.html">401 Page</a>
                                             <a class="nav-link" href="404.html">404 Page</a>
                                             <a class="nav-link" href="500.html">500 Page</a>
                                         </nav>
-                                    </div>
+                                    </div> -->
                                 </nav>
                             </div>
-                            <div class="sb-sidenav-menu-heading">Features</div>
+                            <div class="sb-sidenav-menu-heading">services</div>
 
                             <a class="nav-link" href="{{route('package')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-cube"></i></div>

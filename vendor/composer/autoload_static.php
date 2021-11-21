@@ -542,7 +542,7 @@ class ComposerStaticInit74dae61bfec8a199b3f2c28a1fa1611c
         'App\\Http\\Controllers\\Backend\\AddnewpackageController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/AddnewpackageController.php',
         'App\\Http\\Controllers\\Backend\\CustomerController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/CustomerController.php',
         'App\\Http\\Controllers\\Backend\\DistributionController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/DistributionController.php',
-        'App\\Http\\Controllers\\Backend\\IteamController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/IteamController.php',
+        'App\\Http\\Controllers\\Backend\\ItemController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/ItemController.php',
         'App\\Http\\Controllers\\Backend\\OrderController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/OrderController.php',
         'App\\Http\\Controllers\\Backend\\OrganizationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/OrganizationController.php',
         'App\\Http\\Controllers\\Backend\\PackageController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/PackageController.php',

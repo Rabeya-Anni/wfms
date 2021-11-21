@@ -27,7 +27,7 @@ use App\Http\Controllers\Backend\AddnewpackageController;
 //Route::get('/home', function () {
     //return view('admin.content');
 //});
-Route::get('/admin', [contentcontroller::class,'admin']);
+Route::get('/admin', [contentcontroller::class,'admin'])->name('admin');
 Route::get('/package',[PackageController::class, 'package'])->name('package');
 Route::get('/item',[ItemController::class, 'item'])->name('item');
 Route::get('/customer',[CustomerController::class, 'customer'])->name('customer');
@@ -36,11 +36,16 @@ Route::get('/payment',[PaymentController::class, 'payment'])->name('payment');
 Route::get('/request',[RequestController::class, 'request'])->name('request');
 Route::get('/organization',[OrganizationController::class, 'organization'])->name('organization');
 Route::get('/distribution',[DistributionController::class, 'distribution'])->name('distribution');
+
+//package route
 Route::get('/addnewpackage',[AddnewpackageController::class, 'addnewpackage'])->name('addnewpackage');
-Route::post('/newpackage',[AddnewpackageController::class, 'store'])->name('store');
+Route::post('/addnewpackage',[AddnewpackageController::class, 'store'])->name('store');
 
 //item route
 Route::get('/item/list',[ItemController::class,'index'])->name('item.list');
 Route::get('/item/create',[ItemController::class,'create'])->name('item.create');
 Route::post('/item/store',[ItemController::class,'store'])->name('item.store');
+
+//customer route
+Route::get('/customer/list',[CustomerController::class, 'customer'])->name('customer.list');
 

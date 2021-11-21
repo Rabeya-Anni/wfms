@@ -11,7 +11,7 @@ return array(
     'App\\Http\\Controllers\\Backend\\AddnewpackageController' => $baseDir . '/app/Http/Controllers/Backend/AddnewpackageController.php',
     'App\\Http\\Controllers\\Backend\\CustomerController' => $baseDir . '/app/Http/Controllers/Backend/CustomerController.php',
     'App\\Http\\Controllers\\Backend\\DistributionController' => $baseDir . '/app/Http/Controllers/Backend/DistributionController.php',
-    'App\\Http\\Controllers\\Backend\\IteamController' => $baseDir . '/app/Http/Controllers/Backend/IteamController.php',
+    'App\\Http\\Controllers\\Backend\\ItemController' => $baseDir . '/app/Http/Controllers/Backend/ItemController.php',
     'App\\Http\\Controllers\\Backend\\OrderController' => $baseDir . '/app/Http/Controllers/Backend/OrderController.php',
     'App\\Http\\Controllers\\Backend\\OrganizationController' => $baseDir . '/app/Http/Controllers/Backend/OrganizationController.php',
     'App\\Http\\Controllers\\Backend\\PackageController' => $baseDir . '/app/Http/Controllers/Backend/PackageController.php',
