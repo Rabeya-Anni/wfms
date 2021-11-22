@@ -14,14 +14,15 @@
             {!! session('error') !!}
     </div>
 @endif
+<h4>Item Table</h4>
 
-<a class="btn btn-primary" href="{{route('item.create')}}" role="button">Add new item</a>
+<a class="btn btn-primary" href="{{route('item.create')}}" role="button">Create a new item</a>
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
+      <th scope="col">Serial</th>
       <th scope="col">Name</th>
-      <th scope="col">Package name</th>
+      <th scope="col">Package Name</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -30,7 +31,7 @@
     <tr>
       <th scope="row">{{$key+1}}</th>
       <td>{{$item->name}}</td>
-      <td>{{$item->package->name}}</td>
+      <td></td>
       <td></td>
     </tr>
     @endforeach

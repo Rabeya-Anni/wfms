@@ -2,6 +2,7 @@
 
 
 @section('content')
+<h4>Customer Table</h4>
 <table class="table">
   <thead>
     <tr>

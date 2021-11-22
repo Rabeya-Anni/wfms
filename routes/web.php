@@ -31,15 +31,30 @@ Route::get('/admin', [contentcontroller::class,'admin'])->name('admin');
 Route::get('/package',[PackageController::class, 'package'])->name('package');
 Route::get('/item',[ItemController::class, 'item'])->name('item');
 Route::get('/customer',[CustomerController::class, 'customer'])->name('customer');
+
+//order route
 Route::get('/order',[OrderController::class, 'order'])->name('order');
+
+
+//payment route
 Route::get('/payment',[PaymentController::class, 'payment'])->name('payment');
+
+
+//request route
 Route::get('/request',[RequestController::class, 'request'])->name('request');
+
+
+//organization
 Route::get('/organization',[OrganizationController::class, 'organization'])->name('organization');
+
+
+//distribution route
 Route::get('/distribution',[DistributionController::class, 'distribution'])->name('distribution');
 
 //package route
+Route::get('/package',[PackageController::class, 'package'])->name('package');
 Route::get('/addnewpackage',[AddnewpackageController::class, 'addnewpackage'])->name('addnewpackage');
-Route::post('/addnewpackage',[AddnewpackageController::class, 'store'])->name('store');
+Route::post('/addnewpackage/store',[AddnewpackageController::class, 'store'])->name('store');
 
 //item route
 Route::get('/item/list',[ItemController::class,'index'])->name('item.list');
@@ -47,5 +62,6 @@ Route::get('/item/create',[ItemController::class,'create'])->name('item.create')
 Route::post('/item/store',[ItemController::class,'store'])->name('item.store');
 
 //customer route
+Route::get('/customer',[CustomerController::class, 'customer'])->name('customer');
 Route::get('/customer/list',[CustomerController::class, 'customer'])->name('customer.list');
 

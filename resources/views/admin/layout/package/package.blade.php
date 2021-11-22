@@ -2,14 +2,16 @@
 
 
 @section('content')
-<a class="btn btn-primary" href="{{route('addnewpackage')}}" role="button">Add new package</a>
+<h4>Package Table</h4>
+
+<a class="btn btn-primary" href="{{route('addnewpackage')}}" role="button">Create a new package</a>
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Serial</th>
+      <th scope="col">Package Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Price per person</th>
     </tr>
   </thead>
   <tbody>

@@ -13,11 +13,14 @@ class AddnewpackageController extends Controller
     }
     public function store(Request $request)
     {
+        
         Package::create([
-            'package_id'=>$request->input('package_id'),
-            'name'=>$request->input('name'),
-            'price_per_person'=>$request->input('price_per_person'),
+            'package_id'=>$request->package_id,
+            'name'=>$request->name,
+            'price_per_person'=>$request->price_per_person,
         ]);
-        return redirect()->back();
+        
+        return redirect()->back()-with('error', 'Profile updated!');
+        
     }
 }
