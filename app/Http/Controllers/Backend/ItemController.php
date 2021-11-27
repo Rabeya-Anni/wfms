@@ -24,6 +24,10 @@ class ItemController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'name'=>'required',
+            'package_id'=>'required',
+        ]);
        try{
         Item::create([
             'name'=>$request->name,

@@ -8,11 +8,16 @@ use App\Models\Package;
 
 class PackageController extends Controller
 {
-    public function package()
+    public function packagelist()
     {
-        $packages = Package::orderBy('id','desc')->paginate(2);
-        return view('admin.layout.package.package',compact('packages'));
+        return view('admin.layout.package.package');
+        // $package=Package::all();
+        // $packages = Package::orderBy('id','desc')->paginate(2);
+        // return view('admin.layout.package.package',[
+            // 'package'=>$package 
+        // ]);
     }
+    public function
 
     
 }

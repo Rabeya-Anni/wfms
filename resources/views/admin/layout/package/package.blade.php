@@ -18,9 +18,9 @@
     @foreach($packages as $key=>$package)
     <tr>
       <th scope="row">{{$key+1}}</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <td>{{$package->package_id}}</td>
+      <td>{{$package->name}}</td>
+      <td>{{$package->price_per_person}}</td>
     </tr>
     @endforeach
   </tbody>

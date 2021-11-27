@@ -7,7 +7,7 @@
     @csrf
   <div class="form-group">
     <label for="exampleInputEmail1">Package Id</label>
-    <select name="package_id" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ID">
+    <select name="package_id" type="number" class="form-control" placeholder="ID"required>
     @foreach($packages as $package)  
        <option value="{{$package->id}}">{{$package->name}}</option>
     @endforeach 
@@ -16,7 +16,7 @@
 
   <div class="form-group">
     <label for="exampleInputPassword1">Name</label>
-    <input name="name" type="text" class="form-control" id="exampleInputPassword1" placeholder="Name">
+    <input name="name" type="text" class="form-control" placeholder="Name"required>
   </div>
   
   <button type="submit" class="btn btn-primary">Submit</button>

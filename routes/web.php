@@ -51,17 +51,20 @@ Route::get('/organization',[OrganizationController::class, 'organization'])->nam
 //distribution route
 Route::get('/distribution',[DistributionController::class, 'distribution'])->name('distribution');
 
-//package route
-Route::get('/package',[PackageController::class, 'package'])->name('package');
-Route::get('/addnewpackage',[AddnewpackageController::class, 'addnewpackage'])->name('addnewpackage');
-Route::post('/addnewpackage/store',[AddnewpackageController::class, 'store'])->name('store');
+// //package route
+Route::get('/package/list',[PackageController::class, 'packagelist'])->name('admin.package.list');
+// Route::get('/addnewpackage',[AddnewpackageController::class, 'addnewpackage'])->name('addnewpackage');
+// Route::post('/addnewpackage/store',[AddnewpackageController::class, 'store'])->name('store');
 
 //item route
-Route::get('/item/list',[ItemController::class,'index'])->name('item.list');
+Route::get('/item/list',[ItemController::class,'item'])->name('item.list');
 Route::get('/item/create',[ItemController::class,'create'])->name('item.create');
 Route::post('/item/store',[ItemController::class,'store'])->name('item.store');
 
 //customer route
 Route::get('/customer',[CustomerController::class, 'customer'])->name('customer');
 Route::get('/customer/list',[CustomerController::class, 'customer'])->name('customer.list');
+
+
+
 
