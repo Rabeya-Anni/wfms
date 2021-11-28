@@ -2,9 +2,20 @@
 
 
 @section('content')
+@if(session('success'))
+        <div class="alert alert-success">
+            {!! session('success') !!}
+        </div>
+@endif
+
+@if(session('error'))
+        <div class="alert alert-danger">
+            {!! session('error') !!}
+    </div>
+@endif
 <h4>Package Table</h4>
 
-<a class="btn btn-primary" href="{{route('addnewpackage')}}" role="button">Create a new package</a>
+<a class="btn btn-primary" href="{{route('packageform')}}" role="button">Create a new package</a>
 <table class="table">
   <thead>
     <tr>
@@ -15,17 +26,18 @@
     </tr>
   </thead>
   <tbody>
-    @foreach($packages as $key=>$package)
+  @foreach($packages as $key=>$package)
     <tr>
-      <th scope="row">{{$key+1}}</th>
-      <td>{{$package->package_id}}</td>
-      <td>{{$package->name}}</td>
-      <td>{{$package->price_per_person}}</td>
+    <th scope="row">{{$key+1}}</th>
+      <td>$package->package_id</td>
+      <td>$package->name</td>
+      <td>$package->price_per_person</td>
     </tr>
-    @endforeach
+  @endforeach    
+    
   </tbody>
 </table>
 
-{{$packages->links()}}
+
 
 @endsection

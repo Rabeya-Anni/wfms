@@ -5,40 +5,42 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Item;
-use App\Models\Package;
+//use App\Models\Package;
 
 class ItemController extends Controller
 {
     public function item()
     {
-        $items = Item::with('package')->orderBy('id','desc')->paginate(10);
+        $items = Item::all();
         return view('admin.layout.item.item',compact('items'));
     }
 
 
-    public function create()
+    public function itemform()
     {
-        $packages = Package::orderBy('id','desc')->get();
-        return view('admin.layout.item.create',compact('packages'));
+        $items = Item::all();
+        return view('admin.layout.item.itemform',compact('items'));
     }
 
-    public function store(Request $request)
+     public function store(Request $request)
     {
         $request->validate([
-            'name'=>'required',
-            'package_id'=>'required',
-        ]);
-       try{
-        Item::create([
+             'item_id'=>'required',
+             'name'=>'required',
+             'price_per_person'=>'required',
+         ]);
+        try{
+            Item::create([
+            'item_id'=>$request->item_id,
             'name'=>$request->name,
-            'package_id'=>$request->package_id,
-        ]);
+            'price_per_person'=>$request->price_per_person,
+          ]);
 
-        return redirect()->route('item.list')->with('success', 'Profile updated!');
-       }
-       catch(Throwable $throw)
-       {
-        return redirect()->back()->with('error', 'Profile updated!');
-       }
+          return redirect()->route('item')->with('success', 'Profile updated!');
+         }
+         catch(Throwable $throw)
+         {
+          return redirect()->back()->with('error', 'Profile updated!');
+         }
     }
 }

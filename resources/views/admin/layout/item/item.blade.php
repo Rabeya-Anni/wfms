@@ -16,28 +16,28 @@
 @endif
 <h4>Item Table</h4>
 
-<a class="btn btn-primary" href="{{route('item.create')}}" role="button">Create a new item</a>
+<a class="btn btn-primary" href="{{route('itemform')}}" role="button">Create a new item</a>
 <table class="table">
-  <thead>
+<thead>
     <tr>
       <th scope="col">Serial</th>
+      <th scope="col">Item Id</th>
       <th scope="col">Name</th>
-      <th scope="col">Package Name</th>
-      <th scope="col">Action</th>
+      <th scope="col">Price per person</th>
     </tr>
   </thead>
   <tbody>
-    @foreach($items as $key=>$item)
+  @foreach($items as $key=>$item)
     <tr>
-      <th scope="row">{{$key+1}}</th>
-      <td>{{$item->name}}</td>
-      <td></td>
-      <td></td>
+    <th scope="row">{{$key+1}}</th>
+      <td>$item->item_id</td>
+      <td>$item->name</td>
+      <td>$item->price_per_person</td>
     </tr>
-    @endforeach
+  @endforeach  
   </tbody>
 </table>
 
-{{$items->links()}}
+
 
 @endsection

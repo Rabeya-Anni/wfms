@@ -11,4 +11,7 @@ class CustomerController extends Controller
     {
         return view('admin.layout.customer.customer');
     }
+
 }
+
+

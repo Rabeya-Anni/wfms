@@ -28,8 +28,20 @@ use App\Http\Controllers\Backend\AddnewpackageController;
     //return view('admin.content');
 //});
 Route::get('/admin', [contentcontroller::class,'admin'])->name('admin');
+
+//package route
 Route::get('/package',[PackageController::class, 'package'])->name('package');
+Route::get('/packageform',[PackageController::class, 'packageform'])->name('packageform');
+Route::post('/store',[PackageController::class, 'store'])->name('store');
+
+
+//item route
 Route::get('/item',[ItemController::class, 'item'])->name('item');
+Route::get('/itemform',[ItemController::class, 'itemform'])->name('itemform');
+Route::post('/store',[ItemController::class, 'store'])->name('store');
+
+
+//customer route
 Route::get('/customer',[CustomerController::class, 'customer'])->name('customer');
 
 //order route
@@ -44,26 +56,14 @@ Route::get('/payment',[PaymentController::class, 'payment'])->name('payment');
 Route::get('/request',[RequestController::class, 'request'])->name('request');
 
 
-//organization
+//organization route
 Route::get('/organization',[OrganizationController::class, 'organization'])->name('organization');
 
 
 //distribution route
 Route::get('/distribution',[DistributionController::class, 'distribution'])->name('distribution');
 
-// //package route
-Route::get('/package/list',[PackageController::class, 'packagelist'])->name('admin.package.list');
-// Route::get('/addnewpackage',[AddnewpackageController::class, 'addnewpackage'])->name('addnewpackage');
-// Route::post('/addnewpackage/store',[AddnewpackageController::class, 'store'])->name('store');
 
-//item route
-Route::get('/item/list',[ItemController::class,'item'])->name('item.list');
-Route::get('/item/create',[ItemController::class,'create'])->name('item.create');
-Route::post('/item/store',[ItemController::class,'store'])->name('item.store');
-
-//customer route
-Route::get('/customer',[CustomerController::class, 'customer'])->name('customer');
-Route::get('/customer/list',[CustomerController::class, 'customer'])->name('customer.list');
 
 
 

@@ -2,14 +2,28 @@
 
 
 @section('content')
+
+@if(session('success'))
+        <div class="alert alert-success">
+            {!! session('success') !!}
+        </div>
+@endif
+
+@if(session('error'))
+        <div class="alert alert-danger">
+            {!! session('error') !!}
+    </div>
+@endif
 <h4>Distribution Table</h4>
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Serial</th>
+      <th scope="col">Distribution ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Address</th>
+      <th scope="col">Need Status</th>
+      <th scope="col">Number of People</th>
     </tr>
   </thead>
   <tbody>
@@ -18,19 +32,10 @@
       <td>Mark</td>
       <td>Otto</td>
       <td>@mdo</td>
+      <td>Otto</td>
+      <td>@mdo</td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
+   
   </tbody>
 </table>
 

@@ -70,7 +70,7 @@
                             </div>
                             <div class="sb-sidenav-menu-heading">services</div>
 
-                            <a class="nav-link" href="{{route('admin.package.list')}}">
+                            <a class="nav-link" href="{{route('package')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-cube"></i></div>
                                 package
                             </a>
