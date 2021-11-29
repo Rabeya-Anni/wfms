@@ -17,7 +17,7 @@ class PackageController extends Controller
     public function packageform()
     {
         $packages = Package::all();
-        return view('admin.layout.package.packageform',compact("packages"));
+        return view('admin.layout.package.packageform');//compact("packages"));
         //$dd(package);
     }
     public function store(Request $request)

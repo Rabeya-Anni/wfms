@@ -1,5 +1,5 @@
 <?php
-
+//Admin
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\contentcontroller;
 use App\Http\Controllers\Backend\PackageController;
@@ -12,7 +12,8 @@ use App\Http\Controllers\Backend\OrganizationController;
 use App\Http\Controllers\Backend\DistributionController;
 use App\Http\Controllers\Backend\AddnewpackageController;
 
-
+//Website
+//use App\Http\Controllers\Frontend\ContentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,8 +25,8 @@ use App\Http\Controllers\Backend\AddnewpackageController;
 |
 */
 
-//Route::get('/home', function () {
-    //return view('admin.content');
+//Route::get(url:'/home', function () {
+    //return view('website.master');
 //});
 Route::get('/admin', [contentcontroller::class,'admin'])->name('admin');
 
@@ -63,6 +64,10 @@ Route::get('/organization',[OrganizationController::class, 'organization'])->nam
 //distribution route
 Route::get('/distribution',[DistributionController::class, 'distribution'])->name('distribution');
 
+
+
+//website Part
+//Route::get('/home', [ContentController::class,'home'])->name('home');
 
 
 

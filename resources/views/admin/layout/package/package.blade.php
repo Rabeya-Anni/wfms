@@ -29,12 +29,12 @@
   @foreach($packages as $key=>$package)
     <tr>
     <th scope="row">{{$key+1}}</th>
-      <td>$package->package_id</td>
-      <td>$package->name</td>
-      <td>$package->price_per_person</td>
+      <td>{{($package->package_id)}}</td>
+      <td>{{($package->name)}}</td>
+      <td>{{($package->price_per_person)}}</td>
     </tr>
-  @endforeach    
     
+  @endforeach 
   </tbody>
 </table>
 

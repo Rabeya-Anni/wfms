@@ -18,6 +18,7 @@ class CreateItemsTable extends Migration
             $table->integer('item_id');
             $table->string('name');
             $table->integer('price_per_person');
+            $table->string('image');
             $table->timestamps();
         });
     }
