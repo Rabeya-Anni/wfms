@@ -25,9 +25,15 @@ use App\Http\Controllers\Backend\AddnewpackageController;
 |
 */
 
-//Route::get(url:'/home', function () {
-    //return view('website.master');
+Route::get( '/', function () {
+   return view('website.master');
+});
+
+//Route::get('/home', function () {
+    //return view('admin.content');
 //});
+
+
 Route::get('/admin', [contentcontroller::class,'admin'])->name('admin');
 
 //package route
@@ -67,7 +73,8 @@ Route::get('/distribution',[DistributionController::class, 'distribution'])->nam
 
 
 //website Part
-//Route::get('/home', [ContentController::class,'home'])->name('home');
+//Route::get('/home', [contentcontroller::class,'home'])->name('home');
+
 
 
 

@@ -1,129 +1,352 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html class="no-js" lang="zxx">
+
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-	<title>Website</title>
-	<link rel="stylesheet" type="text/css" href="{{url('Website/bobi.css')}}"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-	<link rel="icon" href="Sprites/bobi-logo.png">
-	<link rel"stylesheet" type="text/css" href="{{url('Website/bobi.css')}}">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Catering</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{url('img/logo.png')}}">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="{{url('Website/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url('Website/css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{url('Website/css/magnific-popup.css')}}">
+    <link rel="stylesheet" href="{{url('Website/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{url('Website/css/themify-icons.css')}}">
+    <link rel="stylesheet" href="{{url('Website/css/nice-select.css')}}">
+    <link rel="stylesheet" href="{{url('Website/css/flaticon.css')}}">
+    <link rel="stylesheet" href="{{url('Website/css/animate.css')}}">
+    <link rel="stylesheet" href="{{url('Website/css/slicknav.css')}}">
+    <link rel="stylesheet" href="{{url('Website/css/style.css')}}">
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 </head>
+
 <body>
-	<div id="background">
-	<img id="logo" src="Sprites/bobi-showcase.png">
-	</div>
-	
-	<ul class="nav nav-pills justify-content-center">
-			<li class="nav-item">
-					<a class="nav-link" href="gallery.html"><i class="fas fa-images"></i> Галерия</a>
-				</li>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
 
-	  <li class="nav-item dropdown">
-	    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-book"></i> Меню</a>
-	    <div class="dropdown-menu">
-	      <a class="dropdown-item" href="content.html"><i class="fas fa-list-ul"></i> Съдържание</a>
-	      <a class="dropdown-item" href="request.html"><i class="fas fa-shopping-basket"></i> Заявки</a>
-	      <a class="dropdown-item" href="alergens.html"><i class="fas fa-allergies"></i> Алергени</a>
-	    </div>
-	  </li>
-     <li class="nav-item">
-	    <a class="nav-link active" href="index.html"><i class="fas fa-home"></i> Начало</a>
-	  </li>
-	  
-	  <li class="nav-item">
-	    <a class="nav-link" href="contacts.html"><i id="contact-icon" class="fas fa-mobile-alt"></i> Контакти</a>
-	  </li>
-	  <li class="nav-item">
-	    <a class="nav-link" href="for-me.html"><i id="contact-icon" class="fas fa-user-check"></i> За мен</a>
-		</li>
-	</ul>
-	
-<!-- 	<div id="slider">
-	<figure>
-		<img src="Images/bread.png">
-		<img src="Images/meatballs.png">
-		<img src="Images/cake.png">
-		<img src="Images/raspberry.png">
-		<img src="Images/steak.png">
-		</figure>
-	</div> -->
-	
-	<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="5000" data-pause="">
-	  <div class="carousel-inner">
-	    <div class="carousel-item active">
-	      <img class="d-block w-100" src="Images/bread.png" alt="First slide">
-	    </div>
-	    <div class="carousel-item">
-	      <img class="d-block w-100" src="Images/meatballs.png" alt="Second slide">
-	    </div>
-	    <div class="carousel-item">
-	      <img class="d-block w-100" src="Images/cake.png" alt="Third slide">
-	    </div>
-	     <div class="carousel-item">
-	      <img class="d-block w-100" src="Images/raspberry.png" alt="Third slide">
-	    </div>
-	    <div class="carousel-item">
-	      <img class="d-block w-100" src="Images/steak.png" alt="Third slide">
-	    </div>
-	  </div>
-	</div>
-	
-	<div id="stripe"> </div>
-	
-<div id="background-img">
-<div class="container">
-	<div class="row">
-	    <div class="container">
-        
-            <blockquote class="quote-card blue-card">
-              <p>
-               Не ти е нужна сребърна вилица, за да ядеш добра храна.
-             </p>
-        
-             <cite>
-              Пол Прудхом
-            </cite>
-          </blockquote>
-
-          <blockquote class="quote-card red-card">
-            <p>
-            	Храната е всичко, което сме. Тя е разширение на националистическото и етническото чувство,
-            	на вашата лична история, вашата провинция, вашия регион, вашето семейство...
-            	Неразделна част от самото начало.
-            </p>
-        
-            <cite>
-              Антъни Бурдейн
-            </cite>
-          </blockquote>
-        
-          <blockquote class="quote-card green-card">
-            <p>
-              Хранeнето не е само набавяне на енергия. То е изживяване.
-            </p>
-        
-            <cite>
-              Гай Фиири
-            </cite>
-          </blockquote>
-        
+    <!-- header-start -->
+    @include('website.fixed.header')
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-10 col-lg-10">
+                            <div class="main-menu d-none d-lg-block">
+                                 <nav>
+                                   <ul class="mein_menu_list" id="navigation">
+									  <li></li><br/>
+									<li></li><br/>
+									<li></li><br/>
+									<li></li><br/>
+                                        <li><a href="{{url('about.html')}}">About</a></li>
+                                        <li><a href="{{url('service.html')}}">Services</a></li>
+                                        <li><a href="{{url('teams.html')}}">Teams</a></li>
+                                        <div class="logo-img d-none d-lg-block">
+                                                <a href="{url('index.html')}}">
+                                                    <img src="{{url('img/logo.png')}}" alt="">
+                                                </a>
+                                            </div>
+                                        <li><a href="{{url('gallery.html')}}">Gallery</a></li>
+                                        <li><a href="{{url('map.html')}}">Location</a></li></li>
+                                        <li><a href="{{url('contact.html')}}">Contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                        <div class="logo-img-small d-sm-block d-md-block d-lg-none">
+                                <a href="{{url('index.html')}}">
+                                    <img src="{{url('img/logo.png')}}" alt="">
+                                </a>
+                            </div>
+                    </div>
+                </div>
+            </div>
         </div>
-	</div>
-</div>
-</div>
-	
-		<div class="red-line-bottom">
-			<div class="text-bottom">
-			<div id="stars"><p><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i></div>
-			<p><i class="fas fa-certificate"></i> 100% Гарантирано качество</p>
-			<p><i class="fas fa-code"></i> Уеб дизайн и разработка - <a class="link" target="_blank" href="https://web.facebook.com/skilldeliver">Владислав Михов</a> и <a class="link" target="_blank" href="https://web.facebook.com/nikola.dionisiev">Никола Дионисиев</a></p>
-			<p><i class="fas fa-utensils"></i> Боби Кетъринг 2018 &copy;</p>
-			</div>
-		</div>
-	
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    </header>
+    <!-- header-end -->
+
+    <!-- slider_area-start -->
+    <div class="slider_area zigzag_bg_2">
+        <div class="slider_sctive owl-carousel">
+            <div class="single_slider slider_img_1">
+                <div class="single_slider-iner">
+                    <div class="slider_contant text-center">
+                        <h3>Food Catering <br>
+                            Service.</h3>
+                            <p>inappropriate behavior is often laughed off as “boys will be boys,” women <br>
+                            face higher conduct standards especially in the workplace. That’s why it’s <br>
+                                crucial that, as women.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- slider_area-end -->
+
+    <!-- service_area-start -->
+    <div class="service_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section_title mb-60">
+                        <h3>Our Services</h3>
+                        <p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards <br> especially in the workplace. That’s why it’s crucial that, as women.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-4 col-md-6">
+                    <div class="single_service">
+                        <div class="service_icon">
+                            <i class="flaticon-gift"></i>
+                        </div>
+                        <h4>Birthday Catering</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6">
+                    <div class="single_service">
+                        <div class="service_icon">
+                            <i class="flaticon-cake"></i>
+                        </div>
+                        <h4>Wedding Service</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6">
+                    <div class="single_service">
+                        <div class="service_icon">
+                            <i class="flaticon-dance"></i>
+                        </div>
+                        <h4>Party Catering</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6">
+                    <div class="single_service">
+                        <div class="service_icon">
+                            <i class="flaticon-calendar"></i>
+                        </div>
+                        <h4>Event Catering</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6">
+                    <div class="single_service">
+                        <div class="service_icon">
+                            <i class="flaticon-businessman"></i>
+                        </div>
+                        <h4>Corporate Service</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6">
+                    <div class="single_service">
+                        <div class="service_icon">
+                            <i class="flaticon-running-man"></i>
+                        </div>
+                        <h4>Catering On Demand</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- service_area-end -->
+
+    <!-- video_area_start -->
+   
+    <!-- video_area_end -->
+
+    <!-- order_area_start -->
+    <div class="order_area">
+        <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="section_title mb-70">
+                            <h3>Our Catering Menu</h3>
+                            <p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards <br> especially in the workplace. That’s why it’s crucial that, as women.</p>
+                        </div>
+                    </div>
+                </div>
+            <div class="row">
+                <div class="col-xl-4 col-md-6">
+                    <div class="single_order">
+                        <div class="order_thumb">
+                            <img src="{{url('img/order/order-1.png')}}" alt="">
+                            
+                        </div>
+                        <div class="order_info">
+                            <h3><a href="#">First Meal</a></h3>
+                            <p>1 Meal   |  2 Meal <br>
+                                    3 Meal   |   4 Meal <br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6">
+                    <div class="single_order">
+                        <div class="order_thumb">
+                            <img src="{{url('img/order/order-2.png')}}" alt="">
+                            </div>
+                        <div class="order_info">
+                            <h3><a href="#">Main Meal</a></h3>
+                           <p>1 Meal   |  2 Meal <br>
+                                    3 Meal   |   4 Meal <br>
+                            </p>
+                         </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6">
+                    <div class="single_order">
+                        <div class="order_thumb">
+                            <img src="{{url('img/order/order-3.png')}}" alt="">
+                            </div>
+                        <div class="order_info">
+                            <h3><a href="#">Pudding/Final Meal</a></h3>
+                            <p>1 Meal   |  2 Meal <br>
+                                    3 Meal   |   4 Meal <br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- order_area_end -->
+
+    <!-- footer-start -->
+    <footer class="footer_area footer-bg zigzag_bg_1">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+				<div class="col-xl-2 col-md-6 col-lg-2">
+                        <div class="footer_widget">
+                            <h3 class="heading">
+                                    
+                            </h3>
+                            <ul>
+                              <li> </li>
+                              <li></li>
+                              <li></li>
+                              <li></li> 
+                            </ul>
+                        </div>
+                    </div>
+					<div class="col-xl-2 col-md-6 col-lg-2">
+                        <div class="footer_widget">
+                            <h3 class="heading">
+                                    
+                            </h3>
+                            <ul>
+                              <li> </li>
+                              <li></li>
+                              <li></li>
+                              <li></li> 
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-lg-2">
+                        <div class="footer_widget">
+                            <h3 class="heading">
+                                  Map/Location
+                            </h3>
+                            <ul>
+								Cape Town, Western Cape
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-lg-2">
+                        <div class="footer_widget">
+                            <h3 class="heading">
+                                   Information  
+                            </h3>
+                            <ul>
+                              <li>#1 Client(Business Name) </li>
+                              <li><a href="#">Contact Number</a></li>
+                              <li><a href="#">Business Email</a></li>
+                              <li>Business Time</li> 
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-lg-2">
+                        <div class="footer_widget">
+                            <h3 class="heading">
+                                   Quick Links
+                            </h3>
+                            <ul>
+                                <li><a href="{{url('index.html')}}">Home</a></li>
+                                <li><a href="{{url('about.html')}}">About</a></li>
+                                <li><a href="{{url('gallery.html')}}">Gallery</a></li>
+                                <li><a href="{{url('contact.html')}}">Contact</a></li>
+                               
+                            </ul>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-7 col-md-12 col-lg-8">
+                        <div class="copyright">
+                                <p class="footer-text"><!-- Link back to Github can't be removed. Website is licensed under MIT. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This Website is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://github.com/benzito1590" target="_blank">Benzito Bezuidenhout</a>
+<!-- Link back to Github can't be removed. Website is licensed under MIT. --></p>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-md-12 col-lg-4">
+                        <div class="social_links">
+                            <ul>
+                                <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
+                                <li><a href="#"> <i class="fa fa-twitter"></i> </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer-end -->
+
+    @include('website.fixed.footer')
+    <!-- JS here -->
+    <script src="{{url('Website/js/vendor/modernizr-3.5.0.min.js')}}"></script>
+    <script src="{{url('Website/js/vendor/jquery-1.12.4.min.js')}}"></script>
+    <script src="{{url('Website/js/popper.min.js')}}"></script>
+    <script src="{{url('Website/js/bootstrap.min.js')}}"></script>
+    <script src="{{url('Website/js/owl.carousel.min.js')}}"></script>
+    <script src="{{url('Website/js/isotope.pkgd.min.js')}}"></script>
+    <script src="{{url('Website/js/ajax-form.js')}}"></script>
+    <script src="{{url('Website/js/waypoints.min.js')}}"></script>
+    <script src="{{url('Website/js/jquery.counterup.min.js')}}"></script>
+    <script src="{{url('Website/js/imagesloaded.pkgd.min.js')}}"></script>
+    <script src="{{url('Website/js/scrollIt.js')}}"></script>
+    <script src="{{url('Website/js/jquery.scrollUp.min.js')}}"></script>
+    <script src="{{url('Website/js/wow.min.js')}}"></script>
+    <script src="{{url('Website/js/nice-select.min.js')}}"></script>
+    <script src="{{url('Website/js/jquery.slicknav.min.js')}}"></script>
+    <script src="{{url('Website/js/jquery.magnific-popup.min.js')}}"></script>
+    <script src="{{url('Website/js/plugins.js')}}"></script>
+
+    <!--contact js-->
+    <script src="{{url('Website/js/contact.js')}}"></script>
+    <script src="{{url('Website/js/jquery.ajaxchimp.min.js')}}"></script>
+    <script src="{{url('Website/js/jquery.form.js')}}"></script>
+    <script src="{{url('Website/js/jquery.validate.min.js')}}"></script>
+    <script src="{{url('Website/js/mail-script.js')}}"></script>
+    <script src="{{url('Website/js/main.js')}}"></script>
 </body>
 </html>
