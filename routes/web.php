@@ -13,7 +13,12 @@ use App\Http\Controllers\Backend\DistributionController;
 use App\Http\Controllers\Backend\AddnewpackageController;
 
 //Website
-//use App\Http\Controllers\Frontend\ContentController;
+use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\ShowPackageController;
+use App\Http\Controllers\Frontend\ShowItemController;
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,27 +30,32 @@ use App\Http\Controllers\Backend\AddnewpackageController;
 |
 */
 
-Route::get( '/', function () {
-   return view('website.master');
-});
+//website Part
+Route::get( '/', [HomeController::class,'home'])->name('home');
+
+//showpackage route
+Route::get('/home/showpackage',[ShowPackageController::class,'showpackage'])->name('showpackage');
+
+//showitem route
+Route::get('/home/showitem',[ShowItemController::class,'showitem'])->name('showitem');
 
 //Route::get('/home', function () {
     //return view('admin.content');
 //});
 
-
+//admin Part
 Route::get('/admin', [contentcontroller::class,'admin'])->name('admin');
 
 //package route
 Route::get('/package',[PackageController::class, 'package'])->name('package');
-Route::get('/packageform',[PackageController::class, 'packageform'])->name('packageform');
-Route::post('/store',[PackageController::class, 'store'])->name('store');
+Route::get('/package-form',[PackageController::class, 'packageform'])->name('packageform');
+Route::post('/package/store',[PackageController::class, 'store'])->name('package.store');
 
 
 //item route
 Route::get('/item',[ItemController::class, 'item'])->name('item');
-Route::get('/itemform',[ItemController::class, 'itemform'])->name('itemform');
-Route::post('/store',[ItemController::class, 'store'])->name('store');
+Route::get('/item-form',[ItemController::class, 'itemform'])->name('itemform');
+Route::post('/item/store',[ItemController::class, 'store'])->name('item.store');
 
 
 //customer route
@@ -72,8 +82,6 @@ Route::get('/distribution',[DistributionController::class, 'distribution'])->nam
 
 
 
-//website Part
-//Route::get('/home', [contentcontroller::class,'home'])->name('home');
 
 
 

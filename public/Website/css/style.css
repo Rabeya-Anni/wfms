@@ -463,7 +463,7 @@ h3 {
 
 /* line 48, ../../Arafath/CL/CL August/199 Flatter Catering/199 Flatter Catering-HTML/scss/_section_title.scss */
 .zigzag_bg_1::before {
-  background-image: url(../img/zigzag.svg);
+  background-image: url(/img/bg-1.jpg);
   content: "";
   position: absolute;
   left: 0;
@@ -477,7 +477,7 @@ h3 {
 
 /* line 63, ../../Arafath/CL/CL August/199 Flatter Catering/199 Flatter Catering-HTML/scss/_section_title.scss */
 .zigzag_bg_2::after {
-  background-image: url(../img/zigzag.svg);
+  background-image: url(/img/bg-1.jpg);
   content: "";
   position: absolute;
   left: 0;
@@ -1102,7 +1102,7 @@ h3 {
 
 /* line 1, ../../Arafath/CL/CL August/199 Flatter Catering/199 Flatter Catering-HTML/scss/_banner.scss */
 .slider_img_1 {
-  background-image: url(../img/banner/banner.png);
+  background-image: url(/img/bg-1.jpg);
 }
 
 /* line 4, ../../Arafath/CL/CL August/199 Flatter Catering/199 Flatter Catering-HTML/scss/_banner.scss */
@@ -1650,7 +1650,7 @@ h3 {
 
 /* line 1, ../../Arafath/CL/CL August/199 Flatter Catering/199 Flatter Catering-HTML/scss/_footer.scss */
 .footer-bg {
-  background-image: url(../img/banner/footer-bg.png);
+  background-image: url(/img/banner/footer-bg.png);
 }
 
 /* line 4, ../../Arafath/CL/CL August/199 Flatter Catering/199 Flatter Catering-HTML/scss/_footer.scss */
@@ -1821,7 +1821,7 @@ h3 {
 
 /* line 1, ../../Arafath/CL/CL August/199 Flatter Catering/199 Flatter Catering-HTML/scss/_breadcam.scss */
 .breadcam_bg_1 {
-  background-image: url(../img/banner/common.png);
+  background-image: url(/img/bg-1.jpg);
 }
 
 /* line 4, ../../Arafath/CL/CL August/199 Flatter Catering/199 Flatter Catering-HTML/scss/_breadcam.scss */

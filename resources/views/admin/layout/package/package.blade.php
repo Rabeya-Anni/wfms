@@ -20,18 +20,18 @@
   <thead>
     <tr>
       <th scope="col">Serial</th>
-      <th scope="col">Package Id</th>
       <th scope="col">Name</th>
       <th scope="col">Price per person</th>
+      <th scope="col">Details</th>
     </tr>
   </thead>
   <tbody>
   @foreach($packages as $key=>$package)
     <tr>
     <th scope="row">{{$key+1}}</th>
-      <td>{{($package->package_id)}}</td>
       <td>{{($package->name)}}</td>
       <td>{{($package->price_per_person)}}</td>
+      <td>{{($package->details)}}</td>
     </tr>
     
   @endforeach 

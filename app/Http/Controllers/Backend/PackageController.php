@@ -22,25 +22,27 @@ class PackageController extends Controller
     }
     public function store(Request $request)
     {
+        // dd($request->all());
         $request->validate([
-             'package_id'=>'required',
              'name'=>'required',
              'price_per_person'=>'required',
-         ]);
-          try{
-           Package::create([
-              'package_id'=>$request->package_id,
-              'name'=>$request->name,
-              'price_per_person'=>$request->price_per_person,
-          ]);
+             'details'=>'required',
+        ]);
 
-           return redirect()->route('package')->with('success', 'Profile updated!');
-         }
+        try{
+            Package::create([
+                'name'=>$request->name,
+                'price_per_person'=>$request->price_per_person,
+                'details'=>$request->details,
+            ]);
+
+            return redirect()->route('package')->with('success', 'Profile updated!');
+        }
          catch(Throwable $throw)
          {
           return redirect()->back()->with('error', 'Profile updated!');
          }
-     }
+    }
 
     
 }

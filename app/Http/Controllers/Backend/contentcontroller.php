@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Http\Controllers\Controller;// ei file ta missing
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class contentcontroller extends Controller
@@ -13,5 +13,3 @@ class contentcontroller extends Controller
 }
 
 
-// controllers er vitor controller name ekta file chilo oita delete kore dicho tai ei error dicche
-// oi file ta ke base controller bole
