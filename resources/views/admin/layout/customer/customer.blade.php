@@ -8,7 +8,6 @@
   <thead>
     <tr>
       <th scope="col">Serial</th>
-      <th scope="col">Customer ID</th>
       <th scope="col">Name</th>
       <th scope="col">Address</th>
       <th scope="col">E-mail</th>
@@ -22,7 +21,7 @@
       <td>Otto</td>
       <td>@mdo</td>
       <td>Mark</td>
-      <td>Otto</td>
+      
       
     </tr>
    

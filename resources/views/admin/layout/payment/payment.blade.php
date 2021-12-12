@@ -18,10 +18,9 @@
   <thead>
     <tr>
       <th scope="col">Serial</th>
-      <th scope="col">Payment ID</th>
-      <th scope="col">E-mail</th>
-      <th scope="col">Card</th>
-      <th scope="col">Bank</th>
+      <th scope="col">Customer ID</th>
+      <th scope="col">Order ID</th>
+      <th scope="col">Status</th>
     </tr>
   </thead>
   <tbody>
@@ -29,7 +28,6 @@
       <th scope="row">1</th>
       <td>Mark</td>
       <td>Otto</td>
-      <td>@mdo</td>
       <td>@mdo</td>
     </tr>
   

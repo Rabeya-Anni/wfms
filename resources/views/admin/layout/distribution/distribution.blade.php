@@ -19,11 +19,10 @@
   <thead>
     <tr>
       <th scope="col">Serial</th>
-      <th scope="col">Distribution ID</th>
-      <th scope="col">Name</th>
-      <th scope="col">Address</th>
-      <th scope="col">Need Status</th>
-      <th scope="col">Number of People</th>
+      <th scope="col">Organization ID</th>
+      <th scope="col">Food Name</th>
+      <th scope="col">Quantity</th>
+    
     </tr>
   </thead>
   <tbody>
@@ -32,8 +31,7 @@
       <td>Mark</td>
       <td>Otto</td>
       <td>@mdo</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+     
     </tr>
    
   </tbody>

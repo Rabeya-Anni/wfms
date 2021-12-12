@@ -14,14 +14,17 @@
                                         <li><a href="#">About</a></li>
                                         <li><a href="{{route('showpackage')}}">Packages</a></li>
                                         <li><a href="{{route('showitem')}}">Items</a></li>
+                                        <li><a href="gallery.html">Gallery</a></li>
+
                                         <div class="logo-img d-none d-lg-block">
                                                 <a href="index.html">
                                                     <img src="img/logo.png" alt="">
                                                 </a>
                                             </div>
-                                        <li><a href="gallery.html">Gallery</a></li>
                                         <li><a href="map.html">Location</a></li></li>
                                         <li><a href="contact.html">Contact</a></li>
+                                        <li><a href="{{route('registrationform')}}">Registration</a></li>
+                                        <li><a href="{{route('loginform')}}">Login</a></li>
                                     </ul>
                                 </nav>
                             </div>

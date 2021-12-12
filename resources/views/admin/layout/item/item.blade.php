@@ -21,9 +21,9 @@
 <thead>
     <tr>
       <th scope="col">Serial</th>
-      <th scope="col">Item Id</th>
       <th scope="col">Name</th>
       <th scope="col">Price per person</th>
+      <th scope="col">Details</th>
       <th scope="col">Image</th>
     </tr>
   </thead>
@@ -31,9 +31,9 @@
   @foreach($items as $key=>$item)
     <tr>
     <th scope="row">{{$key+1}}</th>
-      <td>{{($item->item_id)}}</td>
       <td>{{($item->name)}}</td>
       <td>{{($item->price_per_person)}}</td>
+      <td>{{($item->details)}}</td>
       <td><img src = "{{(url('/uploads/'.$item->image))}}" alt="item image" width="100px"></td>
     </tr>
   @endforeach  

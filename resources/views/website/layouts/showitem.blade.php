@@ -21,11 +21,9 @@
                         <p><img src="{{(url('/uploads/'.$item->image))}}" alt="" ></p>
                         <h4>Id: {{$item->item_id}}</h4>
                         <h4>{{$item->name}}</h4>
-                        <h4>Price: {{$item->price_per_person}}</h4>
+                        <h4>$ {{$item->price_per_person}}</h4>
 
-                        <!-- <p><img src="{{(url('/uploads/'.$item->image))}}" alt="" ></p> -->
-
-                        <p>Cheese Burger</p>
+                        
                     </div>
                 </div>
             </div>

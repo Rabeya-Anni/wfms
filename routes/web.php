@@ -16,6 +16,8 @@ use App\Http\Controllers\Backend\AddnewpackageController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\ShowPackageController;
 use App\Http\Controllers\Frontend\ShowItemController;
+use App\Http\Controllers\Frontend\RegistrationformController;
+use App\Http\Controllers\Frontend\LoginformController;
 
 
 
@@ -30,7 +32,7 @@ use App\Http\Controllers\Frontend\ShowItemController;
 |
 */
 
-//website Part
+//<---------website Part-------->//<---------website Part-------->
 Route::get( '/', [HomeController::class,'home'])->name('home');
 
 //showpackage route
@@ -39,11 +41,24 @@ Route::get('/home/showpackage',[ShowPackageController::class,'showpackage'])->na
 //showitem route
 Route::get('/home/showitem',[ShowItemController::class,'showitem'])->name('showitem');
 
+//Registration route
+Route::get('/home/registrationform',[RegistrationformController::class,'registrationform'])->name('registrationform');
+
+//Loginform route
+Route::get('/home/loginform',[LoginformController::class,'loginform'])->name('loginform');
+
+
+
+
 //Route::get('/home', function () {
     //return view('admin.content');
 //});
 
-//admin Part
+
+
+
+
+//<--------admin Part-------->//<--------admin Part-------->
 Route::get('/admin', [contentcontroller::class,'admin'])->name('admin');
 
 //package route

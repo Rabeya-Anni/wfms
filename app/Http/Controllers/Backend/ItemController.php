@@ -30,16 +30,16 @@ class ItemController extends Controller
             $file->storeAs('/uploads',$filename);
         }
         $request->validate([
-             'item_id'=>'required',
              'name'=>'required',
              'price_per_person'=>'required',
+             'details'=>'required',
              'image'=>'required',
          ]);
         try{
             Item::create([
-            'item_id'=>$request->item_id,
             'name'=>$request->name,
             'price_per_person'=>$request->price_per_person,
+            'details'=>$request->details,
             'image'=>$filename,
           ]);
 
