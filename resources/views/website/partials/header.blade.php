@@ -23,8 +23,12 @@
                                             </div>
                                         <li><a href="map.html">Location</a></li></li>
                                         <li><a href="contact.html">Contact</a></li>
+                                        @if(auth()->user())
+                                        <li><a href="{{route('logoutform')}}">logout</a></li>
+                                        @else
                                         <li><a href="{{route('registrationform')}}">Registration</a></li>
                                         <li><a href="{{route('loginform')}}">Login</a></li>
+                                        @endif
                                     </ul>
                                 </nav>
                             </div>

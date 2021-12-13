@@ -8,23 +8,24 @@
   <thead>
     <tr>
       <th scope="col">Serial</th>
-      <th scope="col">Name</th>
-      <th scope="col">Address</th>
+      <th scope="col">Username</th>
       <th scope="col">E-mail</th>
       <th scope="col">Phone Number</th>
+      <th scope="col">Address</th>
     </tr>
   </thead>
   <tbody>
+  @foreach($customers as $key=>$customer)  
     <tr>
-      <th scope="row">1</th>
-      <td>anni</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>Mark</td>
+      <th scope="row">{{$key+1}}</th>
+      <td>{{($customer->username)}}</td>
+      <td>{{($customer->email)}}</td>
+      <td>{{($customer->phone_number)}}</td>
+      <td>{{($customer->address)}}</td>
       
-      
-    </tr>
-   
+         
+     </tr>
+     @endforeach  
   </tbody>
 </table>
 @endsection

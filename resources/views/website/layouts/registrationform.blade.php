@@ -19,12 +19,13 @@
 		<div class="main-agileinfo">
 		<h1 class="text-uppercase text-center mb-5">Create Account</h1>
 			<div class="agileits-top">
-			<form action="#" method="post">
-					<input class="text" type="text" name="Username" placeholder="Username" required="">
-					<input class="text email" type="email" name="email" placeholder="Email" required="">
-					<input class="text" type="password" name="password" placeholder="Password" required="">
-					<input class="text w3lpass" type="password" name="password" placeholder="Confirm Password" required="">
-					<input class="text" type="text" name="Phone Number" placeholder="Phone Number" required="">
+			<form action="{{route('registration.store')}}" method="post" enctype="multipart/form-data">
+			@csrf
+					<input class="text" type="text" name="username" placeholder="Username" required=""><br>
+					<input class="text" type="email" name="email" placeholder="Email" required=""><br>
+					<input class="text" type="password" name="password" placeholder="Password" required=""><br>
+					<input class="text" type="text" name="phone_number" placeholder="Phone Number" required=""><br>
+					<input class="text" type="text" name="address" placeholder="Address" required=""><br>
 					<div class="wthree-text">
 						<label class="anim">
 							<input type="checkbox" class="checkbox" required="">
@@ -34,7 +35,7 @@
 					</div>
 					<input type="submit" value="SIGNUP">
 				</form>
-				<p>Have Already an Account? <a href="#"> Login Here!</a></p>
+				<p>Have Already an Account? <a href="{{route('loginform')}}"> Login Here!</a></p>
 			</div>
 		</div>
 		<!-- copyright -->

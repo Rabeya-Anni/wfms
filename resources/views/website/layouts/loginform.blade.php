@@ -19,8 +19,9 @@
 		<div class="main-agileinfo">
         <h1 class="text-uppercase text-center mb-5">Login</h1>
 			<div class="agileits-top">
-				<form action="#" method="post">
-                    <input class="text" type="text" name="Username" placeholder="Username" required=""> 
+				<form action="{{route('loginform.store')}}" method="post">
+				@csrf
+                    <input class="text" type="text" name="username" placeholder="Username" required=""> 
 					<input class="text email" type="email" name="email" placeholder="Email" required="">
 					<input class="text" type="password" name="password" placeholder="Password" required="">
 					<div class="wthree-text">
@@ -32,7 +33,7 @@
 					</div>
 					<input type="submit" value="SIGNIN">
 				</form>
-				<p>Don't have an Account? <a href="#"> SIGNUP!</a></p>
+				<p>Don't have an Account? <a href="{{route('registrationform')}}"> SIGNUP!</a></p>
 			</div>
 		</div>
 		<!-- copyright -->

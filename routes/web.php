@@ -17,7 +17,7 @@ use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\ShowPackageController;
 use App\Http\Controllers\Frontend\ShowItemController;
 use App\Http\Controllers\Frontend\RegistrationformController;
-use App\Http\Controllers\Frontend\LoginformController;
+
 
 
 
@@ -33,7 +33,7 @@ use App\Http\Controllers\Frontend\LoginformController;
 */
 
 //<---------website Part-------->//<---------website Part-------->
-Route::get( '/', [HomeController::class,'home'])->name('home');
+Route::get('/',[HomeController::class,'home'])->name('home');
 
 //showpackage route
 Route::get('/home/showpackage',[ShowPackageController::class,'showpackage'])->name('showpackage');
@@ -43,10 +43,13 @@ Route::get('/home/showitem',[ShowItemController::class,'showitem'])->name('showi
 
 //Registration route
 Route::get('/home/registrationform',[RegistrationformController::class,'registrationform'])->name('registrationform');
-
+Route::post('/home/registration/store',[RegistrationformController::class,'registrationstore'])->name('registration.store');
 //Loginform route
-Route::get('/home/loginform',[LoginformController::class,'loginform'])->name('loginform');
+Route::get('/home/loginform',[RegistrationformController::class,'loginform'])->name('loginform');
+Route::post('/home/loginform/store',[RegistrationformController::class,'loginformstore'])->name('loginform.store');
 
+// Logout route
+Route::get('/home/logoutform',[RegistrationformController::class,'logout'])->name('logoutform');
 
 
 
