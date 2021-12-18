@@ -74,6 +74,7 @@ Route::post('/package/store',[PackageController::class, 'store'])->name('package
 Route::get('/item',[ItemController::class, 'item'])->name('item');
 Route::get('/item-form',[ItemController::class, 'itemform'])->name('itemform');
 Route::post('/item/store',[ItemController::class, 'store'])->name('item.store');
+Route::get('/item/view/item_id',[ItemController::class, 'itemview'])->name('item.view');
 
 
 //customer route

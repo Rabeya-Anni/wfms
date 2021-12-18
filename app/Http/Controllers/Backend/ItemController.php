@@ -49,5 +49,10 @@ class ItemController extends Controller
          {
           return redirect()->back()->with('error', 'Profile updated!');
          }
+    
+    }
+    public function itemview($item_id){
+        $items = Item::find($item_id);
+        return view('admin.layout.item.itemview',compact('items'));
     }
 }

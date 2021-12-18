@@ -11,23 +11,23 @@
                     </div>
                 </div>
             </div>
-        @foreach($items as $item)
             <div class="row">
+                @foreach($items as $item)
                 <div class="col-xl-4 col-md-6">
                     <div class="single_service">
                         <div class="service_icon">
                             
                         </div>
                         <p><img src="{{(url('/uploads/'.$item->image))}}" alt="" ></p>
-                        <h4>Id: {{$item->item_id}}</h4>
+                        <h4>{{$item->item_id}}</h4>
                         <h4>{{$item->name}}</h4>
                         <h4>$ {{$item->price_per_person}}</h4>
-
+                        <h4>{{($item->details)}}</h4>
                         
                     </div>
                 </div>
+                @endforeach
             </div>
-        @endforeach
         </div>
     </div>
 @endsection

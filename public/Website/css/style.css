@@ -683,7 +683,7 @@ h3 {
 
 /* line 56, ../../Arafath/CL/CL August/199 Flatter Catering/199 Flatter Catering-HTML/scss/_header.scss */
 .header-area .main-header-area .main-menu ul li a {
-  color: #fff;
+  color: black;
   font-size: 16px;
   text-transform: capitalize;
   font-weight: 400;

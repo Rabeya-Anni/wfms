@@ -39,7 +39,8 @@ class RegistrationformController extends Controller
            if (Auth::attempt($userpost)){
                
                return redirect()->route('home');
-           }else{
+           }
+           else{
             return redirect()->route('loginform');
 
            }

@@ -2,7 +2,7 @@
 
 
 @section('content')
-<form action="{{route('store')}}" method="post" enctype="multipart/form-data">
+<form action="{{route('item.store')}}" method="post" enctype="multipart/form-data">
 @csrf
   <div class="form-group">
     <label for="exampleInputPassword1">Name</label>
