@@ -23,6 +23,7 @@
       <th scope="col">Name</th>
       <th scope="col">Price per person</th>
       <th scope="col">Details</th>
+      <th scope="col">Image</th>
     </tr>
   </thead>
   <tbody>
@@ -32,6 +33,7 @@
       <td>{{($package->name)}}</td>
       <td>{{($package->price_per_person)}}</td>
       <td>{{($package->details)}}</td>
+      <td><img src = "{{(url('/uploads/'.$package->image))}}" alt="package image" width="100px"></td>
     </tr>
     
   @endforeach 

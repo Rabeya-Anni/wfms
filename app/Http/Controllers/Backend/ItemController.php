@@ -51,8 +51,8 @@ class ItemController extends Controller
          }
     
     }
-    public function itemview($item_id){
-        $items = Item::find($item_id);
-        return view('admin.layout.item.itemview',compact('items'));
+    public function itemview($id){
+        $item = Item::find($id);
+        return view('admin.layout.item.itemview',compact('item'));
     }
 }

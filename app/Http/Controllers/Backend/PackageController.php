@@ -20,8 +20,14 @@ class PackageController extends Controller
         return view('admin.layout.package.packageform');//compact("packages"));
         //$dd(package);
     }
-    public function store(Request $request)
+    public function packagestore(Request $request)
     {
+
+        if($request->hasFile('image')){
+            $file = $request->file('image');
+            $filename = (date('Ymdhms')).'.'.$file->getClientOriginalextension();
+            $file->storeAs('/uploads',$filename);
+        }
         // dd($request->all());
         $request->validate([
              'name'=>'required',
@@ -34,6 +40,7 @@ class PackageController extends Controller
                 'name'=>$request->name,
                 'price_per_person'=>$request->price_per_person,
                 'details'=>$request->details,
+                'image'=>$filename,
             ]);
 
             return redirect()->route('package')->with('success', 'Profile updated!');

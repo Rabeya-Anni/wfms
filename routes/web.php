@@ -67,14 +67,14 @@ Route::get('/admin', [contentcontroller::class,'admin'])->name('admin');
 //package route
 Route::get('/package',[PackageController::class, 'package'])->name('package');
 Route::get('/package-form',[PackageController::class, 'packageform'])->name('packageform');
-Route::post('/package/store',[PackageController::class, 'store'])->name('package.store');
+Route::post('/package/store',[PackageController::class, 'packagestore'])->name('package.store');
 
 
 //item route
 Route::get('/item',[ItemController::class, 'item'])->name('item');
 Route::get('/item-form',[ItemController::class, 'itemform'])->name('itemform');
 Route::post('/item/store',[ItemController::class, 'store'])->name('item.store');
-Route::get('/item/view/item_id',[ItemController::class, 'itemview'])->name('item.view');
+Route::get('/item/view/{id}',[ItemController::class, 'itemview'])->name('item.view');
 
 
 //customer route
@@ -94,10 +94,14 @@ Route::get('/request',[RequestController::class, 'request'])->name('request');
 
 //organization route
 Route::get('/organization',[OrganizationController::class, 'organization'])->name('organization');
+Route::get('/organizationform',[OrganizationController::class, 'organizationform'])->name('organizationform');
+Route::post('/organization/store',[OrganizationController::class, 'organizationstore'])->name('organization.store');
 
 
 //distribution route
 Route::get('/distribution',[DistributionController::class, 'distribution'])->name('distribution');
+Route::get('/distributionform',[DistributionController::class, 'distributionform'])->name('distributionform');
+Route::post('/distribution/store',[DistributionController::class, 'distributionstore'])->name('distribution.store');
 
 
 

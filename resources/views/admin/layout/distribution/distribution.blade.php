@@ -15,6 +15,7 @@
     </div>
 @endif
 <h4>Distribution Table</h4>
+<a class="btn btn-primary" href="{{route('distributionform')}}" role="button">Assign</a>
 <table class="table">
   <thead>
     <tr>
@@ -26,13 +27,15 @@
     </tr>
   </thead>
   <tbody>
+  @foreach($distributions as $key=>$distribution)
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-     
+    <th scope="row">{{$key+1}}</th>
+      <td>{{($distribution->organization_id)}}</td>
+      <td>{{($distribution->food_name)}}</td>
+      <td>{{($distribution->quantity)}}</td>  
+      
     </tr>
+  @endforeach 
    
   </tbody>
 </table>
