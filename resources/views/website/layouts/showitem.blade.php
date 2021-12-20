@@ -18,7 +18,7 @@
                         <div class="service_icon">
                             
                         </div>
-                        <p><img src="{{(url('/uploads/'.$item->image))}}" alt="" ></p>
+                        <p><img src="{{(url('/uploads/'.$item->image))}}" alt="" height="200px" width="270px"></p>
                         <h4>{{$item->item_id}}</h4>
                         <h4>{{$item->name}}</h4>
                         <h4>$ {{$item->price_per_person}}</h4>

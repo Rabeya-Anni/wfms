@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Package;
 
 class ShowPackageController extends Controller
 {
@@ -14,7 +15,8 @@ class ShowPackageController extends Controller
      */
     public function showpackage()
     {
-        return view('website.layouts.showpackage');
+        $packages=Package::all();
+        return view('website.layouts.showpackage',compact('packages'));
     }
 
     /**

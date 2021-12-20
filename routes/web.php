@@ -11,6 +11,8 @@ use App\Http\Controllers\Backend\RequestController;
 use App\Http\Controllers\Backend\OrganizationController;
 use App\Http\Controllers\Backend\DistributionController;
 use App\Http\Controllers\Backend\AddnewpackageController;
+use App\Http\Controllers\Backend\EmployeeController;
+use App\Http\Controllers\Backend\AdminLoginController;
 
 //Website
 use App\Http\Controllers\Frontend\HomeController;
@@ -62,12 +64,32 @@ Route::get('/home/logoutform',[RegistrationformController::class,'logout'])->nam
 
 
 //<--------admin Part-------->//<--------admin Part-------->
+
+Route::group(['prefix'=>'admin'],function(){
+    
+//admin-login part
+
+Route::get('/adminlogin',[AdminLoginController::class, 'adminlogin'])->name('admin.login');
+Route::post('/admin/dologin',[AdminLoginController::class, 'dologin'])->name('admin.dologin');
+
+
+Route::group(['middleware'=>'auth'],function(){
+    Route::get('/',function(){
+        return view('admin.layout.content');
+    })->name('admin');
+
+Route::get('/adminlogout',[AdminLoginController::class, 'adminlogout'])->name('admin.logout');
+
+
 Route::get('/admin', [contentcontroller::class,'admin'])->name('admin');
+
 
 //package route
 Route::get('/package',[PackageController::class, 'package'])->name('package');
 Route::get('/package-form',[PackageController::class, 'packageform'])->name('packageform');
 Route::post('/package/store',[PackageController::class, 'packagestore'])->name('package.store');
+Route::get('/package/view/{id}',[PackageController::class, 'packageview'])->name('package.view');
+Route::get('/package/delete/{id}',[PackageController::class, 'packagedelete'])->name('package.delete');
 
 
 //item route
@@ -75,10 +97,18 @@ Route::get('/item',[ItemController::class, 'item'])->name('item');
 Route::get('/item-form',[ItemController::class, 'itemform'])->name('itemform');
 Route::post('/item/store',[ItemController::class, 'store'])->name('item.store');
 Route::get('/item/view/{id}',[ItemController::class, 'itemview'])->name('item.view');
+Route::get('/item/delete/{id}',[ItemController::class, 'itemdelete'])->name('item.delete');
 
 
 //customer route
 Route::get('/customer',[CustomerController::class, 'customer'])->name('customer');
+
+
+//employee route
+Route::get('/employee',[EmployeeController::class, 'employee'])->name('employee');
+Route::get('/employeeform',[EmployeeController::class, 'employeeform'])->name('employeeform');
+Route::post('/employee/store',[OrganizationController::class, 'employeestore'])->name('employee.store');
+
 
 //order route
 Route::get('/order',[OrderController::class, 'order'])->name('order');
@@ -105,8 +135,8 @@ Route::post('/distribution/store',[DistributionController::class, 'distributions
 
 
 
-
-
+});
+});
 
 
 

@@ -49,6 +49,16 @@ class PackageController extends Controller
          {
           return redirect()->back()->with('error', 'Profile updated!');
          }
+         
+    }
+    public function packageview($id){
+        $package = Package::find($id);
+        return view('admin.layout.package.packageview',compact('package'));
+    }
+
+    public function packagedelete($id){
+        Package::find($id)->delete();
+        return redirect()->back()->with('success','Package Delete.');
     }
 
     

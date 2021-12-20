@@ -55,4 +55,9 @@ class ItemController extends Controller
         $item = Item::find($id);
         return view('admin.layout.item.itemview',compact('item'));
     }
+
+    public function itemdelete($id){
+        Item::find($id)->delete();
+        return redirect()->back()->with('success','Item Delete.');
+    }
 }

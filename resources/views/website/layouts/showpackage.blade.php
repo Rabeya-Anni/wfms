@@ -12,60 +12,20 @@
                 </div>
             </div>
             <div class="row">
+                @foreach($packages as $key=>$package)
                 <div class="col-xl-4 col-md-6">
                     <div class="single_service">
                         <div class="service_icon">
-                            <i class="flaticon-gift"></i>
+                            
                         </div>
-                        <h4>Birthday Catering</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p><img src="{{(url('/uploads/'.$package->image))}}" alt="" height="200px" width="270px" ></p>
+                        <h4>{{$package->name}}</h4>
+                        <h4>$ {{$package->price_per_person}}</h4>
+                        <h4>{{($package->details)}}</h4>
+                        
                     </div>
                 </div>
-                <div class="col-xl-4 col-md-6">
-                    <div class="single_service">
-                        <div class="service_icon">
-                            <i class="flaticon-cake"></i>
-                        </div>
-                        <h4>Wedding Service</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6">
-                    <div class="single_service">
-                        <div class="service_icon">
-                            <i class="flaticon-dance"></i>
-                        </div>
-                        <h4>Party Catering</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6">
-                    <div class="single_service">
-                        <div class="service_icon">
-                            <i class="flaticon-calendar"></i>
-                        </div>
-                        <h4>Event Catering</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6">
-                    <div class="single_service">
-                        <div class="service_icon">
-                            <i class="flaticon-businessman"></i>
-                        </div>
-                        <h4>Corporate Service</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6">
-                    <div class="single_service">
-                        <div class="service_icon">
-                            <i class="flaticon-running-man"></i>
-                        </div>
-                        <h4>Catering On Demand</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

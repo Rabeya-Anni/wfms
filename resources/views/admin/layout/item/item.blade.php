@@ -32,12 +32,13 @@
   @foreach($items as $key=>$item)
     <tr>
     <th scope="row">{{$key+1}}</th>
-      <td>{{($item->name)}} "---" {{($item->id)}}</td>
+      <td>{{($item->name)}}</td>
       <td>{{($item->price_per_person)}}</td>
       <td>{{($item->details)}}</td>
       <td><img src = "{{(url('/uploads/'.$item->image))}}" alt="item image" width="100px"></td>
       <td>
         <a class="btn btn-primary" href="{{route('item.view',$item->id)}}">View</a>
+        <a class="btn btn-danger" href="{{route('item.delete',$item->id)}}">Delete</a>
       </td>
     </tr>
   @endforeach  

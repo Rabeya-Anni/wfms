@@ -85,6 +85,11 @@
                                 Customer
                             </a>
 
+                            <a class="nav-link" href="{{route('employee')}}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
+                               Employee
+                            </a>
+
                             <a class="nav-link" href="{{route('order')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Order
