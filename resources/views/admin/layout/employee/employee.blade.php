@@ -24,6 +24,8 @@
       <th scope="col">Address</th>
       <th scope="col">Designation</th>
       <th scope="col">Phone Number</th>
+      <th scope="col">Image</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
@@ -34,7 +36,11 @@
       <td>{{($employee->address)}}</td>
       <td>{{($employee->designation)}}</td>
       <td>{{($employee->phone_number)}}</td>
-      
+      <td><img src = "{{(url('/uploads/'.$employee->image))}}" alt="employee image" width="100px"></td>
+      <td>
+        <a class="btn btn-primary" href="{{route('employee.view',$employee->id)}}">View</a>
+        <a class="btn btn-danger" href="{{route('employee.delete',$employee->id)}}">Delete</a>
+      </td>
       
     </tr>
   @endforeach    

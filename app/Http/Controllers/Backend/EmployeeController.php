@@ -21,19 +21,26 @@ class EmployeeController extends Controller
 
     public function employeestore(Request $request)
     {
+
+        if($request->hasFile('image')){
+            $file = $request->file('image');
+            $filename = (date('Ymdhms')).'.'.$file->getClientOriginalextension();
+            $file->storeAs('/uploads',$filename);
+        }
         
         $request->validate([
              'name'=>'required',
              'address'=>'required',
-             'employee'=>'required',
+             'designation'=>'required',
              'phone_number'=>'required',
          ]);
         try{
             Employee::create([
             'name'=>$request->name,
             'address'=>$request->address,
-            'employee'=>$request->employee,
+            'designation'=>$request->designation,
             'phone_number'=>$request->phone_number,
+            'image'=>$filename,
           ]);
 
           return redirect()->route('employee')->with('success', 'Profile updated!');
@@ -43,5 +50,14 @@ class EmployeeController extends Controller
           return redirect()->back()->with('error', 'Profile updated!');
          }
     
+    }
+    public function employeeview($id){
+        $employee = Employee::find($id);
+        return view('admin.layout.employee.employeeview',compact('employee'));
+    }
+
+    public function employeedelete($id){
+        Employee::find($id)->delete();
+        return redirect()->back()->with('success','Employee Delete.');
     }
 }

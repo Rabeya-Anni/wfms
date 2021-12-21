@@ -102,12 +102,17 @@ Route::get('/item/delete/{id}',[ItemController::class, 'itemdelete'])->name('ite
 
 //customer route
 Route::get('/customer',[CustomerController::class, 'customer'])->name('customer');
+Route::get('/customer/delete/{id}',[CustomerController::class, 'customerdelete'])->name('customer.delete');
+
 
 
 //employee route
 Route::get('/employee',[EmployeeController::class, 'employee'])->name('employee');
 Route::get('/employeeform',[EmployeeController::class, 'employeeform'])->name('employeeform');
-Route::post('/employee/store',[OrganizationController::class, 'employeestore'])->name('employee.store');
+Route::post('/employee/store',[EmployeeController::class, 'employeestore'])->name('employee.store');
+Route::get('/employee/view/{id}',[EmployeeController::class, 'employeeview'])->name('employee.view');
+Route::get('/employee/delete/{id}',[EmployeeController::class, 'employeedelete'])->name('employee.delete');
+
 
 
 //order route

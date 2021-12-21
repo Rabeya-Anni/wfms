@@ -2,7 +2,7 @@
 
 
 @section('content')
-<form action="{{route('employee.store')}}" method="post">
+<form action="{{route('employee.store')}}" method="post" enctype="multipart/form-data">
     @csrf
   <div class="form-group">
     <label for="exampleInputEmail1">Name</label>
@@ -22,6 +22,11 @@
   <div class="form-group">
     <label for="exampleInputEmail1">Phone Number</label>
     <input name="phone_number" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Phone number"required>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputPassword1">Image</label>
+    <input name="image" type="file" class="form-control"  placeholder="image"required>
   </div>
   
   <button type="submit" class="btn btn-primary">Submit</button>

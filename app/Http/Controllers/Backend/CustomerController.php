@@ -13,6 +13,12 @@ class CustomerController extends Controller
         $customers = Customer::all();
         return view('admin.layout.customer.customer',compact('customers'));
     }
+
+    public function customerdelete($id){
+        customer::find($id)->delete();
+        return redirect()->back()->with('Success','Customer Delete.');
+    }
+
     
 }
 

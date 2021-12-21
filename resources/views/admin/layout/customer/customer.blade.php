@@ -12,6 +12,7 @@
       <th scope="col">E-mail</th>
       <th scope="col">Phone Number</th>
       <th scope="col">Address</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
@@ -22,7 +23,7 @@
       <td>{{($customer->email)}}</td>
       <td>{{($customer->phone_number)}}</td>
       <td>{{($customer->address)}}</td>
-      
+      <a class="btn btn-danger" href="{{route('customer.delete',$customer->id)}}">Delete</a>
          
      </tr>
      @endforeach  
