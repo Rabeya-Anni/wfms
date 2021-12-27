@@ -14,8 +14,20 @@
     </div>
 @endif
 <h4>Package Table</h4>
-
 <a class="btn btn-primary" href="{{route('packageform')}}" role="button">Create a new package</a>
+
+<!-- <----search---->
+<form  action="{{route('package')}}">
+<div class="input-group rounded mt-3 mb-2">
+  <div class="form-outline">
+    <input name="search" type="search" id="form1" class="form-control" placeholder="Search" arial-level="search" arial-describedby="search-addon" />
+  </div>
+  <button type="submit" class="btn btn-primary">
+    <i class="fas fa-search"></i>
+  </button>
+</div>
+</form>
+<!-- <---- end search---->
 <table class="table">
   <thead>
     <tr>
@@ -37,6 +49,7 @@
       <td><img src = "{{(url('/uploads/'.$package->image))}}" alt="package image" width="100px"></td>
       <td>
         <a class="btn btn-primary" href="{{route('package.view',$package->id)}}">View</a>
+        <a class="btn btn-success" href="{{route('package.edit',$package->id)}}">Edit</a>
         <a class="btn btn-danger" href="{{route('package.delete',$package->id)}}">Delete</a>
       </td>
     </tr>

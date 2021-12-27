@@ -89,6 +89,8 @@ Route::get('/package',[PackageController::class, 'package'])->name('package');
 Route::get('/package-form',[PackageController::class, 'packageform'])->name('packageform');
 Route::post('/package/store',[PackageController::class, 'packagestore'])->name('package.store');
 Route::get('/package/view/{id}',[PackageController::class, 'packageview'])->name('package.view');
+Route::get('/package/edit/{id}',[PackageController::class, 'packageedit'])->name('package.edit');
+Route::put('/package/update/{id}',[PackageController::class, 'packageupdate'])->name('package.update');
 Route::get('/package/delete/{id}',[PackageController::class, 'packagedelete'])->name('package.delete');
 
 
@@ -102,6 +104,7 @@ Route::get('/item/delete/{id}',[ItemController::class, 'itemdelete'])->name('ite
 
 //customer route
 Route::get('/customer',[CustomerController::class, 'customer'])->name('customer');
+Route::get('/customer/view/{id}',[CustomerController::class, 'customerview'])->name('customer.view');
 Route::get('/customer/delete/{id}',[CustomerController::class, 'customerdelete'])->name('customer.delete');
 
 

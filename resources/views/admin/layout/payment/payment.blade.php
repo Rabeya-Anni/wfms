@@ -14,6 +14,7 @@
     </div>
 @endif
 <h4>Payment Table</h4>
+
 <table class="table">
   <thead>
     <tr>
@@ -26,9 +27,9 @@
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
   
   </tbody>

@@ -17,7 +17,7 @@
 	<div class="main-w3layouts wrapper">
 		<h1>GREEN BOWL CATERING</h1>
 		<div class="main-agileinfo">
-        <h1 class="text-uppercase text-center mb-5">Login</h1>
+        <h1 class="text-uppercase text-center mb-5">Admin Login</h1>
 			<div class="agileits-top">
 				<form action="{{route('admin.dologin')}}" method="post">
 				@csrf

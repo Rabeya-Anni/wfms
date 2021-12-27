@@ -14,7 +14,7 @@
             {!! session('error') !!}
     </div>
 @endif
-<h4>Organization Table</h4>
+<h4>Employee Table</h4>
 <a class="btn btn-primary" href="{{route('employeeform')}}" role="button">Add an Employee</a>
 <table class="table">
   <thead>

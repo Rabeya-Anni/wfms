@@ -23,6 +23,7 @@
       <td>{{($customer->email)}}</td>
       <td>{{($customer->phone_number)}}</td>
       <td>{{($customer->address)}}</td>
+      <a class="btn btn-primary" href="{{route('customer.view',$customer->id)}}">View</a>
       <a class="btn btn-danger" href="{{route('customer.delete',$customer->id)}}">Delete</a>
          
      </tr>
