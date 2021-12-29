@@ -4,19 +4,17 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Package;
 
-class ShowPackageController extends Controller
+class GalleryController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function showpackage()
+    public function gallery()
     {
-        $packages=Package::all();
-        return view('website.layouts.package.showpackage',compact('packages'));
+        return view('website.layouts.gallery.gallery');
     }
 
     /**

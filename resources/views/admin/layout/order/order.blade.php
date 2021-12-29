@@ -19,23 +19,20 @@
   <thead>
     <tr>
       <th scope="col">Serial</th>
-      <th scope="col">Package ID/Item ID</th>
-      <th scope="col">Customer ID</th>
       <th scope="col">Order Quantity</th>
-      <th scope="col">price</th>
+      <th scope="col">Address</th>
+      <th scope="col">Date</th>
     </tr>
   </thead>
   <tbody>
+  @foreach($orders as $key=>$order)
     <tr>
-      <th scope="row">1</th>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      
-     
+    <th scope="row">{{$key+1}}</th>
+      <td>{{($order->order_quantity)}}</td>
+      <td>{{($order->address)}}</td>
+      <td>{{($order->date)}}</td> 
     </tr>
-    
+    @endforeach  
   </tbody>
 </table>
 

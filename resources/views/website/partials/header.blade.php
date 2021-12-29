@@ -14,15 +14,16 @@
                                         <li><a href="#">About</a></li>
                                         <li><a href="{{route('showpackage')}}">Packages</a></li>
                                         <li><a href="{{route('showitem')}}">Items</a></li>
-                                        <li><a href="gallery.html">Gallery</a></li>
+                                        <li><a href="{{route('gallery')}}">Gallery</a></li>
+                                        <li><a href="gallery.html">Food Request</a></li>
 
                                         <div class="logo-img d-none d-lg-block">
                                                 <a href="index.html">
                                                     <img src="img/logo.png" alt="">
                                                 </a>
                                             </div>
-                                        <li><a href="map.html">Location</a></li></li>
-                                        <li><a href="contact.html">Contact</a></li>
+                                        <li><a href="{{route('location')}}">Location</a></li></li>
+                                        <li><a href="{{route('contact')}}">Contact</a></li>
                                         @if(auth()->user())
                                         <li><a href="{{route('logoutform')}}">logout</a></li>
                                         @else

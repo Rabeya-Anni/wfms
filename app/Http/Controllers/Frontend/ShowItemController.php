@@ -16,7 +16,7 @@ class ShowItemController extends Controller
     public function showitem()
     {
         $items=Item::all();
-        return view('website.layouts.showitem',compact('items'));
+        return view('website.layouts.item.showitem',compact('items'));
     }
 
     /**

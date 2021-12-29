@@ -48,7 +48,7 @@
       <td>{{($package->details)}}</td>
       <td><img src = "{{(url('/uploads/'.$package->image))}}" alt="package image" width="100px"></td>
       <td>
-        <a class="btn btn-primary" href="{{route('package.view',$package->id)}}">View</a>
+        <a class="btn btn-warning" href="{{route('package.view',$package->id)}}">View</a>
         <a class="btn btn-success" href="{{route('package.edit',$package->id)}}">Edit</a>
         <a class="btn btn-danger" href="{{route('package.delete',$package->id)}}">Delete</a>
       </td>

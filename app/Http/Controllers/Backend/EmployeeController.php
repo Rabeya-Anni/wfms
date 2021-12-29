@@ -8,7 +8,14 @@ use App\Models\Employee;
 
 class EmployeeController extends Controller
 {
-    public function employee(){
+    public function employee(Request $request){
+
+        $search = $request->query('search');
+        if($search){
+        $employees = Employee::where('designation', 'LIKE', '%' .$search. '%')
+        ->orWhere('phone_number', 'LIKE', '%' .$search. '%')->get();
+        return view('admin.layout.employee.employee',compact('employees'));
+        }
 
         $employees = Employee::all();
         return view('admin.layout.employee.employee',compact('employees'));
@@ -54,6 +61,36 @@ class EmployeeController extends Controller
     public function employeeview($id){
         $employee = Employee::find($id);
         return view('admin.layout.employee.employeeview',compact('employee'));
+    }
+
+    public function employeeedit($id){
+        $employee = Employee::find($id);
+        return view('admin.layout.employee.employeeedit',compact('employee'));
+    }
+
+    public function employeeupdate(Request $request,$id){
+        $employee = Employee::find($id);
+
+        if($request->hasFile('image')){
+            $file = $request->file('image');
+            $filename = (date('Ymdhms')).'.'.$file->getClientOriginalextension();
+            $file->storeAs('/uploads',$filename);
+        }
+        try{
+            $employee->update([
+                'name'=>$request->name,
+                'address'=>$request->address,
+                'designation'=>$request->designation,
+                'phone_number'=>$request->phone_number,
+                'image'=>$filename,
+            ]);
+
+          return redirect()->route('employee')->with('success', 'Profile updated!');
+        }
+         catch(Throwable $throw)
+         {
+          return redirect()->back()->with('error', 'Profile updated!');
+         }
     }
 
     public function employeedelete($id){

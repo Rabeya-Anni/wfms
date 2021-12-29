@@ -18,9 +18,11 @@ use App\Http\Controllers\Backend\AdminLoginController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\ShowPackageController;
 use App\Http\Controllers\Frontend\ShowItemController;
+use App\Http\Controllers\Frontend\GiveOrderController;
 use App\Http\Controllers\Frontend\RegistrationformController;
-
-
+use App\Http\Controllers\Frontend\LocationController;
+use App\Http\Controllers\Frontend\ContactController;
+use App\Http\Controllers\Frontend\GalleryController;
 
 
 /*
@@ -43,9 +45,16 @@ Route::get('/home/showpackage',[ShowPackageController::class,'showpackage'])->na
 //showitem route
 Route::get('/home/showitem',[ShowItemController::class,'showitem'])->name('showitem');
 
+//Give order route
+Route::get('/home/giveorder',[GiveOrderController::class,'giveorder'])->name('giveorder');
+Route::post('/home/giveorder/store',[GiveOrderController::class,'giveorderstore'])->name('giveorder.store');
+
+
 //Registration route
 Route::get('/home/registrationform',[RegistrationformController::class,'registrationform'])->name('registrationform');
 Route::post('/home/registration/store',[RegistrationformController::class,'registrationstore'])->name('registration.store');
+
+
 //Loginform route
 Route::get('/home/loginform',[RegistrationformController::class,'loginform'])->name('loginform');
 Route::post('/home/loginform/store',[RegistrationformController::class,'loginformstore'])->name('loginform.store');
@@ -53,6 +62,15 @@ Route::post('/home/loginform/store',[RegistrationformController::class,'loginfor
 // Logout route
 Route::get('/home/logoutform',[RegistrationformController::class,'logout'])->name('logoutform');
 
+// Location
+Route::get('/home/location',[LocationController::class,'location'])->name('location');
+
+// Contact
+Route::get('/home/contact',[ContactController::class,'contact'])->name('contact');
+
+
+// Gallery
+Route::get('/home/gallery',[GalleryController::class,'gallery'])->name('gallery');
 
 
 //Route::get('/home', function () {
@@ -63,7 +81,7 @@ Route::get('/home/logoutform',[RegistrationformController::class,'logout'])->nam
 
 
 
-//<--------admin Part-------->//<--------admin Part-------->
+//<--------Admin Part-------->//<--------Admin Part-------->
 
 Route::group(['prefix'=>'admin'],function(){
     
@@ -99,11 +117,14 @@ Route::get('/item',[ItemController::class, 'item'])->name('item');
 Route::get('/item-form',[ItemController::class, 'itemform'])->name('itemform');
 Route::post('/item/store',[ItemController::class, 'store'])->name('item.store');
 Route::get('/item/view/{id}',[ItemController::class, 'itemview'])->name('item.view');
+Route::get('/item/edit/{id}',[ItemController::class, 'itemedit'])->name('item.edit');
+Route::put('/item/update/{id}',[ItemController::class, 'itemupdate'])->name('item.update');
 Route::get('/item/delete/{id}',[ItemController::class, 'itemdelete'])->name('item.delete');
 
 
 //customer route
 Route::get('/customer',[CustomerController::class, 'customer'])->name('customer');
+Route::post('/customer',[CustomerController::class, 'customerstore'])->name('customer.store');
 Route::get('/customer/view/{id}',[CustomerController::class, 'customerview'])->name('customer.view');
 Route::get('/customer/delete/{id}',[CustomerController::class, 'customerdelete'])->name('customer.delete');
 
@@ -114,12 +135,15 @@ Route::get('/employee',[EmployeeController::class, 'employee'])->name('employee'
 Route::get('/employeeform',[EmployeeController::class, 'employeeform'])->name('employeeform');
 Route::post('/employee/store',[EmployeeController::class, 'employeestore'])->name('employee.store');
 Route::get('/employee/view/{id}',[EmployeeController::class, 'employeeview'])->name('employee.view');
+Route::get('/employee/edit/{id}',[EmployeeController::class, 'employeeedit'])->name('employee.edit');
+Route::put('/employee/update/{id}',[EmployeeController::class, 'employeeupdate'])->name('employee.update');
 Route::get('/employee/delete/{id}',[EmployeeController::class, 'employeedelete'])->name('employee.delete');
 
 
 
 //order route
 Route::get('/order',[OrderController::class, 'order'])->name('order');
+Route::post('/order/store',[OrderController::class, 'orderstore'])->name('order.store');
 
 
 //payment route

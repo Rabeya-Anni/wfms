@@ -4,19 +4,19 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Package;
+use App\Models\Order;
 
-class ShowPackageController extends Controller
+class GiveOrderController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function showpackage()
+    public function giveorder()
     {
-        $packages=Package::all();
-        return view('website.layouts.package.showpackage',compact('packages'));
+         $orders=Order::all();
+        return view('website.layouts.order.giveorder',compact('orders'));
     }
 
     /**
@@ -35,9 +35,22 @@ class ShowPackageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function giveorderstore(Request $request)
     {
-        //
+        try{
+            Order::create([
+            'order_quantity'=>$request->order_quantity,
+            'address'=>$request->address,
+            'date'=>$request->date,
+            
+          ]);
+
+          return redirect()->route('home')->with('success', 'Profile updated!');
+         }
+         catch(Throwable $throw)
+         {
+          return redirect()->back()->with('error', 'Profile updated!');
+         }
     }
 
     /**
