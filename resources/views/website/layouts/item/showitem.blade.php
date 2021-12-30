@@ -22,7 +22,7 @@
                         <h2>{{$item->name}}<h2>
                         <p class="h5">{{($item->details)}}</p>
                         <p class="h5, font-weight-bold" style="color:red">{{$item->price_per_person}}/-</p>
-                        <a class="btn btn-warning" href="{{route('packageform')}}" role="button">Order Now</a>
+                        <a class="btn btn-warning" href="{{route('giveorder')}}" role="button">Order Now</a>
                     </div>
                 </div>
                 @endforeach

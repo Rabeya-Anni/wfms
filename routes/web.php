@@ -144,6 +144,10 @@ Route::get('/employee/delete/{id}',[EmployeeController::class, 'employeedelete']
 //order route
 Route::get('/order',[OrderController::class, 'order'])->name('order');
 Route::post('/order/store',[OrderController::class, 'orderstore'])->name('order.store');
+Route::get('/order/view/{id}',[OrderController::class, 'orderview'])->name('order.view');
+Route::get('/order/edit/{id}',[OrderController::class, 'orderedit'])->name('order.edit');
+Route::put('/order/update/{id}',[OrderController::class, 'orderupdate'])->name('order.update');
+Route::get('/order/delete/{id}',[OrderController::class, 'orderdelete'])->name('order.delete');
 
 
 //payment route
