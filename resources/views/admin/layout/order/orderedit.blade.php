@@ -13,7 +13,7 @@
             {!! session('error') !!}
     </div>
 @endif
-<h4>Edit Package</h4>
+<h4>Edit Order</h4>
 <form action="{{route('order.update',$order->id)}}" method='post'>
 @csrf
 @method('PUT')

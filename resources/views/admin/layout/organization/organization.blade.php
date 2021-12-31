@@ -24,6 +24,7 @@
       <th scope="col">Address</th>
       <th scope="col">E-mail</th>
       <th scope="col">Phone Number</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
@@ -34,7 +35,11 @@
       <td>{{($organization->address)}}</td>
       <td>{{($organization->email)}}</td>
       <td>{{($organization->phone_number)}}</td>
-      
+      <td>
+        <a class="btn btn-warning" href="{{route('organization.view',$organization->id)}}">View</a>
+        <a class="btn btn-success" href="{{route('organization.edit',$organization->id)}}">Edit</a>
+        <a class="btn btn-danger" href="{{route('organization.delete',$organization->id)}}">Delete</a>
+      </td>
       
     </tr>
   @endforeach    

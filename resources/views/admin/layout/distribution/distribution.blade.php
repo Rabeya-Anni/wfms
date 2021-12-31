@@ -23,6 +23,7 @@
       <th scope="col">Organization ID</th>
       <th scope="col">Food Name</th>
       <th scope="col">Quantity</th>
+      <th scope="col">Action</th>
     
     </tr>
   </thead>
@@ -32,7 +33,12 @@
     <th scope="row">{{$key+1}}</th>
       <td>{{($distribution->organization_id)}}</td>
       <td>{{($distribution->food_name)}}</td>
-      <td>{{($distribution->quantity)}}</td>  
+      <td>{{($distribution->quantity)}}</td>
+      <td>
+        <a class="btn btn-warning" href="{{route('distribution.view',$distribution->id)}}">View</a>
+        <a class="btn btn-success" href="{{route('distribution.edit',$distribution->id)}}">Edit</a>
+        <a class="btn btn-danger" href="{{route('distribution.delete',$distribution->id)}}">Delete</a>
+      </td>  
       
     </tr>
   @endforeach 

@@ -36,14 +36,16 @@ use App\Http\Controllers\Frontend\GalleryController;
 |
 */
 
-//<---------website Part-------->//<---------website Part-------->
+//<---------website Part-------->//<---------website Part-------->//<---------website Part-------->
 Route::get('/',[HomeController::class,'home'])->name('home');
 
 //showpackage route
 Route::get('/home/showpackage',[ShowPackageController::class,'showpackage'])->name('showpackage');
 
+
 //showitem route
 Route::get('/home/showitem',[ShowItemController::class,'showitem'])->name('showitem');
+
 
 //Give order route
 Route::get('/home/giveorder',[GiveOrderController::class,'giveorder'])->name('giveorder');
@@ -62,8 +64,10 @@ Route::post('/home/loginform/store',[RegistrationformController::class,'loginfor
 // Logout route
 Route::get('/home/logoutform',[RegistrationformController::class,'logout'])->name('logoutform');
 
+
 // Location
 Route::get('/home/location',[LocationController::class,'location'])->name('location');
+
 
 // Contact
 Route::get('/home/contact',[ContactController::class,'contact'])->name('contact');
@@ -81,7 +85,7 @@ Route::get('/home/gallery',[GalleryController::class,'gallery'])->name('gallery'
 
 
 
-//<--------Admin Part-------->//<--------Admin Part-------->
+//<--------Admin Part-------->//<--------Admin Part-------->//<--------Admin Part-------->
 
 Route::group(['prefix'=>'admin'],function(){
     
@@ -152,6 +156,12 @@ Route::get('/order/delete/{id}',[OrderController::class, 'orderdelete'])->name('
 
 //payment route
 Route::get('/payment',[PaymentController::class, 'payment'])->name('payment');
+// Route::post('/payment/store',[PaymentController::class, 'paymentstore'])->name('payment.store');
+Route::get('/payment/view/{id}',[PaymentController::class, 'paymentview'])->name('payment.view');
+Route::get('/payment/edit/{id}',[PaymentController::class, 'paymentedit'])->name('payment.edit');
+Route::put('/payment/update/{id}',[PaymentController::class, 'paymentupdate'])->name('payment.update');
+Route::get('/payment/delete/{id}',[PaymentController::class, 'paymentdelete'])->name('payment.delete');
+
 
 
 //request route
@@ -162,12 +172,20 @@ Route::get('/request',[RequestController::class, 'request'])->name('request');
 Route::get('/organization',[OrganizationController::class, 'organization'])->name('organization');
 Route::get('/organizationform',[OrganizationController::class, 'organizationform'])->name('organizationform');
 Route::post('/organization/store',[OrganizationController::class, 'organizationstore'])->name('organization.store');
+Route::get('/organization/view/{id}',[OrganizationController::class, 'organizationview'])->name('organization.view');
+Route::get('/organization/edit/{id}',[OrganizationController::class, 'organizationedit'])->name('organization.edit');
+Route::put('/organization/update/{id}',[OrganizationController::class, 'organizationupdate'])->name('organization.update');
+Route::get('/organization/delete/{id}',[OrganizationController::class, 'organizationdelete'])->name('organization.delete');
 
 
 //distribution route
 Route::get('/distribution',[DistributionController::class, 'distribution'])->name('distribution');
 Route::get('/distributionform',[DistributionController::class, 'distributionform'])->name('distributionform');
 Route::post('/distribution/store',[DistributionController::class, 'distributionstore'])->name('distribution.store');
+Route::get('/distribution/view/{id}',[DistributionController::class, 'distributionview'])->name('distribution.view');
+Route::get('/distribution/edit/{id}',[DistributionController::class, 'distributionedit'])->name('distribution.edit');
+Route::put('/distribution/update/{id}',[DistributionController::class, 'distributionupdate'])->name('distribution.update');
+Route::get('/distribution/delete/{id}',[DistributionController::class, 'distributiondelete'])->name('distribution.delete');
 
 
 

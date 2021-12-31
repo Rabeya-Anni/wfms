@@ -2,6 +2,18 @@
 
 
 @section('content')
+@if(session('success'))
+        <div class="alert alert-success">
+            {!! session('success') !!}
+        </div>
+@endif
+
+@if(session('error'))
+        <div class="alert alert-danger">
+            {!! session('error') !!}
+    </div>
+@endif
+<h4>Edit Employee</h4>
 <form action="{{route('employee.update',$employee->id)}}" method="post" enctype="multipart/form-data">
     @csrf
     @method('PUT')
