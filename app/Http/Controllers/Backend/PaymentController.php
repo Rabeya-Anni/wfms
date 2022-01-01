@@ -8,8 +8,15 @@ use App\Models\Payment;
 
 class PaymentController extends Controller
 {
-    public function payment()
+    public function payment(Request $request)
     {
+        $search = $request->query('search');
+        if($search){
+        $packages = Package::where('name', 'LIKE', '%' .$search. '%')
+        ->orWhere('price_per_person', 'LIKE', '%' .$search. '%')->get();
+        return view('admin.layout.package.package',compact('packages'));
+        }
+
         // $payments = Payment::all();
         return view('admin.layout.payment.payment');
     }

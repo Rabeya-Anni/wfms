@@ -7,7 +7,7 @@
                 <div class="col-xl-12">
                     <div class="section_title mb-60">
                         <h3>Contact</h3>
-                        <p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards <br> especially in the workplace. That’s why it’s crucial that, as women.</p>
+                        <p>A Healthy Food, For A Wealthy Mood!</p>
                     </div>
                 </div>
             </div>

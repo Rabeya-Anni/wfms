@@ -15,7 +15,21 @@
     </div>
 @endif
 <h4>Organization Table</h4>
-<a class="btn btn-primary" href="{{route('organizationform')}}" role="button">Add an Organization</a>
+
+
+<!-- <------Search-----> 
+<form  action="{{route('organization')}}">
+<div class="input-group rounded mt-3 mb-2">
+  <div class="form-outline">
+    <input name="search" type="search" id="form1" class="form-control" placeholder="Search" arial-level="search" arial-describedby="search-addon" />
+  </div>
+  <button type="submit" class="btn btn-primary">
+    <i class="fas fa-search"></i>
+  </button>
+</div>
+</form>
+<!-- <------End Search----->
+
 <table class="table">
   <thead>
     <tr>

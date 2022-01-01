@@ -15,7 +15,7 @@
                                         <li><a href="{{route('showpackage')}}">Packages</a></li>
                                         <li><a href="{{route('showitem')}}">Items</a></li>
                                         <li><a href="{{route('gallery')}}">Gallery</a></li>
-                                        <li><a href="gallery.html">Food Request</a></li>
+                                        <li><a href="{{route('giverequest')}}">Food Request</a></li>
 
                                         <div class="logo-img d-none d-lg-block">
                                                 <a href="index.html">

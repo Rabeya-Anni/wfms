@@ -8,8 +8,15 @@ use App\Models\Distribution;
 
 class DistributionController extends Controller
 {
-    public function distribution()
+    public function distribution(Request $request)
     {
+        $search = $request->query('search');
+        if($search){
+            $distributions = Distribution::where('organization_id', 'LIKE', '%' .$search. '%')
+            ->orWhere('quantity', 'LIKE', '%' .$search. '%')->get();
+            return view('admin.layout.distribution.distribution',compact('distributions'));
+        }
+
         $distributions = Distribution::all();
         return view('admin.layout.distribution.distribution',compact('distributions'));
     }
@@ -25,13 +32,13 @@ class DistributionController extends Controller
     {
         
         $request->validate([
-             'organization_id'=>'required',
+             'organization_name'=>'required',
              'food_name'=>'required',
              'quantity'=>'required',
          ]);
         try{
            Distribution::create([
-            'organization_id'=>$request->organization_id,
+            'organization_name'=>$request->organization_name,
             'food_name'=>$request->food_name,
             'quantity'=>$request->quantity,
           ]);

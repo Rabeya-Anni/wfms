@@ -8,9 +8,7 @@
                     <div class="slider_contant text-center">
                         <h3>Food Catering <br>
                             Service.</h3>
-                            <p>inappropriate behavior is often laughed off as “boys will be boys,” women <br>
-                            face higher conduct standards especially in the workplace. That’s why it’s <br>
-                                crucial that, as women.</p>
+                            <p>A Healthy Food, For A Wealthy Mood!</p>
                     </div>
                 </div>
             </div>
@@ -36,7 +34,7 @@
                             <i class="flaticon-gift"></i>
                         </div>
                         <h4>Birthday Catering</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p>A Healthy Food, For A Wealthy Mood!</p>
                     </div>
                 </div>
                 <div class="col-xl-4 col-md-6">
@@ -100,7 +98,7 @@
                     <div class="col-xl-12">
                         <div class="section_title mb-70">
                             <h3>Our Catering Menu</h3>
-                            <p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards <br> especially in the workplace. That’s why it’s crucial that, as women.</p>
+                            <p>A Healthy Food, For A Wealthy Mood!</p>
                         </div>
                     </div>
                 </div>

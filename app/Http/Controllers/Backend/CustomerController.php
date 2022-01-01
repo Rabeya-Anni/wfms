@@ -3,15 +3,23 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use App\models\Customer;
+use App\models\User;
 use Illuminate\Http\Request;
 
 
 class CustomerController extends Controller
 {
-    public function customer()
+    public function customer(Request $request)
     {
-        $customers = Customer::all();
+
+        $search = $request->query('search');
+        if($search){
+            $customers = Customer::where('username', 'LIKE', '%' .$search. '%')
+            ->orWhere('email', 'LIKE', '%' .$search. '%')->get();
+            return view('admin.layout.customer.customer',compact('customers'));
+        }
+
+        $customers = User::all();
         return view('admin.layout.customer.customer',compact('customers'));
     }
 
@@ -35,13 +43,13 @@ class CustomerController extends Controller
     }
 
     public function customerview($id){
-        $customer = Customer::find($id);
+        $customer = User::find($id);
         return view('admin.layout.customer.customerview',compact('customer'));
     }
 
 
     public function customerdelete($id){
-        customer::find($id)->delete();
+        User::find($id)->delete();
         return redirect()->back()->with('Success','Customer Delete.');
     }
 

@@ -19,6 +19,7 @@ use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\ShowPackageController;
 use App\Http\Controllers\Frontend\ShowItemController;
 use App\Http\Controllers\Frontend\GiveOrderController;
+use App\Http\Controllers\Frontend\GiveRequestController;
 use App\Http\Controllers\Frontend\RegistrationformController;
 use App\Http\Controllers\Frontend\LocationController;
 use App\Http\Controllers\Frontend\ContactController;
@@ -50,6 +51,11 @@ Route::get('/home/showitem',[ShowItemController::class,'showitem'])->name('showi
 //Give order route
 Route::get('/home/giveorder',[GiveOrderController::class,'giveorder'])->name('giveorder');
 Route::post('/home/giveorder/store',[GiveOrderController::class,'giveorderstore'])->name('giveorder.store');
+
+
+//Give request route
+Route::get('/home/giverequest',[GiveRequestController::class,'giverequest'])->name('giverequest');
+Route::post('/home/giverequest/store',[GiveRequestController::class,'giverequeststore'])->name('giverequest.store');
 
 
 //Registration route

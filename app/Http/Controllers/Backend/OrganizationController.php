@@ -8,17 +8,20 @@ use App\Models\Organization;
 
 class OrganizationController extends Controller
 {
-    public function organization()
+    public function organization(Request $request)
     {
+
+        $search = $request->query('search');
+        if($search){
+        $organizations = Organization::where('name', 'LIKE', '%' .$search. '%')
+        ->orWhere('email', 'LIKE', '%' .$search. '%')->get();
+        return view('admin.layout.organization.organization',compact('organizations'));
+        }
+
         $organizations = Organization::all();
         return view('admin.layout.organization.organization',compact('organizations')); 
     }
 
-
-    public function organizationform()
-    {
-        return view('admin.layout.organization.organizationform');
-    }
 
     public function organizationstore(Request $request)
     {

@@ -4,6 +4,20 @@
 @section('content')
 
 <h4>Customer Table</h4>
+
+<!-- <------Search-----> 
+<form  action="{{route('customer')}}">
+<div class="input-group rounded mt-3 mb-2">
+  <div class="form-outline">
+    <input name="search" type="search" id="form1" class="form-control" placeholder="Search" arial-level="search" arial-describedby="search-addon" />
+  </div>
+  <button type="submit" class="btn btn-primary">
+    <i class="fas fa-search"></i>
+  </button>
+</div>
+</form>
+<!-- <------End Search----->
+
 <table class="table">
   <thead>
     <tr>
@@ -23,9 +37,10 @@
       <td>{{($customer->email)}}</td>
       <td>{{($customer->phone_number)}}</td>
       <td>{{($customer->address)}}</td>
-      <a class="btn btn-primary" href="{{route('customer.view',$customer->id)}}">View</a>
+      <td>
+      <a class="btn btn-warning" href="{{route('customer.view',$customer->id)}}">View</a>
       <a class="btn btn-danger" href="{{route('customer.delete',$customer->id)}}">Delete</a>
-         
+    </td>   
      </tr>
      @endforeach  
   </tbody>
