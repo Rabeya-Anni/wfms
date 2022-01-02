@@ -4,19 +4,19 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Organization;
+use App\Models\Foodrequest;
 
-class GiveRequestController extends Controller
+class GiveRequestFormController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function giverequest()
+    public function giverequestform()
     {
-        $organizations=Organization::all();
-        return view ('website.layouts.foodrequest.giverequest',compact('organizations'));
+        // $requests=Request::all();
+        return view ('website.layouts.foodrequest.giverequestform');  
     }
 
     /**
@@ -35,23 +35,23 @@ class GiveRequestController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function giverequeststore(Request $request)
+    public function giverequestformstore(Request $request)
     {
         try{
-            Organization::create([
-                'name'=>$request->name,
-                'address'=>$request->address,
-                'email'=>$request->email,
-                'phone_number'=>$request->phone_number,
+            Foodrequest::create([
+                'type'=>$request->type,
+                'food_quantity'=>$request->food_quantity,
+                
             
           ]);
 
-          return redirect()->route('giverequestform')->with('success', 'Profile updated!');
+          return redirect()->route('giverequestform')->with('success','Send Request Succesfully Submitted. Now Add Organization');
          }
          catch(Throwable $throw)
          {
           return redirect()->back()->with('error', 'Profile updated!');
          }
+        
     }
 
     /**

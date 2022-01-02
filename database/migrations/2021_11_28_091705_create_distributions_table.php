@@ -18,6 +18,7 @@ class CreateDistributionsTable extends Migration
             $table->string('organization_name');
             $table->string('food_name');
             $table->integer('quantity');
+            $table->string('assigned_employee');
             $table->timestamps();
         });
     }

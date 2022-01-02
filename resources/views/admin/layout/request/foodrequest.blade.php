@@ -18,20 +18,19 @@
   <thead>
     <tr>
       <th scope="col">Serial</th>
-      <th scope="col">Organization ID</th>
       <th scope="col">Type</th>
-      <th scope="col">Details</th>
+      <th scope="col">Food Quantity</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
+  @foreach($foodrequests as $key=>$foodrequest)
     <tr>
-      <th scope="row">1</th>
-      <td></td>
-      <td></td>
-      <td></td>
-
+    <th scope="row">{{$key+1}}</th>
+    <td>{{($foodrequest->type)}}</td>
+    <td>{{($foodrequest->food_quantity)}}</td>
     </tr>
-    
+  @endforeach  
   </tbody>
 </table>
 

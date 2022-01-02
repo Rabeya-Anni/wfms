@@ -22,7 +22,7 @@
 
   <div class="form-group">
     <label for="exampleFormControlSelect1">Assign Employee</label>
-    <select class="form-control" id="exampleFormControlSelect1">
+    <select name="assigned_employee" type="text" class="form-control" id="exampleFormControlSelect1">
       <option>Mohammad Jahid khan</option>
       <option>Mr. Asad Hossain</option>
       <option>Md. Nasir Hossain</option>

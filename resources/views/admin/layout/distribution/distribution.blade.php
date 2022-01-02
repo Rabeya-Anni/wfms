@@ -37,6 +37,7 @@
       <th scope="col">Organization Name</th>
       <th scope="col">Food Name</th>
       <th scope="col">Quantity</th>
+      <th scope="col">Assigned Employee</th>
       <th scope="col">Action</th>
     
     </tr>
@@ -48,6 +49,7 @@
       <td>{{($distribution->organization_name)}}</td>
       <td>{{($distribution->food_name)}}</td>
       <td>{{($distribution->quantity)}}</td>
+      <td>{{($distribution->assigned_employee)}}</td>
       <td>
         <a class="btn btn-warning" href="{{route('distribution.view',$distribution->id)}}">View</a>
         <a class="btn btn-success" href="{{route('distribution.edit',$distribution->id)}}">Edit</a>

@@ -46,7 +46,7 @@ img {
         <h1 class="h3 mb-4 page-title">Profile Settings</h1>
         <div class="my-4">
     
-           <h3> <a class="h3 mb-4 page-title" style="color:white" href="{{route('home')}}">Back to Home</a></h3>
+           <!-- <h3><a class="h3 mb-4 page-title" style="color:white" href="{{route('giverequest')}}">Back to Food Request Form</a></h3> -->
             <form action="{{route('giverequest.store')}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="row mt-5 align-items-center">
@@ -139,7 +139,7 @@ img {
                         </ul>
                     </div> -->
                 <!-- </div> --> 
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Send</button>
             </form>
         </div>
     </div>

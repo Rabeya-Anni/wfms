@@ -19,6 +19,7 @@ use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\ShowPackageController;
 use App\Http\Controllers\Frontend\ShowItemController;
 use App\Http\Controllers\Frontend\GiveOrderController;
+use App\Http\Controllers\Frontend\GiveRequestFormController;
 use App\Http\Controllers\Frontend\GiveRequestController;
 use App\Http\Controllers\Frontend\RegistrationformController;
 use App\Http\Controllers\Frontend\LocationController;
@@ -54,9 +55,12 @@ Route::post('/home/giveorder/store',[GiveOrderController::class,'giveorderstore'
 
 
 //Give request route
+Route::get('/home/giverequestform',[GiveRequestFormController::class,'giverequestform'])->name('giverequestform');
+Route::post('/home/giverequestform/store',[GiveRequestFormController::class,'giverequestformstore'])->name('giverequestform.store');
+
+//Give request route//Add organization//
 Route::get('/home/giverequest',[GiveRequestController::class,'giverequest'])->name('giverequest');
 Route::post('/home/giverequest/store',[GiveRequestController::class,'giverequeststore'])->name('giverequest.store');
-
 
 //Registration route
 Route::get('/home/registrationform',[RegistrationformController::class,'registrationform'])->name('registrationform');
@@ -93,7 +97,7 @@ Route::get('/home/gallery',[GalleryController::class,'gallery'])->name('gallery'
 
 //<--------Admin Part-------->//<--------Admin Part-------->//<--------Admin Part-------->
 
-Route::group(['prefix'=>'admin'],function(){
+// Route::group(['prefix'=>'admin'],function(){
     
 //admin-login part
 
@@ -101,7 +105,7 @@ Route::get('/adminlogin',[AdminLoginController::class, 'adminlogin'])->name('adm
 Route::post('/admin/dologin',[AdminLoginController::class, 'dologin'])->name('admin.dologin');
 
 
-Route::group(['middleware'=>'auth'],function(){
+Route::group(['prefix'=>'admin','middleware'=>['auth','admin']],function(){
     Route::get('/',function(){
         return view('admin.layout.content');
     })->name('admin');
@@ -172,6 +176,7 @@ Route::get('/payment/delete/{id}',[PaymentController::class, 'paymentdelete'])->
 
 //request route
 Route::get('/request',[RequestController::class, 'request'])->name('request');
+Route::get('/request/store',[RequestController::class, 'requeststore'])->name('request.store');
 
 
 //organization route
@@ -196,7 +201,7 @@ Route::get('/distribution/delete/{id}',[DistributionController::class, 'distribu
 
 
 });
-});
+
 
 
 

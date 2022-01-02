@@ -35,12 +35,15 @@ class DistributionController extends Controller
              'organization_name'=>'required',
              'food_name'=>'required',
              'quantity'=>'required',
+             'quantity'=>'required',
+             
          ]);
         try{
            Distribution::create([
             'organization_name'=>$request->organization_name,
             'food_name'=>$request->food_name,
             'quantity'=>$request->quantity,
+            'assigned_employee'=>$request->assigned_employee,
           ]);
 
           return redirect()->route('distribution')->with('success', 'Profile updated!');
@@ -71,6 +74,7 @@ class DistributionController extends Controller
                 'organization_id'=>$request->organization_id,
                 'food_name'=>$request->food_name,
                 'quantity'=>$request->quantity,
+                'assigned_employee'=>$request->assigned_employee,
             
             ]);
 
