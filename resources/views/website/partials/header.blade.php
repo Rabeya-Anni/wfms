@@ -19,9 +19,10 @@
 
                                         <div class="logo-img d-none d-lg-block">
                                                 <a href="index.html">
-                                                    <img src="img/logo.png" alt="">
+                                                    <img src="{{url('img/logo.png')}}" alt="">
                                                 </a>
                                             </div>
+                                        <li><a href="{{route('userprofile')}}">User Profile</a></li></li>    
                                         <li><a href="{{route('location')}}">Location</a></li></li>
                                         <li><a href="{{route('contact')}}">Contact</a></li>
                                         @if(auth()->user())
@@ -34,7 +35,7 @@
                                 </nav>
                             </div>
                         </div>
-                        <div class="col-12">
+                        <div class="col-12" style="background-image:url('/bg1.jpg')">
                             <div class="mobile_menu d-block d-lg-none"></div>
                         </div>
                         <div class="logo-img-small d-sm-block d-md-block d-lg-none">

@@ -9,6 +9,7 @@
     <div id="divToPrint">
 
 <h1>Order Details</h1>
+      <p>{{($order->food_details)}}</p>
       <p>{{($order->order_quantity)}}</p>
       <p>{{($order->address)}}</p>
       <p>{{($order->date)}}</p>

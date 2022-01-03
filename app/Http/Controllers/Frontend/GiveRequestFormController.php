@@ -45,7 +45,7 @@ class GiveRequestFormController extends Controller
             
           ]);
 
-          return redirect()->route('giverequestform')->with('success','Send Request Succesfully Submitted. Now Add Organization');
+          return redirect()->route('giverequestform')->with('success','Send Request Successfully Submitted. Now Add Organization');
          }
          catch(Throwable $throw)
          {

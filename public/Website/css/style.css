@@ -683,7 +683,7 @@ h3 {
 
 /* line 56, ../../Arafath/CL/CL August/199 Flatter Catering/199 Flatter Catering-HTML/scss/_header.scss */
 .header-area .main-header-area .main-menu ul li a {
-  color: black;
+  color: white;
   font-size: 16px;
   text-transform: capitalize;
   font-weight: 400;
@@ -1102,7 +1102,7 @@ h3 {
 
 /* line 1, ../../Arafath/CL/CL August/199 Flatter Catering/199 Flatter Catering-HTML/scss/_banner.scss */
 .slider_img_1 {
-  background-image: url(/img/bg-1.jpg);
+  background-image: url(/img/bg1.jpg);
 }
 
 /* line 4, ../../Arafath/CL/CL August/199 Flatter Catering/199 Flatter Catering-HTML/scss/_banner.scss */

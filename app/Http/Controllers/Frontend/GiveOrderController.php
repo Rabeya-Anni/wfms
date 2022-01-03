@@ -39,13 +39,14 @@ class GiveOrderController extends Controller
     {
         try{
             Order::create([
+            'food_details'=>$request->food_details,
             'order_quantity'=>$request->order_quantity,
             'address'=>$request->address,
             'date'=>$request->date,
             
           ]);
 
-          return redirect()->route('home')->with('success', 'Profile updated!');
+          return redirect()->route('giveorder')->with('success', 'Order Confirmed Successfully');
          }
          catch(Throwable $throw)
          {

@@ -5,8 +5,13 @@
 <form action="{{route('employee.store')}}" method="post" enctype="multipart/form-data">
     @csrf
   <div class="form-group">
-    <label for="exampleInputEmail1">Name</label>
-    <input name="name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name"required>
+    <label for="exampleInputEmail1">Username</label>
+    <input name="username" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name"required>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputPassword1">Email</label>
+    <input name="email" type="email" class="form-control" id="exampleInputPassword1" placeholder="Email"required>
   </div>
 
   <div class="form-group">

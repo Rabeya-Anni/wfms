@@ -27,6 +27,7 @@ class OrderController extends Controller
     {
         try{
             Order::create([
+            'food_details'=>$request->food_details,
             'order_quantity'=>$request->order_quantity,
             'address'=>$request->address,
             'date'=>$request->date,
@@ -57,6 +58,7 @@ class OrderController extends Controller
         
         try{
             $order->update([
+            'food_details'=>$request->food_details,
             'order_quantity'=>$request->order_quantity,
             'address'=>$request->address,
             'date'=>$request->date,

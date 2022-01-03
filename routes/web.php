@@ -25,6 +25,7 @@ use App\Http\Controllers\Frontend\RegistrationformController;
 use App\Http\Controllers\Frontend\LocationController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\GalleryController;
+use App\Http\Controllers\Frontend\UserProfileController;
 
 
 /*
@@ -62,6 +63,12 @@ Route::post('/home/giverequestform/store',[GiveRequestFormController::class,'giv
 Route::get('/home/giverequest',[GiveRequestController::class,'giverequest'])->name('giverequest');
 Route::post('/home/giverequest/store',[GiveRequestController::class,'giverequeststore'])->name('giverequest.store');
 
+
+//User profile route
+Route::get('/home/userprofile',[ UserProfileController::class,'userprofile'])->name('userprofile');
+Route::put('/home/userprofile/update/{id}',[ UserProfileController::class,'userprofileupdate'])->name('userprofile.update');
+
+
 //Registration route
 Route::get('/home/registrationform',[RegistrationformController::class,'registrationform'])->name('registrationform');
 Route::post('/home/registration/store',[RegistrationformController::class,'registrationstore'])->name('registration.store');
@@ -70,6 +77,7 @@ Route::post('/home/registration/store',[RegistrationformController::class,'regis
 //Loginform route
 Route::get('/home/loginform',[RegistrationformController::class,'loginform'])->name('loginform');
 Route::post('/home/loginform/store',[RegistrationformController::class,'loginformstore'])->name('loginform.store');
+
 
 // Logout route
 Route::get('/home/logoutform',[RegistrationformController::class,'logout'])->name('logoutform');

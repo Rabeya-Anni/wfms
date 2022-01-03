@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Employee;
+use App\models\User;
+use App\models\Employee;
 
 class EmployeeController extends Controller
 {
@@ -17,7 +18,7 @@ class EmployeeController extends Controller
         return view('admin.layout.employee.employee',compact('employees'));
         }
 
-        $employees = Employee::all();
+        $employees = User::all();
         return view('admin.layout.employee.employee',compact('employees'));
     }
 
@@ -37,13 +38,15 @@ class EmployeeController extends Controller
         
         $request->validate([
              'name'=>'required',
+             'email'=>'required',
              'address'=>'required',
              'designation'=>'required',
              'phone_number'=>'required',
          ]);
         try{
             Employee::create([
-            'name'=>$request->name,
+            'username'=>$request->name,
+            'email'=>$request->email,
             'address'=>$request->address,
             'designation'=>$request->designation,
             'phone_number'=>$request->phone_number,
@@ -59,17 +62,17 @@ class EmployeeController extends Controller
     
     }
     public function employeeview($id){
-        $employee = Employee::find($id);
+        $employee = User::find($id);
         return view('admin.layout.employee.employeeview',compact('employee'));
     }
 
     public function employeeedit($id){
-        $employee = Employee::find($id);
+        $employee = User::find($id);
         return view('admin.layout.employee.employeeedit',compact('employee'));
     }
 
     public function employeeupdate(Request $request,$id){
-        $employee = Employee::find($id);
+        $employee = User::find($id);
 
         if($request->hasFile('image')){
             $file = $request->file('image');
@@ -78,7 +81,8 @@ class EmployeeController extends Controller
         }
         try{
             $employee->update([
-                'name'=>$request->name,
+                'username'=>$request->name,
+                'email'=>$request->email,
                 'address'=>$request->address,
                 'designation'=>$request->designation,
                 'phone_number'=>$request->phone_number,
@@ -94,7 +98,7 @@ class EmployeeController extends Controller
     }
 
     public function employeedelete($id){
-        Employee::find($id)->delete();
+        User::find($id)->delete();
         return redirect()->back()->with('success','Employee Delete.');
     }
 }

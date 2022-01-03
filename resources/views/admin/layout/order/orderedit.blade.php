@@ -17,7 +17,11 @@
 <form action="{{route('order.update',$order->id)}}" method='post'>
 @csrf
 @method('PUT')
-  <div class="form-group">
+<div class="form-group">
+    <label for="exampleInputEmail1">Food Details</label>
+    <input required name="food_details" value="{{$order->order_quantity}}" type="text" class="form-control" placeholder="Order Quantity"required>
+  
+    <div class="form-group">
     <label for="exampleInputEmail1">Order Quantity</label>
     <input required name="order_quantity" value="{{$order->order_quantity}}" type="number" class="form-control" placeholder="Order Quantity"required>
     

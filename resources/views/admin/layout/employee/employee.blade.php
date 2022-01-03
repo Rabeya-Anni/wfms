@@ -34,7 +34,8 @@
   <thead>
     <tr>
       <th scope="col">Serial</th>
-      <th scope="col">Name</th>
+      <th scope="col">Username</th>
+      <th scope="col">Email</th>
       <th scope="col">Address</th>
       <th scope="col">Designation</th>
       <th scope="col">Phone Number</th>
@@ -46,7 +47,8 @@
   @foreach($employees as $key=>$employee)
     <tr>
     <th scope="row">{{$key+1}}</th>
-      <td>{{($employee->name)}}</td>
+      <td>{{($employee->username)}}</td>
+      <td>{{($employee->email)}}</td>
       <td>{{($employee->address)}}</td>
       <td>{{($employee->designation)}}</td>
       <td>{{($employee->phone_number)}}</td>

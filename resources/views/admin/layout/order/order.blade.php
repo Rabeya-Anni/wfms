@@ -33,6 +33,7 @@
   <thead>
     <tr>
       <th scope="col">Serial</th>
+      <th scope="col">Food Details</th>
       <th scope="col">Order Quantity</th>
       <th scope="col">Address</th>
       <th scope="col">Date</th>
@@ -43,6 +44,7 @@
   @foreach($orders as $key=>$order)
     <tr>
     <th scope="row">{{$key+1}}</th>
+    <td>{{($order->food_details)}}</td>
       <td>{{($order->order_quantity)}}</td>
       <td>{{($order->address)}}</td>
       <td>{{($order->date)}}</td>
