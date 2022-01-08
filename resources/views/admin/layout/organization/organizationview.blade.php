@@ -9,13 +9,24 @@
     <div id="divToPrint">
 
 <h1>Organization Details</h1>
-      <p>{{($organization->name)}}</p>
-      <p>{{($organization->address)}}</p>
-      <p>{{($organization->email)}}</p>
-      <p>{{($organization->phone_number)}}</p>
+      <dl class="row">
+      <dt class="col-sm-3">Organization Name:</dt>
+      <dd class="col-sm-2">{{($organization->name)}}</dd>
+      </dl>
+      <dl class="row">
+      <dt class="col-sm-3">Organization Address:</dt>
+      <dd class="col-sm-2">{{($organization->address)}}</dd>
+      </dl>
+      <dl class="row">
+      <dt class="col-sm-3">Organization Email:</dt>
+      <dd class="col-sm-2">{{($organization->email)}}</dd>
+      </dl>
+      <dl class="row">
+      <dt class="col-sm-3">Organization Phone Number:</dt>
+      <dd class="col-sm-2">{{($organization->phone_number)}}</dd>
+      </dl>
       
-
-
+    
 @endsection
 <script language="javascript">
     function PrintDiv() {

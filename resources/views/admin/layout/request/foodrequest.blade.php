@@ -20,6 +20,7 @@
       <th scope="col">Serial</th>
       <th scope="col">Type</th>
       <th scope="col">Food Quantity</th>
+      <th scope="col">Status</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -29,6 +30,11 @@
     <th scope="row">{{$key+1}}</th>
     <td>{{($foodrequest->type)}}</td>
     <td>{{($foodrequest->food_quantity)}}</td>
+    <td>{{($foodrequest->status)}}</td>
+    <td>
+        <a class="btn btn-warning" href="{{route('status.update',$foodrequest->id)}}">Approve</a>
+        <a class="btn btn-danger" href="{{route('status.cancel',$foodrequest->id)}}">Cancel</a>
+      </td>
     </tr>
   @endforeach  
   </tbody>

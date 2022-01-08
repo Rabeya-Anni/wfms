@@ -6,7 +6,7 @@
     @csrf
   <div class="form-group">
     <label for="exampleInputEmail1">Username</label>
-    <input name="username" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name"required>
+    <input name="username" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username"required>
   </div>
 
   <div class="form-group">

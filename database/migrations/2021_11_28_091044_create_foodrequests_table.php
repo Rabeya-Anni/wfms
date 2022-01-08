@@ -17,6 +17,7 @@ class CreateFoodRequestsTable extends Migration
             $table->id();
             $table->string('type');
             $table->integer('food_quantity');
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
     }

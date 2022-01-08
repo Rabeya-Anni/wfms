@@ -18,8 +18,8 @@
 @csrf
 @method('PUT')
   <div class="form-group">
-    <label for="exampleInputEmail1">Organization ID</label>
-    <input required name="organization_id" value="{{$distribution->organization_id}}" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Organization ID">
+    <label for="exampleInputEmail1">Organization Name</label>
+    <input required name="organization_name" value="{{$distribution->organization_id}}" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Organization ID">
   </div>
 
   <div class="form-group">
@@ -33,16 +33,17 @@
     <input required name="quantity" value="{{$distribution->quantity}}" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Quantity">
   </div>
 
-  <div class="Assign Employee">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-  Assign Employee
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Assign Employee</label>
+    <select name="assigned_employee" type="text" class="form-control" id="exampleFormControlSelect1">
+      <option>Mohammad Jahid khan</option>
+      <option>Mr. Asad Hossain</option>
+      <option>Md. Nasir Hossain</option>
+      <option>Mr. Abdullah</option>
+      <option>Mrs. Hiya</option>
+      <option>Mrs. Noushin</option>
+    </select>
   </div>
-</div>
   
   <button type="submit" class="btn btn-primary">Update</button>
 </form>

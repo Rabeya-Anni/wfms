@@ -11,11 +11,13 @@
 									<li></li><br/>
 									<li></li><br/>
 									<li></li><br/>
-                                        <li><a href="#">About</a></li>
+                                        <li><a href="{{route('about')}}">About</a></li>
                                         <li><a href="{{route('showpackage')}}">Packages</a></li>
                                         <li><a href="{{route('showitem')}}">Items</a></li>
                                         <li><a href="{{route('gallery')}}">Gallery</a></li>
+                                        @if(auth()->user())
                                         <li><a href="{{route('giverequestform')}}">Food Request</a></li>
+                                        @endif
 
                                         <div class="logo-img d-none d-lg-block">
                                                 <a href="index.html">

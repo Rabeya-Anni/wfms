@@ -43,7 +43,7 @@ img {
 <div class="container">
 <div class="row justify-content-center">
     <div class="col-12 col-lg-10 col-xl-8 mx-auto">
-        <h1 class="h3 mb-4 page-title">Employee Profile</h1>
+        <h1 class="h3 mb-4 page-title">User Profile</h1>
         <div class="my-4">
     
            <!-- <h3><a class="h3 mb-4 page-title" style="color:white" href="{{route('giverequest')}}">Back to Food Request Form</a></h3> -->
@@ -94,10 +94,7 @@ img {
                         <input name="address" value="{{auth()->user()->address}}" type="text"  class="form-control" placeholder="#" />
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="inputEmail4">Designation</label>
-                    <input name="designation" value="{{auth()->user()->designation}}" type="text" class="form-control" id="inputEmail4" placeholder="#" />
-                </div>
+                
                 <div class="form-group">
                     <label for="inputAddress5">Phone number</label>
                     <input name="phone_number" value="{{auth()->user()->phone_number}}" type="number" class="form-control" id="inputAddress5" placeholder="#" />
@@ -146,7 +143,7 @@ img {
                             <input type="password" class="form-control" id="inputPassword6" />
                         </div>
                     </div>
-                    <!-- <div class="col-md-6">
+                    <div class="col-md-6">
                         <p class="mb-2">Password requirements</p>
                         <p class="small text-muted mb-2">To create a new password, you have to meet all of the following requirements:</p>
                         <ul class="small text-muted pl-4 mb-0">

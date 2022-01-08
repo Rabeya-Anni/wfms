@@ -19,8 +19,13 @@
     @method('PUT')
 
   <div class="form-group">
-    <label for="exampleInputEmail1">Name</label>
-    <input name="name" value="{{$employee->name}}" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name"required>
+    <label for="exampleInputEmail1">Username</label>
+    <input name="username" value="{{$employee->username}}" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username"required>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputPassword1">Email</label>
+    <input name="email" value="{{$employee->email}}" type="email" class="form-control" id="exampleInputPassword1" placeholder="Email"required>
   </div>
 
   <div class="form-group">

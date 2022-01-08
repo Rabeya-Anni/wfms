@@ -20,6 +20,7 @@ class RequestController extends Controller
             Foodrequest::create([
                 'type'=>$request->type,
                 'food_quantity'=>$request->food_quantity,
+                'status'=>$request->status,
                 
             
           ]);
@@ -30,6 +31,22 @@ class RequestController extends Controller
          {
           return redirect()->back()->with('error', 'Profile updated!');
          }
-    }   
+    }
+    
+    public function statusupdate($id){
+        $foosrequests = Foodrequest::find($id);
+        if($foodrequests->status)
+        {
+            $foodrequests->update([
+                'status' => 'approved'
+            ]);
+        }else{
+            $foodrequests->update([
+                'status' => 'cancelled'
+            ]);   
+        }
+           
+        return redirect()->back();
+    }
 
 }

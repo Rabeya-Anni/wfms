@@ -9,10 +9,23 @@
     <div id="divToPrint">
 
 <h1>Distribution Details</h1>
-      <p>{{($distribution->organization_id)}}</p>
-      <p>{{($distribution->food_name)}}</p>
-      <p>{{($distribution->quantity)}}</p>
-      
+      <dl class="row">
+      <dt class="col-sm-2">Organization Name:</dt>
+      <dd class="col-sm-2">{{($distribution->organization_name)}}</dd>
+      </dl>
+      <dl class="row">
+      <dt class="col-sm-2">Food Name:</dt>
+      <dd class="col-sm-2">{{($distribution->food_name)}}</dd>
+      </dl>
+      <dl class="row">
+      <dt class="col-sm-2">Quantity:</dt>
+      <dd class="col-sm-2">{{($distribution->quantity)}}</dd>
+      </dl>
+      <dl class="row">
+      <dt class="col-sm-2">Assigned Employee:</dt>
+      <dd class="col-sm-2">{{($distribution->assigned_employee)}}</dd>
+      </dl>
+     
 
 
 @endsection

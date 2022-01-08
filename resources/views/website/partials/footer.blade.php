@@ -74,11 +74,7 @@
                 <div class="row align-items-center">
                     <div class="col-xl-7 col-md-12 col-lg-8">
                         <div class="copyright">
-                                <!-- <p class="footer-text">
-                                  
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This Website is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://github.com/benzito1590" target="_blank">Benzito Bezuidenhout</a>
-  
-                                </p> -->
+                                
                         </div>
                     </div>
                     <div class="col-xl-5 col-md-12 col-lg-4">

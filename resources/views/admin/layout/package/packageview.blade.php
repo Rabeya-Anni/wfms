@@ -10,11 +10,20 @@
 
 <h1>Item Details</h1>
       <p><img src = "{{(url('/uploads/'.$package->image))}}" alt="package image" width="100px"></p>
-      <p>{{($package->name)}}</p>
-      <p>{{($package->price_per_person)}}</p>
-      <p>{{($package->details)}}</p>
+      <dl class="row">
+      <dt class="col-sm-2">Package Name:</dt>
+      <dd class="col-sm-2">{{($package->name)}}</dd>
+      </dl>
+      <dl class="row">
+      <dt class="col-sm-2">Package price:</dt>
+      <dd class="col-sm-2">{{($package->price_per_person)}}</dd>
+      </dl>
+      <dl class="row">
+      <dt class="col-sm-2">Package Details:</dt>
+      <dd class="col-sm-2">{{($package->details)}}</dd>
+      </dl>
       
-
+      
 
 @endsection
 <script language="javascript">

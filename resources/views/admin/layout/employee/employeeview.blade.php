@@ -11,10 +11,27 @@
 
 <h1>Employee Details</h1>
       <p><img src = "{{(url('/uploads/'.$employee->image))}}" alt="employee image" width="100px"></p>
-      <p>{{($employee->name)}}</p>
-      <p>{{($employee->address)}}</p>
-      <p>{{($employee->designation)}}</p>
-      <p>{{($employee->phone_number)}}</p>
+      <dl class="row">
+      <dt class="col-sm-2">Username:</dt>
+      <dd class="col-sm-2">{{($employee->username)}}</dd>
+      </dl>
+      <dl class="row">
+      <dt class="col-sm-2">Email:</dt>
+      <dd class="col-sm-2">{{($employee->email)}}</dd>
+      </dl>
+      <dl class="row">
+      <dt class="col-sm-2">Address:</dt>
+      <dd class="col-sm-2">{{($employee->address)}}</dd>
+      </dl>
+      <dl class="row">
+      <dt class="col-sm-2">Designation:</dt>
+      <dd class="col-sm-2">{{($employee->designation)}}</dd>
+      </dl>
+      <dl class="row">
+      <dt class="col-sm-2">Phone Number:</dt>
+      <dd class="col-sm-2">{{($employee->phone_number)}}</dd>
+      </dl>
+      
       
 @endsection
 

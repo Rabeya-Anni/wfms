@@ -22,6 +22,7 @@ use App\Http\Controllers\Frontend\GiveOrderController;
 use App\Http\Controllers\Frontend\GiveRequestFormController;
 use App\Http\Controllers\Frontend\GiveRequestController;
 use App\Http\Controllers\Frontend\RegistrationformController;
+use App\Http\Controllers\Frontend\AboutController;
 use App\Http\Controllers\Frontend\LocationController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\GalleryController;
@@ -83,15 +84,19 @@ Route::post('/home/loginform/store',[RegistrationformController::class,'loginfor
 Route::get('/home/logoutform',[RegistrationformController::class,'logout'])->name('logoutform');
 
 
-// Location
+// About Us route
+Route::get('/home/about',[AboutController::class,'about'])->name('about');
+
+
+// Location route
 Route::get('/home/location',[LocationController::class,'location'])->name('location');
 
 
-// Contact
+// Contact route
 Route::get('/home/contact',[ContactController::class,'contact'])->name('contact');
 
 
-// Gallery
+// Gallery roiute
 Route::get('/home/gallery',[GalleryController::class,'gallery'])->name('gallery');
 
 
@@ -182,9 +187,11 @@ Route::get('/payment/delete/{id}',[PaymentController::class, 'paymentdelete'])->
 
 
 
-//request route
+//food request route
 Route::get('/request',[RequestController::class, 'request'])->name('request');
 Route::get('/request/store',[RequestController::class, 'requeststore'])->name('request.store');
+Route::get('/request/status/update/{id}',[RequestController::class, 'statusupdate'])->name('status.update');
+Route::get('/request/status/cancel/{id}',[RequestController::class, 'statuscancel'])->name('status.cancel');
 
 
 //organization route

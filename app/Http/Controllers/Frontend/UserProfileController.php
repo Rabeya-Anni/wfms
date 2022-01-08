@@ -15,7 +15,7 @@ class UserProfileController extends Controller
      */
     public function userprofile()
     {
-        // $employees = Employee::all();
+        
         return view('website.layouts.userprofile.userprofile');
     }
 
@@ -85,23 +85,26 @@ class UserProfileController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function userprofileupdate(Request $request,$id){
+        // dd($request->all());
         // dd($request->want_to_be_a_food_seeker);
         $userprofile = User::find($id);
         // dd($userprofile);
-        
-        try{
-            $userprofile->update([
-                'role'=>$request->want_to_be_a_food_seeker
-                
-            ]);
-
-          return redirect()->route('userprofile')->with('success', 'Profile updated!');
+        if (auth()->user()->role == 'admin') {
+            return redirect()->back()->with('success', 'admin can not change the role...');
+            // dd("in if");
+            
         }
-         catch(Throwable $throw)
-         {
-             dd("error");
-          return redirect()->back()->with('error', 'Profile updated!');
-         }
+        elseif($userprofile) {
+                $userprofile->update([
+                    'role'=>"food_seekar"
+                    
+                ]);
+    
+              return redirect()->route('home')->with('success', 'Profile updated!');
+          
+             
+        }
+        
     }
 
     /**

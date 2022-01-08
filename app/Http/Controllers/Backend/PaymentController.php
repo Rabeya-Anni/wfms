@@ -17,7 +17,7 @@ class PaymentController extends Controller
         return view('admin.layout.package.package',compact('packages'));
         }
 
-        // $payments = Payment::all();
+        $payments = Payment::all();
         return view('admin.layout.payment.payment');
     }
 

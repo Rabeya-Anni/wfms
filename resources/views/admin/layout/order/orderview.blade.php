@@ -9,12 +9,22 @@
     <div id="divToPrint">
 
 <h1>Order Details</h1>
-      <p>{{($order->food_details)}}</p>
-      <p>{{($order->order_quantity)}}</p>
-      <p>{{($order->address)}}</p>
-      <p>{{($order->date)}}</p>
-      
-
+<dl class="row">
+      <dt class="col-sm-2">Food Details:</dt>
+      <dd class="col-sm-2">{{($order->food_details)}}</dd>
+      </dl>
+      <dl class="row">
+      <dt class="col-sm-2">Order Quantity:</dt>
+      <dd class="col-sm-2">{{($order->order_quantity)}}</dd>
+      </dl>
+      <dl class="row">
+      <dt class="col-sm-2">Address:</dt>
+      <dd class="col-sm-2">{{($order->address)}}</dd>
+      </dl>
+      <dl class="row">
+      <dt class="col-sm-2">Date:</dt>
+      <dd class="col-sm-2">{{($order->date)}}</dd>
+      </dl>
 
 @endsection
 <script language="javascript">
