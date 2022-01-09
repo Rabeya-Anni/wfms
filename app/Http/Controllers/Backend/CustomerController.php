@@ -31,6 +31,7 @@ class CustomerController extends Controller
             'email'=>$request->email,
             'phone_number'=>$request->phone_number,
             'address'=>$request->address,
+            'designation'=>$request->designation,
             
           ]);
 

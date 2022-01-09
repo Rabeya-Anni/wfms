@@ -31,8 +31,10 @@
                                         <li><a href="{{route('logoutform')}}">logout</a></li>
                                         @else
                                         <li><a href="{{route('registrationform')}}">Registration</a></li>
+                                        <li><a href="{{route('employeeregistrationform')}}">Employee Registration</a></li>
                                         <li><a href="{{route('loginform')}}">Login</a></li>
                                         @endif
+                                      
                                     </ul>
                                 </nav>
                             </div>

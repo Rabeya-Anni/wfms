@@ -22,6 +22,7 @@ use App\Http\Controllers\Frontend\GiveOrderController;
 use App\Http\Controllers\Frontend\GiveRequestFormController;
 use App\Http\Controllers\Frontend\GiveRequestController;
 use App\Http\Controllers\Frontend\RegistrationformController;
+use App\Http\Controllers\Frontend\EmployeeRegistrationController;
 use App\Http\Controllers\Frontend\AboutController;
 use App\Http\Controllers\Frontend\LocationController;
 use App\Http\Controllers\Frontend\ContactController;
@@ -73,6 +74,10 @@ Route::put('/home/userprofile/update/{id}',[ UserProfileController::class,'userp
 //Registration route
 Route::get('/home/registrationform',[RegistrationformController::class,'registrationform'])->name('registrationform');
 Route::post('/home/registration/store',[RegistrationformController::class,'registrationstore'])->name('registration.store');
+
+//Employee Registration route
+Route::get('/home/employeeregistrationform',[EmployeeRegistrationController::class,'employeeregistrationform'])->name('employeeregistrationform');
+Route::post('/home/employeeregistration/store',[EmployeeRegistrationController::class,'employeeregistrationstore'])->name('employeeregistration.store');
 
 
 //Loginform route
@@ -179,6 +184,8 @@ Route::get('/order/delete/{id}',[OrderController::class, 'orderdelete'])->name('
 
 //payment route
 Route::get('/payment',[PaymentController::class, 'payment'])->name('payment');
+
+
 // Route::post('/payment/store',[PaymentController::class, 'paymentstore'])->name('payment.store');
 Route::get('/payment/view/{id}',[PaymentController::class, 'paymentview'])->name('payment.view');
 Route::get('/payment/edit/{id}',[PaymentController::class, 'paymentedit'])->name('payment.edit');

@@ -34,19 +34,23 @@ class RequestController extends Controller
     }
     
     public function statusupdate($id){
-        $foosrequests = Foodrequest::find($id);
-        if($foodrequests->status)
+        $foosrequest = Foodrequest::find($id);
+        if($foosrequest->status)
         {
-            $foodrequests->update([
+            $foosrequest->update([
                 'status' => 'approved'
             ]);
-        }else{
-            $foodrequests->update([
+        }
+        else
+        {
+            $foodrequest->delete([
                 'status' => 'cancelled'
             ]);   
         }
            
         return redirect()->back();
     }
+
+    
 
 }

@@ -26,6 +26,7 @@
       <th scope="col">E-mail</th>
       <th scope="col">Phone Number</th>
       <th scope="col">Address</th>
+      <th scope="col">Designation</th>
       <th scope="col">Role</th>
       <th scope="col">Action</th>
     </tr>
@@ -38,6 +39,7 @@
       <td>{{($customer->email)}}</td>
       <td>{{($customer->phone_number)}}</td>
       <td>{{($customer->address)}}</td>
+      <td>{{($customer->designation)}}</td>
       <td>{{($customer->role)}}</td>
       <td>
       <a class="btn btn-warning" href="{{route('customer.view',$customer->id)}}">View</a>
