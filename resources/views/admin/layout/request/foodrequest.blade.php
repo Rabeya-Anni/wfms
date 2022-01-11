@@ -32,8 +32,10 @@
     <td>{{($foodrequest->food_quantity)}}</td>
     <td>{{($foodrequest->status)}}</td>
     <td>
-        <a class="btn btn-warning" href="{{route('status.update',$foodrequest->id)}}">Approve</a>
-        <a class="btn btn-danger" href="{{route('status.cancel',$foodrequest->id)}}">Cancel</a>
+        <a class="btn btn-warning" href="{{route('status.approve',$foodrequest->id)}}">Approve</a>
+        <a class="btn btn-success" href="{{route('status.cancel',$foodrequest->id)}}">Cancel</a>
+        <a class="btn btn-danger" href="{{route('request.delete',$foodrequest->id)}}">Delete</a>
+
       </td>
     </tr>
   @endforeach  

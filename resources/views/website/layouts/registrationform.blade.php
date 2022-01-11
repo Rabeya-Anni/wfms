@@ -33,7 +33,7 @@
 						</label>
 						<div class="clear"> </div>
 					</div>
-					<input type="submit" value="SIGNUP">
+					<input type="submit" value="SIGN UP">
 				</form>
 				<p>Have Already an Account? <a href="{{route('loginform')}}"> Login Here!</a></p>
 			</div>

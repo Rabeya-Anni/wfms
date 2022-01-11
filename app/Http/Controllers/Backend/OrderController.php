@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Order;
+use App\Models\Package;
+use Illuminate\Http\Request;
+
 
 class OrderController extends Controller
 {
@@ -75,5 +77,74 @@ class OrderController extends Controller
     public function orderdelete($id){
         Order::find($id)->delete();
         return redirect()->back()->with('success','Order Delete.');
+    }
+
+    public function addtocart($id)
+    {
+
+        $package=Package::find($id);
+        if(!$package)
+        {
+            return redirect()->back()->with('error','No package found.');
+        }
+
+        $cartExist=session()->get('cart');
+
+        if(!$cartExist) {
+            //case 01: cart is empty.
+            //  action: add product to cart
+            $cartData = [
+                $id => [
+                    'package_id' => $id,
+                    'name' => $package->name,
+                    'price_per_person' => $package->price_per_person,
+                    'package_qty' => 1,
+                ]
+            ];
+            session()->put('cart', $cartData);
+            return redirect()->back()->with('message', 'Product Added to Cart.');
+        }
+
+        //case 02: cart is not empty. but product does not exist into the cart
+        //action: add different product with quantity 1
+//        dd(isset($cartExist[$id]));
+        if(!isset($cartExist[$id]))
+        {
+            $cartExist[$id] = [
+                'package_id' => $id,
+                'name' => $package->name,
+                'price_per_person' => $package->price_per_person,
+                'package_qty' => 1,
+            ];
+
+            session()->put('cart', $cartExist);
+
+            return redirect()->back()->with('message', 'Product Added to Cart.');
+        }
+
+
+        //case 03: product exist into cart
+        //action: increase product quantity (quantity+1)
+        if(!isset($cartExist[$id]))
+        {
+            $cartExist[$id] ['package_qty']++;
+            session()->put('cart', $cartExist);
+
+            return redirect()->back()->with('message', 'Product Added to Cart.');
+        }
+
+    }
+
+    public function getCart()
+    {
+       $carts= session()->get('cart');
+        return view('website.layouts.cart.cart',compact('carts'));
+    }
+
+    public function clearCart()
+    {
+        session()->forget('cart');
+        return redirect()->back()->with('message','Cart cleared successfully.');
+
     }
 }

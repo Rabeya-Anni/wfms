@@ -101,8 +101,17 @@ Route::get('/home/location',[LocationController::class,'location'])->name('locat
 Route::get('/home/contact',[ContactController::class,'contact'])->name('contact');
 
 
-// Gallery roiute
+// Gallery route
 Route::get('/home/gallery',[GalleryController::class,'gallery'])->name('gallery');
+
+//web Auth route group
+Route::group(['middleware'=>'web_auth'],function (){
+
+//Cart route   
+Route::get('/home/addtocart/{id}',[OrderController::class,'addtocart'])->name('cart.add');
+Route::get('/get-cart',[OrderController::class,'getCart'])->name('cart.get');
+Route::get('/clear-cart',[OrderController::class,'clearCart'])->name('cart.clear');
+});
 
 
 //Route::get('/home', function () {
@@ -123,6 +132,7 @@ Route::get('/adminlogin',[AdminLoginController::class, 'adminlogin'])->name('adm
 Route::post('/admin/dologin',[AdminLoginController::class, 'dologin'])->name('admin.dologin');
 
 
+//Admin Auth route group
 Route::group(['prefix'=>'admin','middleware'=>['auth','admin']],function(){
     Route::get('/',function(){
         return view('admin.layout.content');
@@ -197,9 +207,9 @@ Route::get('/payment/delete/{id}',[PaymentController::class, 'paymentdelete'])->
 //food request route
 Route::get('/request',[RequestController::class, 'request'])->name('request');
 Route::get('/request/store',[RequestController::class, 'requeststore'])->name('request.store');
-Route::get('/request/status/update/{id}',[RequestController::class, 'statusupdate'])->name('status.update');
+Route::get('/request/status/approve/{id}',[RequestController::class, 'statusapprove'])->name('status.approve');
 Route::get('/request/status/cancel/{id}',[RequestController::class, 'statuscancel'])->name('status.cancel');
-
+Route::get('/request/delete/{id}',[RequestController::class, 'requestdelete'])->name('request.delete');
 
 //organization route
 Route::get('/organization',[OrganizationController::class, 'organization'])->name('organization');

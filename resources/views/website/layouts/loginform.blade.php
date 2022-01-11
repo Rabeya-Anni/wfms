@@ -31,7 +31,7 @@
 						</label>
 						<div class="clear"> </div>
 					</div>
-					<input type="submit" value="SIGNIN">
+					<input type="submit" value="SIGN IN">
 				</form>
 				<p>Don't have an Account? <a href="{{route('registrationform')}}"> SIGNUP!</a></p>
 			</div>

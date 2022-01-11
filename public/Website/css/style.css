@@ -422,7 +422,7 @@ h3 {
 
 /* line 17, ../../Arafath/CL/CL August/199 Flatter Catering/199 Flatter Catering-HTML/scss/_section_title.scss */
 .section_title p {
-  font-weight: 300;
+  font-weight: 400;
   color: #777777;
   margin-bottom: 0;
 }
@@ -862,7 +862,7 @@ h3 {
 
 /* line 178, ../../Arafath/CL/CL August/199 Flatter Catering/199 Flatter Catering-HTML/scss/_header.scss */
 .header-area .main-header-area.sticky .logo-img img {
-  width: 80px;
+  width: 131px;
 }
 
 /* line 184, ../../Arafath/CL/CL August/199 Flatter Catering/199 Flatter Catering-HTML/scss/_header.scss */
@@ -1096,7 +1096,7 @@ h3 {
 /* line 51, ../../Arafath/CL/CL August/199 Flatter Catering/199 Flatter Catering-HTML/scss/_slider.scss */
 .slider_area .single_slider .slider_contant p {
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 400;
   margin-bottom: 0;
 }
 
@@ -1161,7 +1161,7 @@ h3 {
 /* line 30, ../../Arafath/CL/CL August/199 Flatter Catering/199 Flatter Catering-HTML/scss/_service.scss */
 .service_area .single_service p {
   color: #888888;
-  font-weight: 300;
+  font-weight: 400;
   margin-bottom: 0;
   line-height: 28px;
 }

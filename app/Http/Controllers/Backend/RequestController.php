@@ -33,7 +33,7 @@ class RequestController extends Controller
          }
     }
     
-    public function statusupdate($id){
+    public function statusapprove($id){
         $foosrequest = Foodrequest::find($id);
         if($foosrequest->status)
         {
@@ -43,14 +43,29 @@ class RequestController extends Controller
         }
         else
         {
-            $foodrequest->delete([
+            $foodrequest->update([
                 'status' => 'cancelled'
             ]);   
         }
            
-        return redirect()->back();
+        return redirect()->back()->with('success','Request Approve.');
     }
 
-    
 
+    public function statuscancel($id){
+        $foosrequest = Foodrequest::find($id);
+        if($foosrequest->status)
+        {
+            $foosrequest->update([
+                'status' => 'cancelled'
+            ]);
+        }
+    
+        return redirect()->back()->with('success','Request cancel.');
+    }
+    
+    public function requestdelete($id){
+        Foodrequest::find($id)->delete();
+        return redirect()->back()->with('success','Request Delete.');
+    }
 }

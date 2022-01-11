@@ -15,18 +15,17 @@
                                         <li><a href="{{route('showpackage')}}">Packages</a></li>
                                         <li><a href="{{route('showitem')}}">Items</a></li>
                                         <li><a href="{{route('gallery')}}">Gallery</a></li>
-                                        @if(auth()->user())
-                                        <li><a href="{{route('giverequestform')}}">Food Request</a></li>
-                                        @endif
-
-                                        <div class="logo-img d-none d-lg-block">
-                                                <a href="index.html">
-                                                    <img src="{{url('img/logo.png')}}" alt="">
-                                                </a>
-                                            </div>
-                                        <li><a href="{{route('userprofile')}}">User Profile</a></li></li>    
                                         <li><a href="{{route('location')}}">Location</a></li></li>
                                         <li><a href="{{route('contact')}}">Contact</a></li>
+                                        <div class="logo-img d-none d-lg-block">
+                                                <a href="index.html">
+                                                    <img src="{{url('img/greenbowllogo.png')}}" style="height: 162px;" alt="">
+                                                </a>
+                                            </div>
+                                        <li><a href="{{route('userprofile')}}">User Profile</a></li></li>
+                                        @if(auth()->user())
+                                        <li><a href="{{route('giverequestform')}}">Food Request</a></li>
+                                        @endif    
                                         @if(auth()->user())
                                         <li><a href="{{route('logoutform')}}">logout</a></li>
                                         @else
@@ -34,6 +33,9 @@
                                         <li><a href="{{route('employeeregistrationform')}}">Employee Registration</a></li>
                                         <li><a href="{{route('loginform')}}">Login</a></li>
                                         @endif
+                                        <li class="nav-item">
+                                        <a class="nav-link" href="{{route('cart.get')}}">Cart ({{session()->has('cart') ? count(session()->get('cart')):0}})</a>
+                                        </li>
                                       
                                     </ul>
                                 </nav>

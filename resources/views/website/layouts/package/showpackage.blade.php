@@ -21,8 +21,10 @@
                         <p><img src="{{(url('/uploads/'.$package->image))}}" alt="" height="200px" width="270px" ></p>
                         <h2>{{$package->name}}</h2>
                         <p class="h5">{{($package->details)}}</p>
-                        <p class="h5, font-weight-bold" style="color:red">{{$package->price_per_person}}/-</p>
+                        <p class="h5, font-weight-bold" style="color:red">BDT {{$package->price_per_person}}/-</p>
                         <a class="btn btn-warning" href="{{route('giveorder')}}" role="button">Order Now</a>
+                        <a class="btn btn-warning" href="{{route('cart.add',$package->id)}}" role="button">Add to cart</a>
+
 
                         
                     </div>
