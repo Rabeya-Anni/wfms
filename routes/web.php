@@ -28,6 +28,7 @@ use App\Http\Controllers\Frontend\LocationController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\GalleryController;
 use App\Http\Controllers\Frontend\UserProfileController;
+use App\Http\Controllers\Frontend\ViewRequestController;
 
 
 /*
@@ -46,6 +47,7 @@ Route::get('/',[HomeController::class,'home'])->name('home');
 
 //showpackage route
 Route::get('/home/showpackage',[ShowPackageController::class,'showpackage'])->name('showpackage');
+Route::get('/home/packagedetails',[ShowPackageController::class,'packagedetails'])->name('package.details');
 
 
 //showitem route
@@ -69,6 +71,9 @@ Route::post('/home/giverequest/store',[GiveRequestController::class,'giverequest
 //User profile route
 Route::get('/home/userprofile',[ UserProfileController::class,'userprofile'])->name('userprofile');
 Route::put('/home/userprofile/update/{id}',[ UserProfileController::class,'userprofileupdate'])->name('userprofile.update');
+
+//view request route
+Route::post('/home/viewrequest',[ViewRequestController::class,'viewrequest'])->name('viewrequest');
 
 
 //Registration route

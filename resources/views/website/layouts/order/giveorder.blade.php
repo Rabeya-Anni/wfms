@@ -57,7 +57,7 @@ letter-spacing: 4px;margin-left: 105px;">Back to Home</a>
 		</div>
 		<!-- copyright -->
 		<!-- <div class="colorlibcopy-agile">
-			<!-- <p>© 2018 Colorlib Signup Form. All rights reserved | Design by <a href="https://colorlib.com/" target="_blank">Colorlib</a></p> -->
+		<p>© 2018 Colorlib Signup Form. All rights reserved | Design by <a href="https://colorlib.com/" target="_blank">Colorlib</a></p> -->
 		<!-- </div> --> -->
 		<!-- //copyright -->
 		<ul class="colorlib-bubbles">

@@ -6,9 +6,10 @@
         <input class="btn btn-primary" type="button" onClick="PrintDiv();" value="Print">
     </form>
 
-    <div id="divToPrint">
+    
 
 <h1>Item Details</h1>
+      
       <p><img src = "{{(url('/uploads/'.$item->image))}}" alt="item image" width="100px"></p>
       <dl class="row">
       <dt class="col-sm-2">Package Name:</dt>
@@ -22,7 +23,7 @@
       <dt class="col-sm-2">Package Details:</dt>
       <dd class="col-sm-2">{{($item->details)}}</dd>
       </dl>
-      
+
 @endsection
 
 <script language="javascript">

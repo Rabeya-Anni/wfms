@@ -18,7 +18,7 @@
                                         <li><a href="{{route('location')}}">Location</a></li></li>
                                         <li><a href="{{route('contact')}}">Contact</a></li>
                                         <div class="logo-img d-none d-lg-block">
-                                                <a href="index.html">
+                                                <a href="{{route('home')}}">
                                                     <img src="{{url('img/greenbowllogo.png')}}" style="height: 162px;" alt="">
                                                 </a>
                                             </div>

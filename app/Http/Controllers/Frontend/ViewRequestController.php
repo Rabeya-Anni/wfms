@@ -4,28 +4,20 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Package;
+use App\Models\Foodrequest;
 
-class ShowPackageController extends Controller
+class ViewRequestController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function showpackage()
+    public function viewrequest(Request $request )
     {
-        $packages=Package::all();
-        return view('website.layouts.package.showpackage',compact('packages'));
+        $foodrequests = Foodrequest::all();
+        return view('website.layouts.requeststatus.viewrequeststatus',compact('foodrequests'));
     }
-
-    public function packagedetails()
-    {
-        
-        return view('website.layouts.package.packagedetails');
-    }
-
-
 
     /**
      * Show the form for creating a new resource.
@@ -43,7 +35,10 @@ class ShowPackageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    
+    public function store(Request $request)
+    {
+        //
+    }
 
     /**
      * Display the specified resource.

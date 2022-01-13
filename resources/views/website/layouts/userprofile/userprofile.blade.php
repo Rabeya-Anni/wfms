@@ -39,6 +39,21 @@ img {
 </style>
 <!--------- end profile css --------->
 
+<!---------  dropdown html --------->
+
+<form action="{{route('viewrequest')}}" method='post'>
+@csrf
+  <select >
+    <option value="volvo">Status</option>
+    
+    <option value="My Request Status"> <a href="{{route('viewrequest')}}">My Request Status</a> </option>
+  </select>
+  <br><br>
+  <input type="submit" value="Submit">
+</form>
+<!---------  dropdown html --------->
+
+
 <!---------  profile html --------->
 <div class="container">
 <div class="row justify-content-center">

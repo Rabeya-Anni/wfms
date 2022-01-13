@@ -125,13 +125,7 @@ class OrderController extends Controller
 
         //case 03: product exist into cart
         //action: increase product quantity (quantity+1)
-        if(!isset($cartExist[$id]))
-        {
-            $cartExist[$id] ['package_qty']++;
-            session()->put('cart', $cartExist);
-
-            return redirect()->back()->with('message', 'Product Added to Cart.');
-        }
+    
 
     }
 
