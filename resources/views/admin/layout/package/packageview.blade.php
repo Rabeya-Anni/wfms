@@ -8,7 +8,7 @@
 
     <div id="divToPrint">
 
-<h1>Item Details</h1>
+<h1>Package Details</h1>
       <p><img src = "{{(url('/uploads/'.$package->image))}}" alt="package image" width="100px"></p>
       <dl class="row">
       <dt class="col-sm-2">Package Name:</dt>

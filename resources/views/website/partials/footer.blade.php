@@ -29,7 +29,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-xl-2 col-md-6 col-lg-2">
+                    <!-- <div class="col-xl-2 col-md-6 col-lg-2">
                         <div class="footer_widget">
                             <h3 class="heading">
                                   Map/Location
@@ -38,17 +38,17 @@
 								Cape Town, Western Cape
                             </ul>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="col-xl-2 col-md-6 col-lg-2">
                         <div class="footer_widget">
                             <h3 class="heading">
                                    Information  
                             </h3>
                             <ul>
-                              <li>#1 Client(Business Name) </li>
+                              <li>GREEN BOWL CATERING</li><br>
                               <li><a href="#">Contact Number</a></li>
-                              <li><a href="#">Business Email</a></li>
-                              <li>Business Time</li> 
+                              <li><a href="#">Business Email</a></li><br>
+                              <li>Business Time:(8:00am to 12:00am)</li> 
                             </ul>
                         </div>
                     </div>

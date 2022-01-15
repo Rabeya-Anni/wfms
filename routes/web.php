@@ -47,7 +47,7 @@ Route::get('/',[HomeController::class,'home'])->name('home');
 
 //showpackage route
 Route::get('/home/showpackage',[ShowPackageController::class,'showpackage'])->name('showpackage');
-Route::get('/home/packagedetails',[ShowPackageController::class,'packagedetails'])->name('package.details');
+Route::get('/home/packagedetails/{id}',[ShowPackageController::class,'packagedetails'])->name('package.details');
 
 
 //showitem route

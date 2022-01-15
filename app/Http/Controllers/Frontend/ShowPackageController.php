@@ -19,10 +19,10 @@ class ShowPackageController extends Controller
         return view('website.layouts.package.showpackage',compact('packages'));
     }
 
-    public function packagedetails()
+    public function packagedetails($id)
     {
-        
-        return view('website.layouts.package.packagedetails');
+        $package=Package::find($id);
+        return view('website.layouts.package.packagedetails',compact('package'));
     }
 
 

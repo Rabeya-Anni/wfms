@@ -45,8 +45,8 @@
                             <div class="mobile_menu d-block d-lg-none"></div>
                         </div>
                         <div class="logo-img-small d-sm-block d-md-block d-lg-none">
-                                <a href="index.html">
-                                    <img src="img/logo.png" alt="">
+                                <a href="{{route('home')}}">
+                                <img src="{{url('img/greenbowllogo.png')}}" style="height: 162px;" alt="">
                                 </a>
                             </div>
                     </div>

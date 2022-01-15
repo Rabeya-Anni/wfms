@@ -31,5 +31,6 @@
         </tbody>
     </table>
     <a href="{{route('cart.clear')}}" class="btn btn-warning">Clear Cart</a>
+    <a class="btn btn-warning" href="{{route('giveorder')}}" role="button">Order Now</a>
 
     @endsection

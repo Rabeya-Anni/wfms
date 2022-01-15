@@ -1,146 +1,49 @@
-<!--------- profile css --------->
+@extends('website.master')
 
-<style type="text/css">
-    body {
-    background: #eee
-}
+@section('content')
 
-.wrapper {
-    margin-top: 30px
-}
-
-.card {
-    border: 1px solid #eee;
-    cursor: pointer
-}
-
-.weight {
-    margin-top: -65px;
-    transition: all 0.5s
-}
-
-.weight small {
-    color: #e2dede
-}
-
-.buttons {
-    padding: 10px;
-    background-color: #d6d4d44f;
-    border-radius: 4px;
-    position: relative;
-    margin-top: 7px;
-    opacity: 0;
-    transition: all 0.8s
-}
-
-.dot {
-    height: 14px;
-    width: 14px;
-    background-color: green;
-    border-radius: 50%;
-    position: absolute;
-    left: 27%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 8px;
-    color: #fff;
-    opacity: 0
-}
-
-.cart-button {
-    height: 48px
-}
-
-.cart-button:focus {
-    box-shadow: none
-}
-
-.cart {
-    position: relative;
-    height: 48px !important;
-    width: 50px;
-    margin-right: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;
-    padding: 11px;
-    border-radius: 5px;
-    font-size: 14px;
-    transition: 1s ease-in-out;
-    overflow: hidden
-}
-
-.cart-button.clicked span.dot {
-    animation: item 0.3s ease-in forwards
-}
-
-@keyframes item {
-    0% {
-        opacity: 1;
-        top: 30%;
-        left: 30%
-    }
-
-    25% {
-        opacity: 1;
-        left: 26%;
-        top: 0%
-    }
-
-    50% {
-        opacity: 1;
-        left: 23%;
-        top: -22%
-    }
-
-    75% {
-        opacity: 1;
-        left: 19%;
-        top: -18%
-    }
-
-    100% {
-        opacity: 1;
-        left: 14%;
-        top: 28%
-    }
-}
-
-.card:hover .buttons {
-    opacity: 1
-}
-
-.card:hover .weight {
-    margin-top: 10px
-}
-
-.card:hover {
-    transform: scale(1.04);
-    z-index: 2;
-    overflow: hidden
-}
-
-</style>
-<!--------- end profile css --------->
-
-<!---------  start html --------->
-
-<div class="wrapper">
-    <div class="container">
-        <div class="row g-1">
-            <div class="col-md-3">
-                <div class="card p-3">
-                    <div class="text-center"> <img src="https://i.imgur.com/w2rCsEw.jpg" width="200"> </div>
-                    <div class="product-details"> <span class="font-weight-bold d-block">$ 7.00</span> <span>Red Redish</span>
-                        <div class="buttons d-flex flex-row">
-                            <div class="cart"><i class="fa fa-shopping-cart"></i></div> <button class="btn btn-success cart-button btn-block"><span class="dot">1</span>Add to cart </button>
-                        </div>
+    <div class="service_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section_title mb-60">
+                        <h3>Package Details</h3>
+                        <p>A Healthy Food, For A Wealthy Mood!</p>
                     </div>
                 </div>
             </div>
+            <!-- <form class="print_order">
+            <input class="btn btn-primary" type="button" onClick="PrintDiv();" value="Print">
+            </form>
+
+            <div id="divToPrint">  -->
+               
+               
+            <p><img src = "{{(url('/uploads/',$package->image))}}" alt="package image" width="100px"></p>
+            <dl class="row">
+            <dt class="col-sm-2">Package Name:</dt>
+            <dd class="col-sm-2">{{($package->name)}}</dd>
+            </dl>
+            <dl class="row">
+            <dt class="col-sm-2">Package price:</dt>
+            <dd class="col-sm-2">{{($package->price_per_person)}}/-</dd>
+            </dl>
+            <dl class="row">
+            <dt class="col-sm-2">Package Details:</dt>
+            <dd class="col-sm-2">{{($package->details)}}</dd>
+            </dl>
+            <a class="btn btn-warning" href="{{route('cart.add',$package->id)}}" role="button">Add to cart</a>
+
+                    
         </div>
     </div>
-</div>
-<!---------  end html --------->
+@endsection
+<!-- <script language="javascript">
+    function PrintDiv() {
+        var divToPrint = document.getElementById('divToPrint');
+        var popupWin = window.open('', '_blank', 'width=1100,height=700');
+        popupWin.document.open();
+        popupWin.document.write('<html><head><link href="http://127.0.0.1:8000/Website/css/style.css" rel="stylesheet"></head><body onload="window.print()">' + divToPrint.innerHTML + '</html>');
+        popupWin.document.close();
+    }
+</script>    -->
