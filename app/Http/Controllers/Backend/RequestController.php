@@ -10,20 +10,23 @@ class RequestController extends Controller
 {
     public function request()
     {
+
         $foodrequests = Foodrequest::all();
         return view('admin.layout.request.foodrequest',compact('foodrequests'));
     }
 
     public function requeststore(Request $request)
     {
+        
         try{
-            Foodrequest::create([
+           Foodrequest::create([
+                'name'=>$request->name,
                 'type'=>$request->type,
                 'food_quantity'=>$request->food_quantity,
                 'status'=>$request->status,
-                
-            
           ]);
+
+          
 
           return redirect()->route('request')->with('success', 'Profile updated!');
          }

@@ -115,6 +115,11 @@
                                 Distribution
                             </a>
 
+                            <a class="nav-link" href="{{route('package.item')}}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-donate"></i></div>
+                                Package-Item
+                            </a>
+
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">

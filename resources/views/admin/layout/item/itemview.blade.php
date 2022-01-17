@@ -15,10 +15,7 @@
       <dt class="col-sm-2">Package Name:</dt>
       <dd class="col-sm-2">{{($item->name)}}</dd>
       </dl>
-      <dl class="row">
-      <dt class="col-sm-2">Package price:</dt>
-      <dd class="col-sm-2">{{($item->price_per_person)}}</dd>
-      </dl>
+    
       <dl class="row">
       <dt class="col-sm-2">Package Details:</dt>
       <dd class="col-sm-2">{{($item->details)}}</dd>

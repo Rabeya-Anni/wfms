@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="{{url('Website/css/animate.css')}}">
     <link rel="stylesheet" href="{{url('Website/css/slicknav.css')}}">
     <link rel="stylesheet" href="{{url('Website/css/style.css')}}">
-    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+    <link rel="stylesheet" href="{{url('Website/css/responsive.css')}}"> 
 </head>
 
 <body>

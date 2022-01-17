@@ -10,11 +10,6 @@
   </div>
   
   <div class="form-group">
-    <label for="exampleInputPassword1">Price per person</label>
-    <input name="price_per_person" type="number" class="form-control"  placeholder="Price"required>
-  </div>
-
-  <div class="form-group">
     <label for="exampleInputEmail1">Details</label>
     <input name="details" type="text" class="form-control" placeholder="Details"required>  
   </div>

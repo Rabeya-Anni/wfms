@@ -39,14 +39,12 @@ class ItemController extends Controller
         }
         $request->validate([
              'name'=>'required',
-             'price_per_person'=>'required',
              'details'=>'required',
              'image'=>'required',
          ]);
         try{
             Item::create([
             'name'=>$request->name,
-            'price_per_person'=>$request->price_per_person,
             'details'=>$request->details,
             'image'=>$filename,
           ]);
@@ -80,7 +78,6 @@ class ItemController extends Controller
         try{
             $item->update([
                 'name'=>$request->name,
-                'price_per_person'=>$request->price_per_person,
                 'details'=>$request->details,
                 'image'=>$filename,
             ]);

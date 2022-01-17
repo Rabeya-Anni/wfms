@@ -15,7 +15,7 @@ class GiveRequestFormController extends Controller
      */
     public function giverequestform()
     {
-        // $requests=Request::all();
+        // $foodrequests = Foodrequest::all();
         return view ('website.layouts.foodrequest.giverequestform');  
     }
 
@@ -39,8 +39,10 @@ class GiveRequestFormController extends Controller
     {
         try{
             Foodrequest::create([
+                'name'=>$request->name,
                 'type'=>$request->type,
                 'food_quantity'=>$request->food_quantity,
+               
                 
             
           ]);

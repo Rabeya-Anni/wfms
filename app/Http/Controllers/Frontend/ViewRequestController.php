@@ -13,8 +13,9 @@ class ViewRequestController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function viewrequest(Request $request )
+    public function viewrequest()
     {
+        
         $foodrequests = Foodrequest::all();
         return view('website.layouts.requeststatus.viewrequeststatus',compact('foodrequests'));
     }

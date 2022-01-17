@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\contentcontroller;
 use App\Http\Controllers\Backend\PackageController;
+use App\Http\Controllers\Backend\PackageItemController;
 use App\Http\Controllers\Backend\ItemController;
 use App\Http\Controllers\Backend\CustomerController;
 use App\Http\Controllers\Backend\OrderController;
@@ -158,6 +159,9 @@ Route::get('/package/edit/{id}',[PackageController::class, 'packageedit'])->name
 Route::put('/package/update/{id}',[PackageController::class, 'packageupdate'])->name('package.update');
 Route::get('/package/delete/{id}',[PackageController::class, 'packagedelete'])->name('package.delete');
 
+
+//package-item route
+Route::get('/packageitem',[PackageItemController::class, 'packageitem'])->name('package.item');
 
 //item route
 Route::get('/item',[ItemController::class, 'item'])->name('item');

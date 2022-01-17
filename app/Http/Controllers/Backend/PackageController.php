@@ -5,12 +5,14 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Package;
+use App\Models\Item;
 
 class PackageController extends Controller
 {
 
     public function package(Request $request)
     {
+        
 
         $search = $request->query('search');
         if($search){
@@ -26,11 +28,15 @@ class PackageController extends Controller
     public function packageform()
     {
         $packages = Package::all();
-        return view('admin.layout.package.packageform');//compact("packages"));
-        //$dd(package);
+        $items = Item::all();
+        return view('admin.layout.package.packageform',compact("packages",'items'));
+        
     }
     public function packagestore(Request $request)
     {
+        // dd($request->all());
+
+
 
         if($request->hasFile('image')){
             $file = $request->file('image');
@@ -40,17 +46,28 @@ class PackageController extends Controller
         // dd($request->all());
         $request->validate([
              'name'=>'required',
-             'price_per_person'=>'required',
              'details'=>'required',
+             'price_per_person'=>'required',
+             'selected_item'=>'required',
         ]);
 
         try{
-            Package::create([
+          $s=  Package::create([
                 'name'=>$request->name,
                 'price_per_person'=>$request->price_per_person,
                 'details'=>$request->details,
+                // 'selected_item'=>json_encode($request->selected_item),
                 'image'=>$filename,
             ]);
+
+            foreach($request->selected_item as $item)
+            {
+                PackageItem::create([
+                    'package_id'=>$s->id,
+                    'item_id'=>$item
+                ]);
+            }
+             
 
             return redirect()->route('package')->with('success', 'Profile updated!');
         }
@@ -81,8 +98,9 @@ class PackageController extends Controller
         try{
             $package->update([
                 'name'=>$request->name,
-                'price_per_person'=>$request->price_per_person,
                 'details'=>$request->details,
+                'price_per_person'=>$request->price_per_person,
+                'selected_item'=>$request->selected_item,
                 'image'=>$filename,
             ]);
 

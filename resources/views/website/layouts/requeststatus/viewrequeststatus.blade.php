@@ -18,6 +18,7 @@
   <thead>
     <tr>
       <th scope="col">Serial</th>
+      <th scope="col">Name</th>
       <th scope="col">Type</th>
       <th scope="col">Food Quantity</th>
       <th scope="col">Status</th>
@@ -27,6 +28,7 @@
   @foreach($foodrequests as $key=>$foodrequest)
     <tr>
     <th scope="row">{{$key+1}}</th>
+    <td>{{($foodrequest->name)}}</td>
     <td>{{($foodrequest->type)}}</td>
     <td>{{($foodrequest->food_quantity)}}</td>
     <td>{{($foodrequest->status)}}</td>

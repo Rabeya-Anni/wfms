@@ -21,7 +21,9 @@
 			<div class="agileits-top">
 			<form action="{{route('employeeregistration.store')}}" method="post" enctype="multipart/form-data">
 			@csrf
+			        <!-- employee Role -->
                     <input type="hidden" value="employee" name="employee_role">
+					<!-- employee Role -->
 					<input class="text" type="text" name="username" placeholder="Username" required=""><br>
 					<input class="text" type="email" name="email" placeholder="Email" required=""><br>
 					<input class="text" type="password" name="password" placeholder="Password" required=""><br>

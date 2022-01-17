@@ -46,8 +46,8 @@
                             </h3>
                             <ul>
                               <li>GREEN BOWL CATERING</li><br>
-                              <li><a href="#">Contact Number</a></li>
-                              <li><a href="#">Business Email</a></li><br>
+                              <li><a href="#">Contact Number: +8801 7222 81265</a></li>
+                              <li><a href="#">Business Email: greenbowl@gmail.com</a></li><br>
                               <li>Business Time:(8:00am to 12:00am)</li> 
                             </ul>
                         </div>

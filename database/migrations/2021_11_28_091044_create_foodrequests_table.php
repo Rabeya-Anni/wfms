@@ -15,6 +15,7 @@ class CreateFoodRequestsTable extends Migration
     {
         Schema::create('foodrequests', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->string('type');
             $table->integer('food_quantity');
             $table->string('status')->default('pending');

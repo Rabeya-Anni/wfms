@@ -33,8 +33,9 @@
     <tr>
       <th scope="col">Serial</th>
       <th scope="col">Name</th>
-      <th scope="col">Price per person</th>
       <th scope="col">Details</th>
+      <th scope="col">Price per person</th>
+      <th scope="col">Selected Item</th>
       <th scope="col">Image</th>
       <th scope="col">Action</th>
     </tr>
@@ -44,8 +45,9 @@
     <tr>
     <th scope="row">{{$key+1}}</th>
       <td>{{($package->name)}}</td>
-      <td>{{($package->price_per_person)}}</td>
       <td>{{($package->details)}}</td>
+      <td>{{($package->price_per_person)}}</td>
+      <td>{{($package->selected_item)}}</td>
       <td><img src = "{{(url('/uploads/'.$package->image))}}" alt="package image" width="100px"></td>
       <td>
         <a class="btn btn-warning" href="{{route('package.view',$package->id)}}">View</a>

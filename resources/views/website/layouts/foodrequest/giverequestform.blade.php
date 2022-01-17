@@ -41,6 +41,7 @@ letter-spacing: 4px;margin-left: 105px;">Back to Home</a>
 			<div class="agileits-top">
 			<form action="{{route('giverequestform.store')}}" method="post" enctype="multipart/form-data">
 			@csrf
+			        <input class="text" type="text" name="name" placeholder="Name" required=""><br>
                     <input class="text" type="text" name="type" placeholder="Type" required=""><br>
                     <input class="text" type="text" name="food_quantity" placeholder="Food Quantity" required="">
 					
