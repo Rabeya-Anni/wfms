@@ -10,21 +10,25 @@
 
 <h1>Order Details</h1>
 <dl class="row">
-      <dt class="col-sm-2">Food Details:</dt>
-      <dd class="col-sm-2">{{($order->food_details)}}</dd>
+      <dt class="col-sm-2">User_id:</dt>
+      <dd class="col-sm-2">{{($order->user_id)}}</dd>
+      </dl>
+      <dt class="col-sm-2">Package Name:</dt>
+      <dd class="col-sm-2">{{($order->package_name)}}</dd>
       </dl>
       <dl class="row">
-      <dt class="col-sm-2">Order Quantity:</dt>
-      <dd class="col-sm-2">{{($order->order_quantity)}}</dd>
+      <dt class="col-sm-2">Price:</dt>
+      <dd class="col-sm-2">{{($order->price)}}</dd>
       </dl>
       <dl class="row">
-      <dt class="col-sm-2">Address:</dt>
-      <dd class="col-sm-2">{{($order->address)}}</dd>
+      <dt class="col-sm-2">Quantity:</dt>
+      <dd class="col-sm-2">{{($order->quantity)}}</dd>
       </dl>
       <dl class="row">
-      <dt class="col-sm-2">Date:</dt>
-      <dd class="col-sm-2">{{($order->date)}}</dd>
+      <dt class="col-sm-2">Sub Total:</dt>
+      <dd class="col-sm-2">{{($order->sub_total)}}</dd>
       </dl>
+      
 
 @endsection
 <script language="javascript">

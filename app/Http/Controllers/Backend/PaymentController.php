@@ -18,57 +18,50 @@ class PaymentController extends Controller
         }
 
         $payments = Payment::all();
-        return view('admin.layout.payment.payment');
+        return view('admin.layout.payment.payment',compact('payments'));
     }
 
 
-    // public function paymentstore(Request $request)
-    // {
-    //     try{
-    //         Payment::create([
-    //         'customer_id'=>$request->customer_id,
-    //         'order_id'=>$request->order_id,
-    //         'status'=>$request->status,
+    public function paymentstore(Request $request)
+    {
+        
+            Payment::create([
+            'user_id'=>$request->user_id,
+            'order_id'=>$request->order_id,
+            'total'=>$request->total,
+            'status'=>$request->status,
             
-    //       ]);
+          ]);
 
-    //       return redirect()->route('payment')->with('success', 'Profile updated!');
-    //      }
-    //      catch(Throwable $throw)
-    //      {
-    //       return redirect()->back()->with('error', 'Profile updated!');
-    //      }
-    // }
+         
+          return redirect()->back();
+         
+    }
+
+    public function paymentapprove($id){
+        $payment = Payment::find($id);
+        if($payment->status)
+        {
+            $payment->update([
+                'status' => 'approved'
+            ]);
+        }
+        else
+        {
+            $payment->update([
+                'status' => 'cancelled'
+            ]);   
+        }
+           
+        return redirect()->back()->with('success','Request Approve.');
+    }
 
     public function paymentview($id){
         $payment = Payment::find($id);
         return view('admin.layout.payment.paymentview',compact('payment'));
     }
 
-    public function paymentedit($id){
-        $payment = Payment::find($id);
-        return view('admin.layout.payment.paymentedit',compact('payment'));
-    }
-
-    public function paymentupdate(Request $request,$id){
-        $payment = Payment::find($id);
-
-        
-        try{
-            $payment->update([
-            'customer_id'=>$request->customer_id,
-            'order_id'=>$request->order_id,
-            'status'=>$request->status,
-            
-            ]);
-
-          return redirect()->route('payment')->with('success', 'Profile updated!');
-        }
-         catch(Throwable $throw)
-         {
-          return redirect()->back()->with('error', 'Profile updated!');
-         }
-    }
+   
     public function paymentdelete($id){
         Payment::find($id)->delete();
         return redirect()->back()->with('success','Payment Delete.');

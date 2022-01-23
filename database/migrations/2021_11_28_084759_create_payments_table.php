@@ -15,9 +15,10 @@ class CreatePaymentsTable extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->integer('customer_id');
+            $table->integer('user_id');
             $table->integer('order_id');
-            $table->string('status');
+            $table->integer('total');
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
     }

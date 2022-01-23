@@ -2,6 +2,18 @@
 
 @section('content')
 
+@if(session('success'))
+        <div class="alert alert-success" style="text-align:center; background:white">
+            {!! session('success') !!}
+        </div>
+@endif
+
+@if(session('error'))
+        <div class="alert alert-danger">
+            {!! session('error') !!}
+    </div>
+@endif
+
 
     <h1 style="padding-top: 100px;">My Cart ({{session()->has('cart') ? count(session()->get('cart')):0}})</h1>
     <table class="table">
@@ -12,6 +24,7 @@
             <th scope="col">Price</th>
             <th scope="col">Quantity</th>
             <th scope="col">Sub Total</th>
+
         </tr>
         </thead>
         <tbody>
@@ -26,7 +39,7 @@
             <td>{{$cart['price_per_person'] * $cart['package_qty']}}</td>
         </tr>
         @endforeach
-            @endif
+     @endif
 
         </tbody>
     </table>

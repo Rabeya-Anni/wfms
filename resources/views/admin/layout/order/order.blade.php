@@ -33,24 +33,35 @@
   <thead>
     <tr>
       <th scope="col">Serial</th>
-      <th scope="col">Food Details</th>
-      <th scope="col">Order Quantity</th>
-      <th scope="col">Address</th>
-      <th scope="col">Date</th>
+      <th scope="col">User ID</th>
+      <th scope="col">Package Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Sub Total</th>
+      <!-- <th scope="col">Total</th> -->
       <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
+    <!-- @php
+    $total= 0;
+    @endphp -->
   @foreach($orders as $key=>$order)
     <tr>
     <th scope="row">{{$key+1}}</th>
-    <td>{{($order->food_details)}}</td>
-      <td>{{($order->order_quantity)}}</td>
-      <td>{{($order->address)}}</td>
-      <td>{{($order->date)}}</td>
-      <td>
+    <td>{{($order->orderRelation->username)}}</td>
+    <td>{{($order->package_name)}}</td>
+    <td>{{($order->price)}}</td>
+    <td>{{($order->quantity)}}</td>
+    <td>{{($order->sub_total)}}</td>
+    <!-- @php
+    $subtotal = $order->sub_total;
+    $total = $total + $subtotal;
+    @endphp -->
+    <!-- <td>{{$total}}</td> -->
+
+    <td>
         <a class="btn btn-warning" href="{{route('order.view',$order->id)}}">View</a>
-        <a class="btn btn-success" href="{{route('order.edit',$order->id)}}">Edit</a>
         <a class="btn btn-danger" href="{{route('order.delete',$order->id)}}">Delete</a>
       </td> 
     </tr>

@@ -41,7 +41,6 @@ letter-spacing: 4px;margin-left: 105px;">Back to Home</a>
 			<div class="agileits-top">
 			<form action="{{route('giverequestform.store')}}" method="post" enctype="multipart/form-data">
 			@csrf
-			        <input class="text" type="text" name="name" placeholder="Name" required=""><br>
                     <input class="text" type="text" name="type" placeholder="Type" required=""><br>
                     <input class="text" type="text" name="food_quantity" placeholder="Food Quantity" required="">
 					
@@ -63,11 +62,7 @@ letter-spacing: 4px;margin-left: 105px;">Back to Home</a>
 				
 			</div>
 		</div>
-		<!-- copyright -->
-		<!-- <div class="colorlibcopy-agile">
-			<!-- <p>© 2018 Colorlib Signup Form. All rights reserved | Design by <a href="https://colorlib.com/" target="_blank">Colorlib</a></p> -->
-		<!-- </div> --> -->
-		<!-- //copyright -->
+
 		<ul class="colorlib-bubbles">
 			<li></li>
 			<li></li>

@@ -24,8 +24,8 @@
     <label for="exampleFormControlSelect2">Select Item (press ctrl to select multiple value) </label>
     <select multiple name="selected_item[]" type="text" class="form-control" id="exampleFormControlSelect2">
       
-      @foreach (json_decode($items) as $data)
-      <option value="{{$data->id}}">{{($data->name)}}</option>
+    @foreach($items as $key=>$item)
+      <option value="{{$item->id}}">{{($item->name)}}</option>
       @endforeach 
     </select>
   </div>

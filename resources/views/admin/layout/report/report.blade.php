@@ -1,0 +1,77 @@
+@extends('admin.master')
+
+
+@section('content')
+@if(session('success'))
+        <div class="alert alert-success">
+            {!! session('success') !!}
+        </div>
+@endif
+
+@if(session('error'))
+        <div class="alert alert-danger">
+            {!! session('error') !!}
+    </div>
+@endif
+
+<!-- report start -->
+<div>
+    <form>
+        <div class="input-group rounded mt-3 mb-2">
+            <input type="date" class="form-control rounded" value="{{request()->from_date}}" name="from_date" placeholder="Search" aria-label="Search"
+                   aria-describedby="search-addon" />
+            <input type="date" class="form-control rounded" value="{{request()->to_date}}" name="to_date" placeholder="Search" aria-label="Search"
+                   aria-describedby="search-addon" />
+            <span class="input-group-text border-0" id="search-addon">
+    <button type="submit">submit</button>
+  </span>
+        </div>
+    </form>
+</div>
+<!-- report End-->
+
+<center>
+<h4>Report</h4>
+</center>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Serial</th>
+      <th scope="col">User ID</th>
+      <th scope="col">Package Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Sub Total</th>
+      <!-- <th scope="col">Total</th> -->
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- @php
+    $total= 0;
+    @endphp -->
+  @foreach($orders as $key=>$order)
+    <tr>
+    <th scope="row">{{$key+1}}</th>
+    <td>{{($order->orderRelation->username)}}</td>
+    <td>{{($order->package_name)}}</td>
+    <td>{{($order->price)}}</td>
+    <td>{{($order->quantity)}}</td>
+    <td>{{($order->sub_total)}}</td>
+    <!-- @php
+    $subtotal = $order->sub_total;
+    $total = $total + $subtotal;
+    @endphp -->
+    <!-- <td>{{$total}}</td> -->
+
+    <td>
+        <a class="btn btn-warning" href="{{route('order.view',$order->id)}}">View</a>
+        <a class="btn btn-danger" href="{{route('order.delete',$order->id)}}">Delete</a>
+      </td> 
+    </tr>
+    @endforeach  
+  </tbody>
+</table>
+
+@endsection

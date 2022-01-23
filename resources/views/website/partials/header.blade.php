@@ -13,8 +13,8 @@
 									<li></li><br/>
                                         <li><a href="{{route('about')}}">About</a></li>
                                         <li><a href="{{route('showpackage')}}">Packages</a></li>
-                                        <li><a href="{{route('showitem')}}">Items</a></li>
-                                        <li><a href="{{route('gallery')}}">Gallery</a></li>
+                                        <li><a href="{{route('showitem')}}">Item Gallery</a></li>
+                                        <!-- <li><a href="{{route('gallery')}}">Gallery</a></li> -->
                                         <li><a href="{{route('location')}}">Location</a></li></li>
                                         <li><a href="{{route('contact')}}">Contact</a></li>
                                         <div class="logo-img d-none d-lg-block">
@@ -36,6 +36,8 @@
                                         <li class="nav-item">
                                         <a class="nav-link" href="{{route('cart.get')}}">Cart ({{session()->has('cart') ? count(session()->get('cart')):0}})</a>
                                         </li>
+                                        <li><a href="{{route('orderdetails')}}">My Order</a></li>
+
                                       
                                     </ul>
                                 </nav>

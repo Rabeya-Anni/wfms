@@ -9,4 +9,8 @@ class Order extends Model
 {
     use HasFactory;
     protected $guarded=[];
+
+    public function orderRelation(){
+        return $this->belongsTo(User::class,'user_id','id');
+    }
 }

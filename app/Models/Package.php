@@ -9,4 +9,8 @@ class Package extends Model
 {
     use HasFactory;
     protected $guarded=[];
+
+    public function pack(){
+        return $this->hasMany(PackageItem::class);
+    }
 }

@@ -20,6 +20,8 @@ color: #fff; background: #76b852; outline: none; border: 1px solid #76b852;
 cursor: pointer; padding: 0.9em;-webkit-appearance: none; width: 100%; margin: 2em 0; 
 letter-spacing: 4px;margin-left: 105px;">Back to Home</a>
 
+<!-- <h3><a class="btn btn-info" style="color:white" href="{{route('home')}}">Back to Home</a></h3> -->
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
@@ -35,31 +37,22 @@ letter-spacing: 4px;margin-left: 105px;">Back to Home</a>
 	<div class="main-w3layouts wrapper">
 		<h1>GREEN BOWL CATERING</h1>
 		<div class="main-agileinfo">
-		<h1 class="text-uppercase text-center mb-5">Food order Form</h1>
+		<h1 class="text-uppercase text-center mb-5"> Payment Form</h1>
 			<div class="agileits-top">
-			<form action="{{route('giveorder.store')}}" method="post" enctype="multipart/form-data">
+			<form action="{{route('paymentform.store')}}" method="post" enctype="multipart/form-data">
 			@csrf
-			        <input class="text" type="text" name="food_details" placeholder="Food Details" required=""><br>
-					<input class="text" type="text" name="order_quantity" placeholder="Order Quantity" required=""><br>
-					<input class="text" type="text" name="address" placeholder="Address" required=""><br>
-					<input class="text" type="date" name="date" placeholder="Date" required=""><br>
-					<div class="wthree-text">
-						<!-- <label class="anim">
-							<input type="checkbox" class="checkbox" required="">
-							<span>I Agree To The Terms & Conditions</span>
-						</label> -->
-						<!-- <div class="clear"> </div> -->
-					</div>
-					<input type="submit" value="Order Submit">
+                    <input class="text" type="text" name="amount" placeholder="Amount" required=""><br>
+					
+					
+                    <input type="submit" value="PAYMENT SUBMIT">
+                   
+
+					
 				</form>
 				
 			</div>
 		</div>
-		<!-- copyright -->
-		<!-- <div class="colorlibcopy-agile">
-		<p>© 2018 Colorlib Signup Form. All rights reserved | Design by <a href="https://colorlib.com/" target="_blank">Colorlib</a></p> -->
-		<!-- </div> --> -->
-		<!-- //copyright -->
+		
 		<ul class="colorlib-bubbles">
 			<li></li>
 			<li></li>

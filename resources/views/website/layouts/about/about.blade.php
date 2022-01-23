@@ -33,8 +33,7 @@
                             </p> -->
 							<div class="order_info">
                             <h1>Our Client Choices</h1>
-                            <p>1 Meal   |  2 Meal <br>
-                                    3 Meal   |   4 Meal <br>
+                            <p>First Meal   |  Main Meal  | Final Meal <br>
                             </p>
                         </div>
                     </div>

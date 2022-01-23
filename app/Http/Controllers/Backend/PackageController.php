@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Package;
+use App\Models\PackageItem;
 use App\Models\Item;
 
 class PackageController extends Controller
@@ -22,6 +23,7 @@ class PackageController extends Controller
         }
 
         $packages = Package::all();
+        // dd($packages);
         return view('admin.layout.package.package',compact('packages'));
         
     }
@@ -48,15 +50,17 @@ class PackageController extends Controller
              'name'=>'required',
              'details'=>'required',
              'price_per_person'=>'required',
-             'selected_item'=>'required',
+             
         ]);
 
         try{
+
+             // field name from db || field name from form
+
           $s=  Package::create([
                 'name'=>$request->name,
                 'price_per_person'=>$request->price_per_person,
                 'details'=>$request->details,
-                // 'selected_item'=>json_encode($request->selected_item),
                 'image'=>$filename,
             ]);
 
@@ -78,7 +82,7 @@ class PackageController extends Controller
          
     }
     public function packageview($id){
-        $package = Package::find($id);
+        $package = Package::with('pack')->find($id);
         return view('admin.layout.package.packageview',compact('package'));
     }
 

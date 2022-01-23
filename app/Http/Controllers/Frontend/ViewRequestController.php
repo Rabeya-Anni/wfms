@@ -16,7 +16,7 @@ class ViewRequestController extends Controller
     public function viewrequest()
     {
         
-        $foodrequests = Foodrequest::all();
+        $foodrequests = Foodrequest::where('user_id',auth()->user()->id)->get();
         return view('website.layouts.requeststatus.viewrequeststatus',compact('foodrequests'));
     }
 

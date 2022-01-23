@@ -1,7 +1,7 @@
 @extends('website.master')
 
 @section('content')
-<div class="service_area">
+<div class="service_area"><br>
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">

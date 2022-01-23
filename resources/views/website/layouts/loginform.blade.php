@@ -39,7 +39,7 @@
 		<!-- copyright -->
 		<!-- <div class="colorlibcopy-agile">
 			<!-- <p>© 2018 Colorlib Signup Form. All rights reserved | Design by <a href="https://colorlib.com/" target="_blank">Colorlib</a></p> -->
-		<!-- </div> --> -->
+		<!-- </div> --> 
 		<!-- //copyright -->
 		<ul class="colorlib-bubbles">
 			<li></li>

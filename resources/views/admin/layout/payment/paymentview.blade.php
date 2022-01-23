@@ -9,9 +9,21 @@
     <div id="divToPrint">
 
 <h1>Payment Details</h1>
-      <!-- <p>{{($payment->customer_id)}}</p>
-      <p>{{($payment->order_id)}}</p>
-      <p>{{($payment->status)}}</p> -->
+<dl class="row">
+      <dt class="col-sm-2">User Name:</dt>
+      <dd class="col-sm-2">{{($payment->user_id)}}</dd>
+      </dl>
+      <dt class="col-sm-2">Order Name:</dt>
+      <dd class="col-sm-2">{{($payment->order_id)}}</dd>
+      </dl>
+      <dl class="row">
+      <dt class="col-sm-2">Total:</dt>
+      <dd class="col-sm-2">{{($payment->total)}}</dd>
+      </dl>
+      <dl class="row">
+      <dt class="col-sm-2">Status:</dt>
+      <dd class="col-sm-2">{{($payment->status)}}</dd>
+      </dl>
       
 
 

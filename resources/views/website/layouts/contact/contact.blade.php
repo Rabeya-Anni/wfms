@@ -34,23 +34,23 @@
                         <h2 class="contact-title">Information</h2>
                     </div>
                         <div class="media contact-info">
-                            <span class="contact-info__icon"><i class="ti-home"></i></span>
+                            <span class="contact-info__icon"><i class="fa fa-home"></i></span>
                             <div class="media-body">
-                                <h3>[Street Num][Street Name],[Area],[State], South Africa</h3>
+                                <h3>[Uttara-Dhaka]</h3>
                                 <p>[PO Box]</p>
                             </div>
                         </div>
                         <div class="media contact-info">
-                            <span class="contact-info__icon"><i class="ti-tablet"></i></span>
+                            <span class="contact-info__icon"><i class="fa fa-tablet"></i></span>
                             <div class="media-body">
-                                <h3>[Business Number]</h3>
-                                <p>[Business Times]</p>
+                                <h3>[+8801 7222 81265]</h3>
+                                <p>[8:00am to 12:00am]</p>
                             </div>
                         </div>
                         <div class="media contact-info">
-                            <span class="contact-info__icon"><i class="ti-email"></i></span>
+                            <span class="contact-info__icon"><i class="fa fa-envelope"></i></span>
                             <div class="media-body">
-                                <h3>[Business E-Mail]</h3>
+                                <h3>[greenbowl@gmail.com]</h3>
                                 <p>Send us a e-mail anytime for a event!!!</p>
                             </div>
                         </div>

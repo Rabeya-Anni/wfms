@@ -32,8 +32,9 @@
   <thead>
     <tr>
       <th scope="col">Serial</th>
-      <th scope="col">Customer ID</th>
+      <th scope="col">User ID</th>
       <th scope="col">Order ID</th>
+      <th scope="col">Total</th>
       <th scope="col">Status</th>
       <th scope="col">Action</th>
     </tr>
@@ -42,12 +43,13 @@
   @foreach($payments as $key=>$payment)
     <tr>
       <th scope="row">{{$key+1}}</th>
-      <td>{{($payment->customer_id)}}</td>
+      <td>{{($payment->user_id)}}</td>
       <td>{{($payment->order_id)}}</td>
+      <td>{{($payment->total)}}</td> 
       <td>{{($payment->status)}}</td> 
       <td>
+        <a class="btn btn-success" href="{{route('payment.approve',$payment->id)}}">Approve</a>
         <a class="btn btn-warning" href="{{route('payment.view',$payment->id)}}">View</a>
-        <a class="btn btn-success" href="{{route('payment.edit',$payment->id)}}">Edit</a>
         <a class="btn btn-danger" href="{{route('payment.delete',$payment->id)}}">Delete</a>
       </td> 
     </tr>

@@ -14,6 +14,8 @@ use App\Http\Controllers\Backend\DistributionController;
 use App\Http\Controllers\Backend\AddnewpackageController;
 use App\Http\Controllers\Backend\EmployeeController;
 use App\Http\Controllers\Backend\AdminLoginController;
+use App\Http\Controllers\Backend\ReportController;
+
 
 //Website
 use App\Http\Controllers\Frontend\HomeController;
@@ -30,6 +32,9 @@ use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\GalleryController;
 use App\Http\Controllers\Frontend\UserProfileController;
 use App\Http\Controllers\Frontend\ViewRequestController;
+use App\Http\Controllers\Frontend\OrderDetailsController;
+use App\Http\Controllers\Frontend\PaymentFromController;
+
 
 
 /*
@@ -57,14 +62,24 @@ Route::get('/home/showitem',[ShowItemController::class,'showitem'])->name('showi
 
 //Give order route
 Route::get('/home/giveorder',[GiveOrderController::class,'giveorder'])->name('giveorder');
-Route::post('/home/giveorder/store',[GiveOrderController::class,'giveorderstore'])->name('giveorder.store');
+// Route::post('/home/giveorder/store',[GiveOrderController::class,'giveorderstore'])->name('giveorder.store');
+
+
+//Order details route
+Route::get('/home/orderdetails',[OrderDetailsController::class,'orderdetails'])->name('orderdetails');
+
+
+//payment form route
+Route::get('/home/paymentform',[PaymentFromController::class,'paymentform'])->name('paymentform');
+Route::post('/home/paymentform/store',[PaymentFromController::class,'paymentformstore'])->name('paymentform.store');
 
 
 //Give request route
 Route::get('/home/giverequestform',[GiveRequestFormController::class,'giverequestform'])->name('giverequestform');
 Route::post('/home/giverequestform/store',[GiveRequestFormController::class,'giverequestformstore'])->name('giverequestform.store');
 
-//Give request route//Add organization//
+
+//Give request route//--->Add organization//
 Route::get('/home/giverequest',[GiveRequestController::class,'giverequest'])->name('giverequest');
 Route::post('/home/giverequest/store',[GiveRequestController::class,'giverequeststore'])->name('giverequest.store');
 
@@ -163,6 +178,7 @@ Route::get('/package/delete/{id}',[PackageController::class, 'packagedelete'])->
 //package-item route
 Route::get('/packageitem',[PackageItemController::class, 'packageitem'])->name('package.item');
 
+
 //item route
 Route::get('/item',[ItemController::class, 'item'])->name('item');
 Route::get('/item-form',[ItemController::class, 'itemform'])->name('itemform');
@@ -194,31 +210,28 @@ Route::get('/employee/delete/{id}',[EmployeeController::class, 'employeedelete']
 
 //order route
 Route::get('/order',[OrderController::class, 'order'])->name('order');
-Route::post('/order/store',[OrderController::class, 'orderstore'])->name('order.store');
+// Route::post('/order/store',[OrderController::class, 'orderstore'])->name('order.store');
 Route::get('/order/view/{id}',[OrderController::class, 'orderview'])->name('order.view');
-Route::get('/order/edit/{id}',[OrderController::class, 'orderedit'])->name('order.edit');
-Route::put('/order/update/{id}',[OrderController::class, 'orderupdate'])->name('order.update');
 Route::get('/order/delete/{id}',[OrderController::class, 'orderdelete'])->name('order.delete');
 
 
 //payment route
 Route::get('/payment',[PaymentController::class, 'payment'])->name('payment');
-
-
-// Route::post('/payment/store',[PaymentController::class, 'paymentstore'])->name('payment.store');
+Route::post('/payment/store',[PaymentController::class, 'paymentstore'])->name('payment.store');
+Route::get('/payment/status/approve/{id}',[PaymentController::class, 'paymentapprove'])->name('payment.approve');
 Route::get('/payment/view/{id}',[PaymentController::class, 'paymentview'])->name('payment.view');
-Route::get('/payment/edit/{id}',[PaymentController::class, 'paymentedit'])->name('payment.edit');
-Route::put('/payment/update/{id}',[PaymentController::class, 'paymentupdate'])->name('payment.update');
 Route::get('/payment/delete/{id}',[PaymentController::class, 'paymentdelete'])->name('payment.delete');
 
 
 
 //food request route
 Route::get('/request',[RequestController::class, 'request'])->name('request');
-Route::get('/request/store',[RequestController::class, 'requeststore'])->name('request.store');
+Route::post('/request/store',[RequestController::class, 'requeststore'])->name('request.store');
 Route::get('/request/status/approve/{id}',[RequestController::class, 'statusapprove'])->name('status.approve');
 Route::get('/request/status/cancel/{id}',[RequestController::class, 'statuscancel'])->name('status.cancel');
 Route::get('/request/delete/{id}',[RequestController::class, 'requestdelete'])->name('request.delete');
+
+
 
 //organization route
 Route::get('/organization',[OrganizationController::class, 'organization'])->name('organization');
@@ -230,6 +243,7 @@ Route::put('/organization/update/{id}',[OrganizationController::class, 'organiza
 Route::get('/organization/delete/{id}',[OrganizationController::class, 'organizationdelete'])->name('organization.delete');
 
 
+
 //distribution route
 Route::get('/distribution',[DistributionController::class, 'distribution'])->name('distribution');
 Route::get('/distributionform',[DistributionController::class, 'distributionform'])->name('distributionform');
@@ -238,6 +252,11 @@ Route::get('/distribution/view/{id}',[DistributionController::class, 'distributi
 Route::get('/distribution/edit/{id}',[DistributionController::class, 'distributionedit'])->name('distribution.edit');
 Route::put('/distribution/update/{id}',[DistributionController::class, 'distributionupdate'])->name('distribution.update');
 Route::get('/distribution/delete/{id}',[DistributionController::class, 'distributiondelete'])->name('distribution.delete');
+
+
+
+//report route
+Route::get('/report',[ReportController::class, 'report'])->name('report');
 
 
 

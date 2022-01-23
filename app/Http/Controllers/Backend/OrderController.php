@@ -21,18 +21,23 @@ class OrderController extends Controller
         return view('admin.layout.order.order',compact('orders'));
         }
 
-        $orders = Order::all();
+        $orders = Order::with('orderRelation')->get();
+        // dd($orders);
         return view('admin.layout.order.order',compact('orders'));
     }
 
     public function orderstore(Request $request)
     {
+        // dd($request->all());
         try{
             Order::create([
-            'food_details'=>$request->food_details,
-            'order_quantity'=>$request->order_quantity,
-            'address'=>$request->address,
-            'date'=>$request->date,
+            'user_id'=>$request->user_id,
+            'package_name'=>$request->package_name,
+            'price'=>$request->price,
+            'quantity'=>$request->quantity,
+            'sub_total'=>$request->sub_total,
+
+
             
           ]);
 
@@ -49,35 +54,16 @@ class OrderController extends Controller
         return view('admin.layout.order.orderview',compact('order'));
     }
 
-    public function orderedit($id){
-        $order = Order::find($id);
-        return view('admin.layout.order.orderedit',compact('order'));
-    }
+  
 
-    public function orderupdate(Request $request,$id){
-        $order = Order::find($id);
-
-        
-        try{
-            $order->update([
-            'food_details'=>$request->food_details,
-            'order_quantity'=>$request->order_quantity,
-            'address'=>$request->address,
-            'date'=>$request->date,
-            
-            ]);
-
-          return redirect()->route('order')->with('success', 'Profile updated!');
-        }
-         catch(Throwable $throw)
-         {
-          return redirect()->back()->with('error', 'Profile updated!');
-         }
-    }
+   
+    
     public function orderdelete($id){
         Order::find($id)->delete();
         return redirect()->back()->with('success','Order Delete.');
     }
+
+    // Add to cart.......>
 
     public function addtocart($id)
     {

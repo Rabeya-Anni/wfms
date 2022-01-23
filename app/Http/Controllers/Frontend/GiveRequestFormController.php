@@ -38,8 +38,9 @@ class GiveRequestFormController extends Controller
     public function giverequestformstore(Request $request)
     {
         try{
+            // dd($request->all());
             Foodrequest::create([
-                'name'=>$request->name,
+                'user_id'=>auth()->user()->id,
                 'type'=>$request->type,
                 'food_quantity'=>$request->food_quantity,
                

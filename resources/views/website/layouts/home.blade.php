@@ -31,7 +31,7 @@
                 <div class="col-xl-4 col-md-6">
                     <div class="single_service">
                         <div class="service_icon">
-                            <i class="flaticon-calendar"></i>
+                            <i class="fa fa-calendar-alt"></i>
                         </div>
                         <h4>Event Catering</h4>
                         <p>A Healthy Food, For A Wealthy Mood!</p>
@@ -40,7 +40,7 @@
                 <div class="col-xl-4 col-md-6">
                     <div class="single_service">
                         <div class="service_icon">
-                            <i class="flaticon-businessman"></i>
+                            <i class="fa fa-briefcase"></i>
                         </div>
                         <h4>Corporate Service</h4>
                         <p>A Healthy Food, For A Wealthy Mood!</p>
@@ -49,7 +49,7 @@
                 <div class="col-xl-4 col-md-6">
                     <div class="single_service">
                         <div class="service_icon">
-                            <i class="flaticon-running-man"></i>
+                            <i class="fa fa-running"></i>
                         </div>
                         <h4>Catering On Demand</h4>
                         <p>A Healthy Food, For A Wealthy Mood!</p>
@@ -84,9 +84,7 @@
                         </div>
                         <div class="order_info">
                             <h3><a href="#">First Meal</a></h3>
-                            <p>1 Meal   |  2 Meal <br>
-                                    3 Meal   |   4 Meal <br>
-                            </p>
+                            
                         </div>
                     </div>
                 </div>
@@ -97,9 +95,7 @@
                             </div>
                         <div class="order_info">
                             <h3><a href="#">Main Meal</a></h3>
-                           <p>1 Meal   |  2 Meal <br>
-                                    3 Meal   |   4 Meal <br>
-                            </p>
+                           
                          </div>
                     </div>
                 </div>
@@ -110,9 +106,7 @@
                             </div>
                         <div class="order_info">
                             <h3><a href="#">Pudding/Final Meal</a></h3>
-                            <p>1 Meal   |  2 Meal <br>
-                                    3 Meal   |   4 Meal <br>
-                            </p>
+                            
                         </div>
                     </div>
                 </div>

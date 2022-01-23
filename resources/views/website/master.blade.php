@@ -61,5 +61,10 @@
     <script src="{{url('Website/js/jquery.validate.min.js')}}"></script>
     <script src="{{url('Website/js/mail-script.js')}}"></script>
     <script src="{{url('Website/js/main.js')}}"></script>
+
+    <!-- fontawesome link -->
+    <script src="https://kit.fontawesome.com/cac90b619f.js" crossorigin="anonymous"></script>
+
+
 </body>
 </html>

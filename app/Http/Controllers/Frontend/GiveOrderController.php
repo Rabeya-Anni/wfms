@@ -15,8 +15,26 @@ class GiveOrderController extends Controller
      */
     public function giveorder()
     {
-         $orders=Order::all();
-        return view('website.layouts.order.giveorder',compact('orders'));
+        // dd('true');
+        $cart = session('cart');
+    
+        // dd($cart['price_per_person'] * $cart['package_qty']);
+        // dd(auth()->user());
+        foreach ($cart as $key => $value) {
+            // dd($value['price_per_person'] * $value['package_qty']);
+            
+            Order::create([
+                'user_id'=>auth()->user()->id,
+                'package_name'=>$value['name'],
+                'price'=>$value['price_per_person'],
+                'quantity'=>$value['package_qty'],
+                'sub_total'=>$value['price_per_person'] * $value['package_qty'],
+            ]);
+            return redirect()->back();
+        }
+        
+        //  $orders=Order::all();
+        // return view('website.layouts.order.giveorder',compact('orders'));
     }
 
     /**
@@ -35,24 +53,7 @@ class GiveOrderController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function giveorderstore(Request $request)
-    {
-        try{
-            Order::create([
-            'food_details'=>$request->food_details,
-            'order_quantity'=>$request->order_quantity,
-            'address'=>$request->address,
-            'date'=>$request->date,
-            
-          ]);
-
-          return redirect()->route('giveorder')->with('success', 'Order Confirmed Successfully');
-         }
-         catch(Throwable $throw)
-         {
-          return redirect()->back()->with('error', 'Profile updated!');
-         }
-    }
+   
 
     /**
      * Display the specified resource.

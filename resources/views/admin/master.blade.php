@@ -19,10 +19,20 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
 
+                       
+
                             <div class="sb-sidenav-menu-heading">Core</div>
                             <a class="nav-link" href="{{url('admin')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
+                            </a>
+                            <a class="nav-link" href="{{route('employee')}}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
+                               Employee
+                            </a>
+                            <a class="nav-link" href="{{route('distribution')}}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-donate"></i></div>
+                                Distribution
                             </a>
 
                             <!-- <div class="sb-sidenav-menu-heading">Interface</div> -->
@@ -68,6 +78,7 @@
                                     </div> -->
                                 </nav>
                             </div>
+                            @if(auth()->user()->role=='admin')
                             <div class="sb-sidenav-menu-heading">services</div>
 
                             <a class="nav-link" href="{{route('package')}}">
@@ -85,10 +96,7 @@
                                 Customer
                             </a>
 
-                            <a class="nav-link" href="{{route('employee')}}">
-                                <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
-                               Employee
-                            </a>
+                            
 
                             <a class="nav-link" href="{{route('order')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
@@ -110,15 +118,15 @@
                                 Organization
                             </a>
 
-                            <a class="nav-link" href="{{route('distribution')}}">
-                                <div class="sb-nav-link-icon"><i class="fas fa-donate"></i></div>
-                                Distribution
-                            </a>
+                            
 
-                            <a class="nav-link" href="{{route('package.item')}}">
+                            <a class="nav-link" href="{{route('report')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-donate"></i></div>
-                                Package-Item
+                                Report
                             </a>
+                            @endif
+
+                           
 
                         </div>
                     </div>

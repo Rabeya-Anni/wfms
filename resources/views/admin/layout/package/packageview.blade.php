@@ -23,7 +23,11 @@
       <dd class="col-sm-2">{{($package->details)}}</dd>
       </dl>
       
-      
+      @foreach($package->pack as $pack)
+
+<p>{{$pack->item->name}}</p>
+
+      @endforeach
 
 @endsection
 <script language="javascript">

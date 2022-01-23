@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Foodrequest;
+use App\Models\User;
 
 class RequestController extends Controller
 {
@@ -17,10 +18,13 @@ class RequestController extends Controller
 
     public function requeststore(Request $request)
     {
+
+        dd($request->all());
         
         try{
+            // dd($request->all());
            Foodrequest::create([
-                'name'=>$request->name,
+                'user_id'=>auth()->user()->id,
                 'type'=>$request->type,
                 'food_quantity'=>$request->food_quantity,
                 'status'=>$request->status,

@@ -9,4 +9,10 @@ class PackageItem extends Model
 {
     use HasFactory;
     protected $guarded=[];
+    public $timestamps = false;
+
+
+    public function item(){
+        return $this->belongsTo(Item::class);
+    }
 }
