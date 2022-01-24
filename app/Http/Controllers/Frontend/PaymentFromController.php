@@ -42,6 +42,7 @@ class PaymentFromController extends Controller
 
         // dd($request->all());
         Paymentform::create([
+            
             'amount'=>$request->amount,
           
             

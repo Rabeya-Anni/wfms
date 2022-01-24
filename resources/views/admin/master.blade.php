@@ -121,7 +121,7 @@
                             
 
                             <a class="nav-link" href="{{route('report')}}">
-                                <div class="sb-nav-link-icon"><i class="fas fa-donate"></i></div>
+                                <div class="sb-nav-link-icon"><i class="fas fa-exclamation-circle"></i></div>
                                 Report
                             </a>
                             @endif
@@ -131,8 +131,8 @@
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
-                        <div class="small">Logged in as:</div>
-                        Admin
+                        <div class="small"></div>
+                       
                     </div>
                 </nav>
             </div>

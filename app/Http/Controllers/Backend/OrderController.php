@@ -36,6 +36,8 @@ class OrderController extends Controller
             'price'=>$request->price,
             'quantity'=>$request->quantity,
             'sub_total'=>$request->sub_total,
+            'total'=>$request->total,
+
 
 
             
@@ -85,6 +87,8 @@ class OrderController extends Controller
                     'name' => $package->name,
                     'price_per_person' => $package->price_per_person,
                     'package_qty' => 1,
+                    'sub_total' =>$package['price_per_person'] * 1
+
                 ]
             ];
             session()->put('cart', $cartData);
@@ -101,6 +105,7 @@ class OrderController extends Controller
                 'name' => $package->name,
                 'price_per_person' => $package->price_per_person,
                 'package_qty' => 1,
+                'sub_total' =>$package['price_per_person'] * 1
             ];
 
             session()->put('cart', $cartExist);
@@ -113,6 +118,7 @@ class OrderController extends Controller
         //action: increase product quantity (quantity+1)
 
         $cartExist[$id]['package_qty']++;
+        $cartExist[$id]['sub_total']=$cartExist[$id]['package_qty']*$cartExist[$id]['price_per_person'];
         session()->put('cart', $cartExist);
 
         return redirect()->back()->with('message', 'Product Added to Cart.');
@@ -122,8 +128,9 @@ class OrderController extends Controller
 
     public function getCart()
     {
-       $carts= session()->get('cart');
-        return view('website.layouts.cart.cart',compact('carts'));
+       $carts= session()->get('cart') ?? [];
+       $total = array_sum(array_column($carts, 'sub_total'));
+        return view('website.layouts.cart.cart',compact('carts','total'));
     }
 
     public function clearCart()

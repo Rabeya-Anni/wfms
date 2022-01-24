@@ -17,7 +17,9 @@ class GiveOrderController extends Controller
     {
         // dd('true');
         $cart = session('cart');
-    
+        // dd($cart);
+        
+        $total = 0;
         // dd($cart['price_per_person'] * $cart['package_qty']);
         // dd(auth()->user());
         foreach ($cart as $key => $value) {
@@ -28,9 +30,11 @@ class GiveOrderController extends Controller
                 'package_name'=>$value['name'],
                 'price'=>$value['price_per_person'],
                 'quantity'=>$value['package_qty'],
-                'sub_total'=>$value['price_per_person'] * $value['package_qty'],
+                'sub_total'=>$value['sub_total'],
+                'total'=>array_sum(array_column($cart,'sub_total'))
             ]);
-            return redirect()->back();
+            session()->forget('cart');
+            return redirect()->back()->with('message','Order Placed Successfully.');
         }
         
         //  $orders=Order::all();

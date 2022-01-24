@@ -36,8 +36,9 @@
                                         <li class="nav-item">
                                         <a class="nav-link" href="{{route('cart.get')}}">Cart ({{session()->has('cart') ? count(session()->get('cart')):0}})</a>
                                         </li>
+                                        @if(auth()->user())
                                         <li><a href="{{route('orderdetails')}}">My Order</a></li>
-
+                                        @endif 
                                       
                                     </ul>
                                 </nav>

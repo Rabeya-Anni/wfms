@@ -32,7 +32,7 @@
   <thead>
     <tr>
       <th scope="col">Serial</th>
-      <th scope="col">User ID</th>
+      <th scope="col">Name</th>
       <th scope="col">Order ID</th>
       <th scope="col">Total</th>
       <th scope="col">Status</th>
@@ -43,7 +43,7 @@
   @foreach($payments as $key=>$payment)
     <tr>
       <th scope="row">{{$key+1}}</th>
-      <td>{{($payment->user_id)}}</td>
+      <td>{{($payment->paymentRelation->username)}}</td>
       <td>{{($payment->order_id)}}</td>
       <td>{{($payment->total)}}</td> 
       <td>{{($payment->status)}}</td> 

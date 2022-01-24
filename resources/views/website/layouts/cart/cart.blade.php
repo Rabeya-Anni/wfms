@@ -13,10 +13,10 @@
             {!! session('error') !!}
     </div>
 @endif
+<br>
 
-
-    <h1 style="padding-top: 100px;">My Cart ({{session()->has('cart') ? count(session()->get('cart')):0}})</h1>
-    <table class="table">
+    <h1 style="padding-top: 100px;">My Cart ({{session()->has('cart') ? count(session()->get('cart')):0}})</h1><br>
+    <table class="table"><br>
         <thead>
         <tr>
             <th scope="col">Serial</th>
@@ -30,17 +30,32 @@
         <tbody>
 
         @if($carts)
+        @php
+        $total = 0;
+        @endphp
         @foreach($carts as $key=>$cart)
         <tr>
             <th scope="row">{{$key+1}}</th>
             <td>{{$cart['name']}}</td>
             <td>{{$cart['price_per_person']}}</td>
             <td>{{$cart['package_qty']}}</td>
-            <td>{{$cart['price_per_person'] * $cart['package_qty']}}</td>
+            <td>{{$cart['sub_total']}}</td>
+            @php
+            $total = $total + $cart['price_per_person'] * $cart['package_qty'];
+            @endphp
         </tr>
         @endforeach
      @endif
 
+        </tbody>
+    </table>
+
+    <table>
+        <thead>
+            <th>Total</th>
+        </thead>
+        <tbody>
+            <td>{{$total}}</td>
         </tbody>
     </table>
     <a href="{{route('cart.clear')}}" class="btn btn-warning">Clear Cart</a>

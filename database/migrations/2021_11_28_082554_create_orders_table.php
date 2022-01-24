@@ -20,7 +20,7 @@ class CreateOrdersTable extends Migration
             $table->integer('price');
             $table->integer('quantity');
             $table->integer('sub_total');
-            // $table->integer('total');
+            $table->integer('total');
             $table->timestamps();
         });
     }

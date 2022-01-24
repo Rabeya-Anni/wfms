@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Payment;
+use App\Models\User;
 
 class PaymentController extends Controller
 {
@@ -17,7 +18,7 @@ class PaymentController extends Controller
         return view('admin.layout.package.package',compact('packages'));
         }
 
-        $payments = Payment::all();
+        $payments = Payment::with('paymentRelation')->get();
         return view('admin.layout.payment.payment',compact('payments'));
     }
 
@@ -26,7 +27,7 @@ class PaymentController extends Controller
     {
         
             Payment::create([
-            'user_id'=>$request->user_id,
+            'user_id'=>auth()->user()->id,
             'order_id'=>$request->order_id,
             'total'=>$request->total,
             'status'=>$request->status,

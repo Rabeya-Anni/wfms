@@ -16,17 +16,21 @@ class ReportController extends Controller
     public function report(Request $request)
 
     {
+        // dd($request->all());
+        $orders = Order::whereBetween('created_at',[$request->from_date,$request->to_date])->get();
+        // dd($orders);
 
-        $from = $request->query('from_date');
-            $to = $request->query('to_date');
-            $orders = [];
-            if($from && $to){
-                // dd('ok');
 
-              $orders = Order::whereBetween('date',[$from,$to])->get();
-            //   dd($problem);
-            return view('admin.layout.report.report',compact('orders'));
-            }
+        // $from = $request->query('from_date');
+        //     $to = $request->query('to_date');
+        //     $orders = [];
+        //     if($from && $to){
+        //         // dd('ok');
+
+              
+        //     //   dd($problem);
+            // return view('admin.layout.report.report',compact('orders'));
+            // }
             return view('admin.layout.report.report',compact('orders'));
     }
         

@@ -33,12 +33,12 @@
   <thead>
     <tr>
       <th scope="col">Serial</th>
-      <th scope="col">User ID</th>
+      <th scope="col">Name</th>
       <th scope="col">Package Name</th>
       <th scope="col">Price</th>
       <th scope="col">Quantity</th>
       <th scope="col">Sub Total</th>
-      <!-- <th scope="col">Total</th> -->
+      <th scope="col">Total</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -54,11 +54,8 @@
     <td>{{($order->price)}}</td>
     <td>{{($order->quantity)}}</td>
     <td>{{($order->sub_total)}}</td>
-    <!-- @php
-    $subtotal = $order->sub_total;
-    $total = $total + $subtotal;
-    @endphp -->
-    <!-- <td>{{$total}}</td> -->
+    <td>{{($order->total)}}</td>
+   
 
     <td>
         <a class="btn btn-warning" href="{{route('order.view',$order->id)}}">View</a>
