@@ -3,6 +3,10 @@
 
 @section('content')
 
+<center>
+<h4>GREEN BOWL CATERING</h4>
+</center>
+
 <h4>Customer Table</h4>
 
 <!-- <------Search-----> 

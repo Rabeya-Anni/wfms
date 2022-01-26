@@ -13,7 +13,11 @@
             {!! session('error') !!}
     </div>
 @endif
-<h4>Edit Employee</h4>
+
+<center>
+<h4>GREEN BOWL CATERING</h4><br><br>
+</center>
+<h4>Edit Employee</h4><br>
 <form action="{{route('employee.update',$employee->id)}}" method="post" enctype="multipart/form-data">
     @csrf
     @method('PUT')

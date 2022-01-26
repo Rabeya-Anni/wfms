@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Order;
+use App\Models\Orderdetail;
 use App\Models\Package;
 use Illuminate\Http\Request;
 
@@ -26,46 +27,52 @@ class OrderController extends Controller
         return view('admin.layout.order.order',compact('orders'));
     }
 
-    public function orderstore(Request $request)
+// <------order view---->
+    public function orderdetails($id)
     {
-        // dd($request->all());
-        try{
-            Order::create([
-            'user_id'=>$request->user_id,
-            'package_name'=>$request->package_name,
-            'price'=>$request->price,
-            'quantity'=>$request->quantity,
-            'sub_total'=>$request->sub_total,
-            'total'=>$request->total,
-
-
-
-            
-          ]);
-
-          return redirect()->route('order')->with('success', 'Profile updated!');
-         }
-         catch(Throwable $throw)
-         {
-          return redirect()->back()->with('error', 'Profile updated!');
-         }
+        $orderdetails = Orderdetail::where('order_id',$id)->get();
+        $orders = Order::find($id);
+        return view('admin.layout.order.orderdetails',compact('orderdetails','orders'));
     }
 
-    public function orderview($id){
-        $order = Order::find($id);
-        return view('admin.layout.order.orderview',compact('order'));
-    }
-
-  
-
-   
     
+    //<------ order delete--->
     public function orderdelete($id){
         Order::find($id)->delete();
         return redirect()->back()->with('success','Order Delete.');
     }
 
-    // Add to cart.......>
+
+
+//<------ order status confirm--->
+public function orderconfirm($id)
+{
+    //find the data
+    $order=Order::find($id);
+   $order->update([
+       'status'=>'confirm'
+   ]);
+
+   return redirect()->back();
+}
+
+//<------ order status cancel--->
+    public function ordercancel($id)
+    {
+        //find the data
+        $order=Order::find($id);
+       $order->update([
+           'status'=>'cancel'
+       ]);
+
+       return redirect()->back();
+    }
+
+
+
+
+
+    // <------Add to cart.......>
 
     public function addtocart($id)
     {
@@ -79,8 +86,10 @@ class OrderController extends Controller
         $cartExist=session()->get('cart');
 
         if(!$cartExist) {
+
             //case 01: cart is empty.
             //  action: add product to cart
+
             $cartData = [
                 $id => [
                     'package_id' => $id,
@@ -95,9 +104,12 @@ class OrderController extends Controller
             return redirect()->back()->with('message', 'Product Added to Cart.');
         }
 
+
         //case 02: cart is not empty. but product does not exist into the cart
         //action: add different product with quantity 1
 //        dd(isset($cartExist[$id]));
+
+
         if(!isset($cartExist[$id]))
         {
             $cartExist[$id] = [

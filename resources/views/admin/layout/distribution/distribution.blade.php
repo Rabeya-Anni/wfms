@@ -14,6 +14,10 @@
             {!! session('error') !!}
     </div>
 @endif
+
+<center>
+<h4>GREEN BOWL CATERING</h4>
+</center>
 <h4>Distribution Table</h4>
 <a class="btn btn-primary" href="{{route('distributionform')}}" role="button">Assign</a>
 

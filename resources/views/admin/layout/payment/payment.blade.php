@@ -13,10 +13,15 @@
             {!! session('error') !!}
     </div>
 @endif
+
+<center>
+<h4>GREEN BOWL CATERING</h4>
+</center>
+
 <h4>Payment Table</h4>
 
 <!-- <------Search-----> 
-<form  action="{{route('employee')}}">
+<form  action="{{route('order')}}">
 <div class="input-group rounded mt-3 mb-2">
   <div class="form-outline">
     <input name="search" type="search" id="form1" class="form-control" placeholder="Search" arial-level="search" arial-describedby="search-addon" />
@@ -32,28 +37,28 @@
   <thead>
     <tr>
       <th scope="col">Serial</th>
-      <th scope="col">Name</th>
-      <th scope="col">Order ID</th>
+      <th scope="col"> User Name</th>
       <th scope="col">Total</th>
-      <th scope="col">Status</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
-  @foreach($payments as $key=>$payment)
+   
+  @foreach($orders as $key=>$order)
     <tr>
-      <th scope="row">{{$key+1}}</th>
-      <td>{{($payment->paymentRelation->username)}}</td>
-      <td>{{($payment->order_id)}}</td>
-      <td>{{($payment->total)}}</td> 
-      <td>{{($payment->status)}}</td> 
-      <td>
-        <a class="btn btn-success" href="{{route('payment.approve',$payment->id)}}">Approve</a>
-        <a class="btn btn-warning" href="{{route('payment.view',$payment->id)}}">View</a>
-        <a class="btn btn-danger" href="{{route('payment.delete',$payment->id)}}">Delete</a>
+    <th scope="row">{{$key+1}}</th>
+    <td>{{($order->orderRelation->username)}}</td>
+    <td>{{($order->total)}}</td>
+   
+
+    <td>
+        <a class="btn btn-warning" href="{{route('payment.view',$order->id)}}">View</a>
+        <a class="btn btn-danger" href="{{route('payment.delete',$order->id)}}">Delete</a>
+
+
       </td> 
     </tr>
-    @endforeach
+    @endforeach  
   </tbody>
 </table>
 

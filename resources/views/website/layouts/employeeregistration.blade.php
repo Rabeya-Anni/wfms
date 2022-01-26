@@ -31,22 +31,15 @@
 					<input class="text" type="text" name="address" placeholder="Address" required=""><br>
                     <input class="text" type="text" name="designation" placeholder="Designation" required=""><br>
 					<div class="wthree-text">
-						<label class="anim">
-							<input type="checkbox" class="checkbox" required="">
-							<span>I Agree To The Terms & Conditions</span>
-						</label>
+						
 						<div class="clear"> </div>
 					</div>
-					<input type="submit" value="SIGNUP">
+					<input type="submit" value="SIGN UP">
 				</form>
 				<p>Have Already an Account? <a href="{{route('loginform')}}"> Login Here!</a></p>
 			</div>
 		</div>
-		<!-- copyright -->
-		<!-- <div class="colorlibcopy-agile">
-			<!-- <p>© 2018 Colorlib Signup Form. All rights reserved | Design by <a href="https://colorlib.com/" target="_blank">Colorlib</a></p> -->
-		<!-- </div> -->
-		<!-- //copyright -->
+		
 		<ul class="colorlib-bubbles">
 			<li></li>
 			<li></li>

@@ -14,6 +14,10 @@
             {!! session('error') !!}
     </div>
 @endif
+
+<center>
+<h4>GREEN BOWL CATERING</h4>
+</center>
 <h4>Employee Table</h4>
 <a class="btn btn-primary" href="{{route('employeeform')}}" role="button">Add an Employee</a>
 

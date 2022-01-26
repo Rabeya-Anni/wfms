@@ -14,7 +14,7 @@ class CustomerController extends Controller
 
         $search = $request->query('search');
         if($search){
-            $customers = Customer::where('username', 'LIKE', '%' .$search. '%')
+            $customers = User::where('username', 'LIKE', '%' .$search. '%')
             ->orWhere('email', 'LIKE', '%' .$search. '%')->get();
             return view('admin.layout.customer.customer',compact('customers'));
         }

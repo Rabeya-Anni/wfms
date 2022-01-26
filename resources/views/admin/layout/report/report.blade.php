@@ -40,48 +40,38 @@
 
 
 <center>
-<h4>GREEN BOWL CATERING</h4>
+<h4>GREEN BOWL CATERING</h4><br>
 </center>
 
 <center>
-<h4>Report</h4>
+<h4>Report</h4><br>
 </center>
 
 <table class="table">
   <thead>
     <tr>
       <th scope="col">Serial</th>
-      <th scope="col">User ID</th>
       <th scope="col">Package Name</th>
       <th scope="col">Price</th>
       <th scope="col">Quantity</th>
       <th scope="col">Sub Total</th>
-      <!-- <th scope="col">Total</th> -->
-      <th scope="col">Action</th>
+      <!-- <th scope="col">Action</th> -->
     </tr>
   </thead>
   <tbody>
     <!-- @php
     $total= 0;
     @endphp -->
-  @foreach($orders as $key=>$order)
+  @foreach($orderdetails as $key=>$orderdetail)
     <tr>
     <th scope="row">{{$key+1}}</th>
-    <td>{{($order->orderRelation->username)}}</td>
-    <td>{{($order->package_name)}}</td>
-    <td>{{($order->price)}}</td>
-    <td>{{($order->quantity)}}</td>
-    <td>{{($order->sub_total)}}</td>
-    <!-- @php
-    $subtotal = $order->sub_total;
-    $total = $total + $subtotal;
-    @endphp -->
-    <!-- <td>{{$total}}</td> -->
+    <td>{{($orderdetail->package_name)}}</td>
+    <td>{{($orderdetail->price)}}</td>
+    <td>{{($orderdetail->quantity)}}</td>
+    <td>{{($orderdetail->sub_total)}}</td>
+   
 
-    <td>
-        <a class="btn btn-warning" href="{{route('order.view',$order->id)}}">View</a>
-        <a class="btn btn-danger" href="{{route('order.delete',$order->id)}}">Delete</a>
-      </td> 
+   
     </tr>
     @endforeach  
   </tbody>

@@ -27,10 +27,10 @@
 					<input class="text" type="text" name="phone_number" placeholder="Phone Number" required=""><br>
 					<input class="text" type="text" name="address" placeholder="Address" required=""><br>
 					<div class="wthree-text">
-						<label class="anim">
+						<!-- <label class="anim">
 							<input type="checkbox" class="checkbox" required="">
 							<span>I Agree To The Terms & Conditions</span>
-						</label>
+						</label> -->
 						<div class="clear"> </div>
 					</div>
 					<input type="submit" value="SIGN UP">
@@ -41,7 +41,7 @@
 		<!-- copyright -->
 		<!-- <div class="colorlibcopy-agile">
 		<p>© 2018 Colorlib Signup Form. All rights reserved | Design by <a href="https://colorlib.com/" target="_blank">Colorlib</a></p> -->
-		<!-- </div> --> -->
+		<!-- </div> --> 
 		<!-- //copyright -->
 		<ul class="colorlib-bubbles">
 			<li></li>

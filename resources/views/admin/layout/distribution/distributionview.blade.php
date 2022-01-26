@@ -2,13 +2,19 @@
 
 
 @section('content')
+
+
+
 <form class="print_order">
         <input class="btn btn-primary" type="button" onClick="PrintDiv();" value="Print">
     </form>
 
     <div id="divToPrint">
+<center>
+<h4>GREEN BOWL CATERING</h4><br><br>
+</center>
 
-<h1>Distribution Details</h1>
+<h1>Distribution Details</h1><br>
       <dl class="row">
       <dt class="col-sm-2">Organization Name:</dt>
       <dd class="col-sm-2">{{($distribution->organization_name)}}</dd>

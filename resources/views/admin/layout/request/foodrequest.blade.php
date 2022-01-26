@@ -13,6 +13,10 @@
             {!! session('error') !!}
     </div>
 @endif
+
+<center>
+<h4>GREEN BOWL CATERING</h4>
+</center>
 <h4>Request Table</h4>
 <table class="table">
   <thead>

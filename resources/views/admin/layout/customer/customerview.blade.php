@@ -2,7 +2,11 @@
 
 
 @section('content')
-<h1>Customer Details</h1>
+
+<center>
+<h4>GREEN BOWL CATERING</h4><br><br>
+</center>
+<h1>Customer Details</h1><br>
       <dl class="row">
       <dt class="col-sm-2">Username:</dt>
       <dd class="col-sm-2">{{($customer->username)}}</dd>

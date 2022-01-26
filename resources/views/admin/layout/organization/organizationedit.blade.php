@@ -13,6 +13,10 @@
             {!! session('error') !!}
     </div>
 @endif
+
+<center>
+<h4>GREEN BOWL CATERING</h4>
+</center>
 <h4>Edit Organization</h4>
 <form action="{{route('organization.update',$organization->id)}}" method='post'>
 @csrf

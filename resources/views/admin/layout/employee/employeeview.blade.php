@@ -9,8 +9,14 @@
 
     <div id="divToPrint">
 
-<h1>Employee Details</h1>
-      <p><img src = "{{(url('/uploads/'.$employee->image))}}" alt="employee image" width="100px"></p>
+<center>
+<h4>GREEN BOWL CATERING</h4><br><br>
+</center>    
+
+<h1>Employee Details</h1><br>
+      <p><img src = "{{(url('/uploads/'.$employee->image))}}" alt="employee image" width="200px"></p>
+
+      
       <dl class="row">
       <dt class="col-sm-2">Username:</dt>
       <dd class="col-sm-2">{{($employee->username)}}</dd>
@@ -31,7 +37,8 @@
       <dt class="col-sm-2">Phone Number:</dt>
       <dd class="col-sm-2">{{($employee->phone_number)}}</dd>
       </dl>
-      
+
+  
       
 @endsection
 

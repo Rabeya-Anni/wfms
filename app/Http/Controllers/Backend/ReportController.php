@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Order;
+use App\Models\Orderdetail;
 
 class ReportController extends Controller
 {
@@ -17,21 +17,9 @@ class ReportController extends Controller
 
     {
         // dd($request->all());
-        $orders = Order::whereBetween('created_at',[$request->from_date,$request->to_date])->get();
+        $orderdetails = Orderdetail::whereBetween('created_at',[$request->from_date,$request->to_date])->get();
         // dd($orders);
-
-
-        // $from = $request->query('from_date');
-        //     $to = $request->query('to_date');
-        //     $orders = [];
-        //     if($from && $to){
-        //         // dd('ok');
-
-              
-        //     //   dd($problem);
-            // return view('admin.layout.report.report',compact('orders'));
-            // }
-            return view('admin.layout.report.report',compact('orders'));
+        return view('admin.layout.report.report',compact('orderdetails'));
     }
         
 

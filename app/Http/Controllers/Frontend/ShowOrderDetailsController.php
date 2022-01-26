@@ -6,17 +6,17 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Order;
 
-class OrderDetailsController extends Controller
+class ShowOrderDetailsController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function orderdetails()
+    public function showorderdetails()
     {
         $orders = Order::all();
-        return view('website.layouts.order.orderdetails',compact('orders'));
+        return view('website.layouts.order.showorderdetails',compact('orders'));
     }
 
     /**

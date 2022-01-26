@@ -93,7 +93,7 @@
 
                             <a class="nav-link" href="{{route('customer')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
-                                Customer
+                                User
                             </a>
 
                             
@@ -102,6 +102,8 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Order
                             </a>
+
+                            
 
                             <a class="nav-link" href="{{route('payment')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-credit-card"></i></div>

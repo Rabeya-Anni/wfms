@@ -16,11 +16,8 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id');
-            $table->string('package_name');
-            $table->integer('price');
-            $table->integer('quantity');
-            $table->integer('sub_total');
-            $table->integer('total');
+            $table->double('total',10,2)->default(0);
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
     }

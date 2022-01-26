@@ -46,7 +46,7 @@ class GiveRequestController extends Controller
             
           ]);
 
-          return redirect()->route('giverequestform')->with('success', 'Profile updated!');
+          return redirect()->route('giverequestform')->with('success','Organization Informations Successfully Submitted.');
          }
          catch(Throwable $throw)
          {

@@ -19,7 +19,7 @@
             <div id="divToPrint">  -->
                
                
-            <p><img src = "{{(url('/uploads/',$package->image))}}" alt="package image" width="100px"></p>
+            <p><img src = "{{(url('/uploads/',$package->image))}}" alt="package image" width="250px"></p>
             <dl class="row">
             <dt class="col-sm-2">Package Name:</dt>
             <dd class="col-sm-2">{{($package->name)}}</dd>

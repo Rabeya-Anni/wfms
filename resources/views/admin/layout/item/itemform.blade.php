@@ -2,6 +2,10 @@
 
 
 @section('content')
+
+<center>
+<h4>GREEN BOWL CATERING</h4><br><br>
+</center>
 <form action="{{route('item.store')}}" method="post" enctype="multipart/form-data">
 @csrf
   <div class="form-group">

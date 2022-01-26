@@ -32,7 +32,7 @@ use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\GalleryController;
 use App\Http\Controllers\Frontend\UserProfileController;
 use App\Http\Controllers\Frontend\ViewRequestController;
-use App\Http\Controllers\Frontend\OrderDetailsController;
+use App\Http\Controllers\Frontend\ShowOrderDetailsController;
 use App\Http\Controllers\Frontend\PaymentFromController;
 
 
@@ -65,13 +65,13 @@ Route::get('/home/giveorder',[GiveOrderController::class,'giveorder'])->name('gi
 // Route::post('/home/giveorder/store',[GiveOrderController::class,'giveorderstore'])->name('giveorder.store');
 
 
-//Order details route
-Route::get('/home/orderdetails',[OrderDetailsController::class,'orderdetails'])->name('orderdetails');
+//show Order details route
+Route::get('/home/showorderdetails',[ShowOrderDetailsController::class,'showorderdetails'])->name('showorderdetails');
 
 
 //payment form route
-Route::get('/home/paymentform',[PaymentFromController::class,'paymentform'])->name('paymentform');
-Route::post('/home/paymentform/store',[PaymentFromController::class,'paymentformstore'])->name('paymentform.store');
+Route::get('/home/paymentform/',[PaymentFromController::class,'paymentform'])->name('paymentform');
+Route::post('/home/paymentform/store/',[PaymentFromController::class,'paymentformstore'])->name('paymentform.store');
 
 
 //Give request route
@@ -210,15 +210,16 @@ Route::get('/employee/delete/{id}',[EmployeeController::class, 'employeedelete']
 
 //order route
 Route::get('/order',[OrderController::class, 'order'])->name('order');
-// Route::post('/order/store',[OrderController::class, 'orderstore'])->name('order.store');
-Route::get('/order/view/{id}',[OrderController::class, 'orderview'])->name('order.view');
+Route::get('/orderdetails/{order_id}',[OrderController::class, 'orderdetails'])->name('orderdetails');
+Route::get('/order/confirm/{id}',[OrderController::class, 'orderconfirm'])->name('orderdetails.confirm');
+Route::get('/order/cancel/{id}',[OrderController::class, 'ordercancel'])->name('order.cancel');
 Route::get('/order/delete/{id}',[OrderController::class, 'orderdelete'])->name('order.delete');
+
 
 
 //payment route
 Route::get('/payment',[PaymentController::class, 'payment'])->name('payment');
 Route::post('/payment/store',[PaymentController::class, 'paymentstore'])->name('payment.store');
-Route::get('/payment/status/approve/{id}',[PaymentController::class, 'paymentapprove'])->name('payment.approve');
 Route::get('/payment/view/{id}',[PaymentController::class, 'paymentview'])->name('payment.view');
 Route::get('/payment/delete/{id}',[PaymentController::class, 'paymentdelete'])->name('payment.delete');
 

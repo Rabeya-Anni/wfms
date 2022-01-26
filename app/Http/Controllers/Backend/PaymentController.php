@@ -5,66 +5,31 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Payment;
-use App\Models\User;
+use App\Models\Order;
+use App\Models\Orderdetail;
 
 class PaymentController extends Controller
 {
     public function payment(Request $request)
     {
-        $search = $request->query('search');
-        if($search){
-        $packages = Package::where('name', 'LIKE', '%' .$search. '%')
-        ->orWhere('price_per_person', 'LIKE', '%' .$search. '%')->get();
-        return view('admin.layout.package.package',compact('packages'));
-        }
-
-        $payments = Payment::with('paymentRelation')->get();
-        return view('admin.layout.payment.payment',compact('payments'));
+       
+        $orders = Order::all();
+        return view('admin.layout.payment.payment',compact('orders'));
     }
 
-
-    public function paymentstore(Request $request)
+    //<------ payment view--->
+    public function paymentview($id)
     {
-        
-            Payment::create([
-            'user_id'=>auth()->user()->id,
-            'order_id'=>$request->order_id,
-            'total'=>$request->total,
-            'status'=>$request->status,
-            
-          ]);
-
-         
-          return redirect()->back();
-         
+        $orderdetails = Orderdetail::where('order_id',$id)->get();
+        $orders = Order::find($id);
+        return view('admin.layout.payment.paymentview',compact('orderdetails','orders'));
     }
 
-    public function paymentapprove($id){
-        $payment = Payment::find($id);
-        if($payment->status)
-        {
-            $payment->update([
-                'status' => 'approved'
-            ]);
-        }
-        else
-        {
-            $payment->update([
-                'status' => 'cancelled'
-            ]);   
-        }
-           
-        return redirect()->back()->with('success','Request Approve.');
-    }
-
-    public function paymentview($id){
-        $payment = Payment::find($id);
-        return view('admin.layout.payment.paymentview',compact('payment'));
-    }
-
-   
+ 
+    //<------ payment delete--->
     public function paymentdelete($id){
-        Payment::find($id)->delete();
-        return redirect()->back()->with('success','Payment Delete.');
-    }
+    Order::find($id)->delete();
+    return redirect()->back()->with('success','Payment Delete.');
+}
+         
 }

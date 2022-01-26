@@ -13,9 +13,9 @@
             {!! session('error') !!}
     </div>
 @endif
-<br>
+<br><br><br><br>
 
-    <h1 style="padding-top: 100px;">My Cart ({{session()->has('cart') ? count(session()->get('cart')):0}})</h1><br>
+    <h2 style="padding-top: 100px;">My Cart ({{session()->has('cart') ? count(session()->get('cart')):0}})</h2><br>
     <table class="table"><br>
         <thead>
         <tr>
@@ -48,7 +48,7 @@
      @endif
 
         </tbody>
-    </table>
+    </table><br>
 
     <table>
         <thead>
@@ -58,7 +58,10 @@
             <td>{{$total}}</td>
         </tbody>
     </table>
-    <a href="{{route('cart.clear')}}" class="btn btn-warning">Clear Cart</a>
+    <td><br>
+    <a href="{{route('showpackage')}}" class="btn btn-warning">Add Another Cart</a>
     <a class="btn btn-warning" href="{{route('giveorder')}}" role="button">Order Now</a>
+    <a href="{{route('cart.clear')}}" class="btn btn-warning">Clear Cart</a>
+</td>
 
     @endsection

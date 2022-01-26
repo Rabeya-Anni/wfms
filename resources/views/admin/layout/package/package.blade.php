@@ -13,6 +13,10 @@
             {!! session('error') !!}
     </div>
 @endif
+
+<center>
+<h4>GREEN BOWL CATERING</h4>
+</center>
 <h4>Package Table</h4>
 <a class="btn btn-primary" href="{{route('packageform')}}" role="button">Create a new package</a>
 

@@ -3,14 +3,14 @@
             <div id="sticky-header" class="main-header-area">
                 <div class="container">
                     <div class="row align-items-center">
-                        <div class="col-xl-10 col-lg-10">
+                        <div style="margin: auto;">
                             <div class="main-menu d-none d-lg-block">
                                  <nav>
                                    <ul class="mein_menu_list" id="navigation">
-									  <li></li><br/>
+									  <!-- <li></li><br/>
 									<li></li><br/>
 									<li></li><br/>
-									<li></li><br/>
+									<li></li><br/> -->
                                         <li><a href="{{route('about')}}">About</a></li>
                                         <li><a href="{{route('showpackage')}}">Packages</a></li>
                                         <li><a href="{{route('showitem')}}">Item Gallery</a></li>
@@ -37,7 +37,7 @@
                                         <a class="nav-link" href="{{route('cart.get')}}">Cart ({{session()->has('cart') ? count(session()->get('cart')):0}})</a>
                                         </li>
                                         @if(auth()->user())
-                                        <li><a href="{{route('orderdetails')}}">My Order</a></li>
+                                        <li><a href="{{route('showorderdetails')}}">My Order</a></li>
                                         @endif 
                                       
                                     </ul>

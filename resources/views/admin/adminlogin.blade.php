@@ -24,13 +24,13 @@
 					<input class="text email" type="email" name="email" placeholder="Email" required="">
 					<input class="text" type="password" name="password" placeholder="Password" required="">
 					<div class="wthree-text">
-						<label class="anim">
+						<!-- <label class="anim">
 							<input type="checkbox" class="checkbox" required="">
 							<span>I Agree To The Terms & Conditions</span>
-						</label>
+						</label> -->
 						<div class="clear"> </div>
 					</div>
-					<input type="submit" value="SIGNIN">
+					<input type="submit" value="SIGN IN">
 				</form>
 			</div>
 		</div>

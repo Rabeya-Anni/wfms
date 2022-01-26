@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
-use App\Models\Paymentform;
+use App\Models\Payment;
 
 use Illuminate\Http\Request;
 
@@ -16,9 +16,11 @@ class PaymentFromController extends Controller
      */
     public function paymentform()
     {
-        $paymentforms = Paymentform::all();
+        // dd($id);
+        $payments = Payment::all();
+    
 
-       return view('website.layouts.payment.paymentform',compact('paymentforms'));
+       return view('website.layouts.payment.paymentform',compact('payments'));
     }
 
     /**
@@ -41,14 +43,14 @@ class PaymentFromController extends Controller
     {
 
         // dd($request->all());
-        Paymentform::create([
-            
+        Payment::create([
+            'user_id'=>auth()->user()->id,
             'amount'=>$request->amount,
           
             
           ]);
 
-          return redirect()->route('home');
+          return redirect()->route('showorderdetails');
          
          
     }
