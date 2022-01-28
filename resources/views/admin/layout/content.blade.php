@@ -1,122 +1,129 @@
 @extends('admin.master')
 
-@section('content') 
+@section('content')
 
-        
-                     
-<div class="container-fluid px-4">
-                        <h1 class="mt-4">Dashboard</h1>
+    @if(session()->has('message'))
+        <p class="alert alert-success">
+            {{session()->get('message')}}
+        </p>
+    @endif
+
+    <style>
+        .card-box {
+            position: relative;
+            color: #fff;
+            padding: 20px 10px 40px;
+            margin: 20px 0px;
+        }
+        .card-box:hover {
+            text-decoration: none;
+            color: #f1f1f1;
+        }
+        .card-box:hover .icon i {
+            font-size: 100px;
+            transition: 1s;
+            -webkit-transition: 1s;
+        }
+        .card-box .inner {
+            padding: 5px 10px 0 10px;
+        }
+        .card-box h3 {
+            font-size: 27px;
+            font-weight: bold;
+            margin: 0 0 8px 0;
+            white-space: nowrap;
+            padding: 0;
+            text-align: left;
+        }
+        .card-box p {
+            font-size: 15px;
+        }
+        .card-box .icon {
+            position: absolute;
+            top: auto;
+            bottom: 5px;
+            right: 5px;
+            z-index: 0;
+            font-size: 72px;
+            color: rgba(0, 0, 0, 0.15);
+        }
+        .card-box .card-box-footer {
+            position: absolute;
+            left: 0px;
+            bottom: 0px;
+            text-align: center;
+            padding: 3px 0;
+            color: rgba(255, 255, 255, 0.8);
+            background: rgba(0, 0, 0, 0.1);
+            width: 100%;
+            text-decoration: none;
+        }
+        .card-box:hover .card-box-footer {
+            background: rgba(0, 0, 0, 0.3);
+        }
+        .bg-blue {
+            background-color: #00c0ef !important;
+        }
+        .bg-green {
+            background-color: #00a65a !important;
+        }
+        .bg-orange {
+            background-color: #f39c12 !important;
+        }
+        .bg-red {
+            background-color: #d9534f !important;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+
+    <div class="container">
+    <h1 class="mt-4">Dashboard</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active"></li>
                         </ol>
-                        @if(auth()->user()->role=='admin')
+        <div class="row">
+            <div class="col-lg-3 col-sm-6">
+                <div class="card-box bg-blue">
+                    <div class="inner">
+                        <h3> {{$count['package']}} </h3>
+                        <p> Number of Package </p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-utensils" aria-hidden="true"></i>
+                    </div>
+                    <a href="{{route('package')}}" class="card-box-footer">View More <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
 
-                        <div class="row">
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-primary text-white mb-4">
-                                    <div class="card-body">Package</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="{{route('package')}}">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-success text-white mb-4">
-                                    <div class="card-body">Item</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="{{route('item')}}">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-warning text-white mb-4">
-                                    <div class="card-body">Customer</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="{{route('customer')}}">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-danger text-white mb-4">
-                                    <div class="card-body">Order</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="{{route('order')}}">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            
-                        <!-- new -->
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-info text-white mb-4">
-                                    <div class="card-body">Payment</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="{{route('payment')}}">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                                </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-warning text-white mb-4">
-                                    <div class="card-body">Wastage food request</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="{{route('request')}}">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-secondary text-white mb-4">
-                                    <div class="card-body">Organization</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="{{route('organization')}}">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-success text-white mb-4">
-                                    <div class="card-body">Report</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="{{route('report')}}">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        @endif
-                        <div class="row">
-                        <div class="col-xl-3 col-md-6">
-                                <div class="card bg-secondary text-white mb-6">
-                                    <div class="card-body">Employee</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="{{route('employee')}}">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="card-box bg-green">
+                    <div class="inner">
+                        <h3> {{$count['order']}} </h3>
+                        <p> Total Order </p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-money-bill-alt" aria-hidden="true"></i>
+                    </div>
+                    <a href="{{route('order')}}" class="card-box-footer">View More <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="card-box bg-orange">
+                    <div class="inner">
+                        <h3> {{$count['customer']}} </h3>
+                        <p> Total Customer </p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-user-plus" aria-hidden="true"></i>
+                    </div>
+                    <a href="{{route('customer')}}" class="card-box-footer">View More <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-danger text-white mb-4">
-                                    <div class="card-body">Distribution</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="{{route('distribution')}}">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
 
-                        </div>
-                            
-                               
-</div>   
-          
+
 @endsection
+

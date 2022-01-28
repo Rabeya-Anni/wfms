@@ -10,7 +10,7 @@
 <center>
 <h4>GREEN BOWL CATERING</h4><br><br>
 </center>
-<h1>Organization Details</h1><br>
+<h1>Organization Details</h1><br><br>
       <dl class="row">
       <dt class="col-sm-3">Organization Name:</dt>
       <dd class="col-sm-2">{{($organization->name)}}</dd>

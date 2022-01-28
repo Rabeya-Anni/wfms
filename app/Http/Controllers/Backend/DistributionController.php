@@ -71,7 +71,7 @@ class DistributionController extends Controller
         
         try{
             $distribution->update([
-                'organization_id'=>$request->organization_id,
+                'organization_name'=>$request->organization_name,
                 'food_name'=>$request->food_name,
                 'quantity'=>$request->quantity,
                 'assigned_employee'=>$request->assigned_employee,

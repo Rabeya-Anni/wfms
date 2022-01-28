@@ -16,9 +16,7 @@ class OrderController extends Controller
 
         $search = $request->query('search');
         if($search){
-        $orders = Order::where('order_quantity', 'LIKE', '%' .$search. '%')
-        ->orWhere('address', 'LIKE', '%' .$search. '%')
-        ->orWhere('date', 'LIKE', '%' .$search. '%')->get();
+        $orders = Order::where('username', 'LIKE', '%' .$search. '%')->get();
         return view('admin.layout.order.order',compact('orders'));
         }
 

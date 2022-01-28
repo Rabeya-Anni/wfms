@@ -78,7 +78,9 @@
                                     </div> -->
                                 </nav>
                             </div>
+
                             @if(auth()->user()->role=='admin')
+                            
                             <div class="sb-sidenav-menu-heading">services</div>
 
                             <a class="nav-link" href="{{route('package')}}">
@@ -93,7 +95,7 @@
 
                             <a class="nav-link" href="{{route('customer')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
-                                User
+                                Customer
                             </a>
 
                             

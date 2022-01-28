@@ -15,6 +15,7 @@ use App\Http\Controllers\Backend\AddnewpackageController;
 use App\Http\Controllers\Backend\EmployeeController;
 use App\Http\Controllers\Backend\AdminLoginController;
 use App\Http\Controllers\Backend\ReportController;
+use App\Http\Controllers\Backend\DashboardController;
 
 
 //Website
@@ -155,13 +156,15 @@ Route::post('/admin/dologin',[AdminLoginController::class, 'dologin'])->name('ad
 
 //Admin Auth route group
 Route::group(['prefix'=>'admin','middleware'=>['auth','admin']],function(){
-    Route::get('/',function(){
-        return view('admin.layout.content');
-    })->name('admin');
+    Route::get('/',[contentcontroller::class,'admin'])->name('admin');
+
+    //     return view('admin.layout.content');
+    // })->name('admin');
 
 Route::get('/adminlogout',[AdminLoginController::class, 'adminlogout'])->name('admin.logout');
 
 
+//contend route
 Route::get('/admin', [contentcontroller::class,'admin'])->name('admin');
 
 

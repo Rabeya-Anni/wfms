@@ -17,6 +17,7 @@ class GiveOrderController extends Controller
      */
     public function giveorder()
     {
+
       // insert order data into order table- user_id, total
  
         $carts= session()->get('cart');

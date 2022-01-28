@@ -24,7 +24,7 @@
 @method('PUT')
   <div class="form-group">
     <label for="exampleInputEmail1">Organization Name</label>
-    <input required name="organization_name" value="{{$distribution->organization_id}}" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Organization ID">
+    <input required name="organization_name" value="{{$distribution->organization_name}}" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Organization Name">
   </div>
 
   <div class="form-group">
@@ -39,7 +39,7 @@
   </div>
 
   <div class="form-group">
-    <label for="exampleFormControlSelect1">Assign Employee</label>
+    <label for="exampleFormControlSelect1">Assigned Employee</label>
     <select name="assigned_employee" type="text" class="form-control" id="exampleFormControlSelect1">
       <option>Mohammad Jahid khan</option>
       <option>Mr. Asad Hossain</option>

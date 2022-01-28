@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\models\User;
+use App\models\Customer;
 use Illuminate\Http\Request;
 
 

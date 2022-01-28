@@ -43,6 +43,7 @@ class EmployeeRegistrationController extends Controller
             'password'=>bcrypt($request->password),
             'phone_number'=>$request->phone_number,
             'address'=>$request->address,
+            'designation'=>$request->designation,
             'role'=>$request->employee_role,
             
           ]);

@@ -32,7 +32,7 @@ letter-spacing: 4px;margin-left: 105px;">Back to Home</a>
 			@csrf
                     <input class="text" type="text" name="name" placeholder="Organization Name" required=""><br>
                     <input class="text" type="text" name="address" placeholder="Organization Address" required=""><br>
-                    <input class="text" type="text" name="email" placeholder="Organization Email" required=""><br>
+                    <input class="text" type="email" name="email" placeholder="Organization Email" required=""><br>
                     <input class="text" type="text" name="phone_number" placeholder="Organization Phone number" required="">
 					
 					<div class="wthree-text">

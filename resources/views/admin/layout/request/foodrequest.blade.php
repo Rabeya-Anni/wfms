@@ -33,7 +33,7 @@
   @foreach($foodrequests as $key=>$foodrequest)
     <tr>
     <th scope="row">{{$key+1}}</th>
-    <td>{{($foodrequest->user->username)}}</td>
+    <td>{{($foodrequest->requestRelation->username)}}</td>
     <td>{{($foodrequest->type)}}</td>
     <td>{{($foodrequest->food_quantity)}}</td>
     <td>{{($foodrequest->status)}}</td>

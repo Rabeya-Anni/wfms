@@ -6,14 +6,15 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\models\Employee;
 
+
 class EmployeeController extends Controller
 {
     public function employee(Request $request){
 
         $search = $request->query('search');
         if($search){
-        $employees = Employee::where('designation', 'LIKE', '%' .$search. '%')
-        ->orWhere('phone_number', 'LIKE', '%' .$search. '%')->get();
+        $employees = Employee::where('username', 'LIKE', '%' .$search. '%')
+        ->orWhere('email', 'LIKE', '%' .$search. '%')->get();
         return view('admin.layout.employee.employee',compact('employees'));
         }
 

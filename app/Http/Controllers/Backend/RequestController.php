@@ -5,21 +5,22 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Foodrequest;
-use App\Models\User;
+// use App\Models\User;
 
 class RequestController extends Controller
 {
     public function request()
     {
 
-        $foodrequests = Foodrequest::all();
+        $foodrequests = Foodrequest::with('requestRelation')->get();
+        // dd($foodrequests);
         return view('admin.layout.request.foodrequest',compact('foodrequests'));
     }
 
     public function requeststore(Request $request)
     {
 
-        dd($request->all());
+        // dd($request->all());
         
         try{
             // dd($request->all());

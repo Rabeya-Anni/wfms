@@ -15,9 +15,13 @@ class ShowOrderDetailsController extends Controller
      */
     public function showorderdetails()
     {
-        $orders = Order::all();
+
+        $orders = Order::where('user_id',auth()->user()->id)->get();
         return view('website.layouts.order.showorderdetails',compact('orders'));
     }
+
+
+
 
     /**
      * Show the form for creating a new resource.

@@ -15,9 +15,9 @@
 @endif
 
 <center>
-<h4>GREEN BOWL CATERING</h4>
+<h4>GREEN BOWL CATERING</h4><br><br>
 </center>
-<h4>Edit Organization</h4>
+<h4>Edit Organization</h4><br>
 <form action="{{route('organization.update',$organization->id)}}" method='post'>
 @csrf
 @method('PUT')

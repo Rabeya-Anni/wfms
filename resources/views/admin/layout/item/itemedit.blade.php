@@ -27,10 +27,7 @@
     <input required name="name" value="{{$item->name}}" type="text" class="form-control" placeholder="Name"required>
     
   </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Price per person</label>
-    <input required name="price_per_person" value="{{$item->price_per_person}}" type="number" class="form-control"  placeholder="Price"required>
-  </div>
+
   
   <div class="form-group">
     <label for="exampleInputPassword1">Details</label>

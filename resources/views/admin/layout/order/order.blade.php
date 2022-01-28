@@ -37,7 +37,7 @@
   <thead>
     <tr>
       <th scope="col">Serial</th>
-      <th scope="col"> User Name</th>
+      <th scope="col">User Name</th>
       <th scope="col">Total</th>
       <th scope="col">Status</th>
       <th scope="col">Action</th>

@@ -15,8 +15,8 @@ class GiveRequestFormController extends Controller
      */
     public function giverequestform()
     {
-        // $foodrequests = Foodrequest::all();
-        return view ('website.layouts.foodrequest.giverequestform');  
+        $foodrequests = Foodrequest::all();
+        return view ('website.layouts.foodrequest.giverequestform',compact('foodrequests'));  
     }
 
     /**
