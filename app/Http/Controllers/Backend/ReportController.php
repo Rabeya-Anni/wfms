@@ -16,10 +16,21 @@ class ReportController extends Controller
     public function report(Request $request)
 
     {
+        
+        $orderdetails = [];
+        if($request->has('from_date'))
+      {
+        $request->validate([
+          'from_date' => 'required',
+          'to_date' => 'required|date|after_or_equal:from_date',
+      ]);
+      
         // dd($request->all());
         $orderdetails = Orderdetail::whereBetween('created_at',[$request->from_date,$request->to_date])->get();
         // dd($orders);
-        return view('admin.layout.report.report',compact('orderdetails'));
+        return view('admin.layout.report.report',compact('orderdetails'))->with('error','Please select a validate date');
+    }
+    return view('admin.layout.report.report',compact('orderdetails'))->with('error','Please select a validate date');
     }
         
 
@@ -89,3 +100,6 @@ class ReportController extends Controller
         //
     }
 }
+
+
+

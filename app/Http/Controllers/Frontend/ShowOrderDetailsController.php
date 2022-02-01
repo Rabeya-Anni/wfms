@@ -20,6 +20,13 @@ class ShowOrderDetailsController extends Controller
         return view('website.layouts.order.showorderdetails',compact('orders'));
     }
 
+    //<------ orderdetails clear--->
+    public function showorderdetailsclear($id)
+    {
+        Order::find($id)->delete();
+        return redirect()->back()->with('success','Orderdetails clear Delete.');
+    }
+
 
 
 

@@ -39,6 +39,7 @@
       <th scope="col">Serial</th>
       <th scope="col"> User Name</th>
       <th scope="col">Total</th>
+      <th scope="col">Status</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -49,16 +50,19 @@
     <th scope="row">{{$key+1}}</th>
     <td>{{($order->orderRelation->username)}}</td>
     <td>{{($order->total)}}</td>
+    <td>{{($order->status)}}</td>
    
-
     <td>
         <a class="btn btn-warning" href="{{route('payment.view',$order->id)}}">View</a>
+        <a class="btn btn-success" href="{{route('payment.paid',$order->id)}}">Paid</a>
+        <a class="btn btn-info" href="{{route('payment.due',$order->id)}}">Due</a>
         <a class="btn btn-danger" href="{{route('payment.delete',$order->id)}}">Delete</a>
 
 
       </td> 
     </tr>
     @endforeach  
+    
   </tbody>
 </table>
 

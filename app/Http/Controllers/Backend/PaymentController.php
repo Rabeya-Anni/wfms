@@ -12,7 +12,7 @@ class PaymentController extends Controller
 {
     public function payment(Request $request)
     {
-       
+        
         $orders = Order::all();
         return view('admin.layout.payment.payment',compact('orders'));
     }
@@ -27,9 +27,35 @@ class PaymentController extends Controller
 
  
     //<------ payment delete--->
-    public function paymentdelete($id){
-    Order::find($id)->delete();
-    return redirect()->back()->with('success','Payment Delete.');
-}
+    public function paymentdelete($id)
+    {
+        Order::find($id)->delete();
+        return redirect()->back()->with('success','Payment Delete.');
+    }
          
+
+    //<------ payment status paid--->
+public function paymentpaid($id)
+{
+    
+    $order=Order::find($id);
+   $order->update([
+       'status'=>'paid'
+   ]);
+
+   return redirect()->back();
+}
+
+
+//<------ payment status due--->
+public function paymentdue($id)
+{
+    
+    $order=Order::find($id);
+    $order->update([
+       'status'=>'due'
+   ]);
+
+   return redirect()->back();
+}
 }

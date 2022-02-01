@@ -2,17 +2,8 @@
 
 
 @section('content')
-@if(session('success'))
-        <div class="alert alert-success">
-            {!! session('success') !!}
-        </div>
-@endif
 
-@if(session('error'))
-        <div class="alert alert-danger">
-            {!! session('error') !!}
-    </div>
-@endif
+
 
 <!-- report start -->
 <div>
@@ -37,6 +28,15 @@
     </form>
 
     <div id="divToPrint">
+
+  <!-- Message start  -->
+
+  @if ($errors->any())
+     @foreach ($errors->all() as $error)
+         <p class="alert alert-danger">{{$error}}</p>
+     @endforeach
+ @endif
+<!-- Message end  -->
 
 
 <center>

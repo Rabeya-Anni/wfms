@@ -68,6 +68,7 @@ Route::get('/home/giveorder',[GiveOrderController::class,'giveorder'])->name('gi
 
 //show Order details route
 Route::get('/home/showorderdetails',[ShowOrderDetailsController::class,'showorderdetails'])->name('showorderdetails');
+Route::get('/home/showorderdetailsclear/{id}',[ShowOrderDetailsController::class,'showorderdetailsclear'])->name('showorderdetails.clear');
 
 
 //payment form route
@@ -222,9 +223,11 @@ Route::get('/order/delete/{id}',[OrderController::class, 'orderdelete'])->name('
 
 //payment route
 Route::get('/payment',[PaymentController::class, 'payment'])->name('payment');
-Route::post('/payment/store',[PaymentController::class, 'paymentstore'])->name('payment.store');
+// Route::post('/payment/store',[PaymentController::class, 'paymentstore'])->name('payment.store');
 Route::get('/payment/view/{id}',[PaymentController::class, 'paymentview'])->name('payment.view');
 Route::get('/payment/delete/{id}',[PaymentController::class, 'paymentdelete'])->name('payment.delete');
+Route::get('/payment/paid/{id}',[PaymentController::class, 'paymentpaid'])->name('payment.paid');
+Route::get('/payment/due/{id}',[PaymentController::class, 'paymentdue'])->name('payment.due');
 
 
 

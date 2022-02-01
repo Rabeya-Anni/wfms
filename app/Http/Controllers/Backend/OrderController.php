@@ -16,7 +16,11 @@ class OrderController extends Controller
 
         $search = $request->query('search');
         if($search){
-        $orders = Order::where('username', 'LIKE', '%' .$search. '%')->get();
+        $orders = Order::with('user')->whereHas('user',function($query)use($search){
+            $query->where('username','Like','%' .$search. '%');
+        })->get();
+        // dd($orders);
+        // ('username', 'LIKE', '%' .$search. '%')->get();
         return view('admin.layout.order.order',compact('orders'));
         }
 

@@ -34,7 +34,7 @@
     <td>{{($order->total)}}</td>
     <td>{{($order->status)}}</td>
 <td>
-<a class="btn btn-warning" href="#">Clear Details</a>
+<a class="btn btn-warning" href="{{route('showorderdetails.clear',$order->id)}}">Cancel Order</a>
 
 </td>
    
