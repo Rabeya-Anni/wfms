@@ -11,9 +11,10 @@
 
 
 <center>
-<h4>GREEN BOWL CATERING</h4><br><br>
+<h4>GREEN BOWL CATERING</h4><br>
+
+<h4>Payment Details </h4><br>
 </center>
-<h4>Payment Details Table</h4><br>
 
     <table class="table">
     <thead>

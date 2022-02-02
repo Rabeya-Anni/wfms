@@ -12,6 +12,17 @@ class PaymentController extends Controller
 {
     public function payment(Request $request)
     {
+
+
+        $search = $request->query('search');
+        if($search){
+        $orders = Order::with('user')->whereHas('user',function($query)use($search){
+            $query->where('username','Like','%' .$search. '%');
+        })->get();
+        // dd($orders);
+        // ('username', 'LIKE', '%' .$search. '%')->get();
+        return view('admin.layout.payment.payment',compact('orders'));
+        }
         
         $orders = Order::all();
         return view('admin.layout.payment.payment',compact('orders'));
