@@ -20,7 +20,7 @@
                         <li><hr class="dropdown-divider" /></li>
                         <li><a class="dropdown-item" href="#!">Logout</a></li>
                     </ul> -->
-                    <li><a class="btn btn-primary" href="{{route('admin.login')}}">Logout</a></li>
+                    <li><a class="btn btn-secondary" href="{{route('admin.login')}}">Logout</a></li>
 
                 </li>
             </ul>

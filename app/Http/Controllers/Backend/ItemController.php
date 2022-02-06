@@ -36,6 +36,7 @@ class ItemController extends Controller
             $filename = (date('Ymdhms')).'.'.$file->getClientOriginalextension();
             $file->storeAs('/uploads',$filename);
         }
+        
         $request->validate([
              'name'=>'required',
              'details'=>'required',

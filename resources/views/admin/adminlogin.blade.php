@@ -21,7 +21,7 @@
 			<div class="agileits-top">
 				<form action="{{route('admin.dologin')}}" method="post">
 				@csrf
-					<input class="text email" type="email" name="email" placeholder="Email" required="">
+					<input class="text" type="email" name="email" placeholder="Email" required=""><br>
 					<input class="text" type="password" name="password" placeholder="Password" required="">
 					<div class="wthree-text">
 						<!-- <label class="anim">

@@ -39,17 +39,18 @@ class PackageController extends Controller
         // dd($request->all());
 
 
-
         if($request->hasFile('image')){
             $file = $request->file('image');
             $filename = (date('Ymdhms')).'.'.$file->getClientOriginalextension();
             $file->storeAs('/uploads',$filename);
         }
+
         // dd($request->all());
         $request->validate([
              'name'=>'required',
              'details'=>'required',
              'price_per_person'=>'required',
+             'image'=>'required',
              
         ]);
 
@@ -86,14 +87,16 @@ class PackageController extends Controller
         return view('admin.layout.package.packageview',compact('package'));
     }
 
-    public function packageedit($id){
+    public function packageedit($id)
+    {
         $package = Package::find($id);
-        return view('admin.layout.package.packageedit',compact('package'));
+        $items = Item::all();
+        return view('admin.layout.package.packageedit',compact('package','items'));
     }
 
     public function packageupdate(Request $request,$id){
-        $package = Package::find($id);
-
+        $package = Package::with('pack')->find($id);
+        
         if($request->hasFile('image')){
             $file = $request->file('image');
             $filename = (date('Ymdhms')).'.'.$file->getClientOriginalextension();
@@ -104,7 +107,6 @@ class PackageController extends Controller
                 'name'=>$request->name,
                 'details'=>$request->details,
                 'price_per_person'=>$request->price_per_person,
-                'selected_item'=>$request->selected_item,
                 'image'=>$filename,
             ]);
 

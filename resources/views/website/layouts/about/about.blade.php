@@ -25,7 +25,7 @@
                             of managing cooking.We began in Dhaka and as our business has developed
                             to Seattle and Dhaka and our business have developed 
                             more honed as we grow the nation over. 
-                            We benefit Fortune 100 Companies and we benefit new businesses.
+                            We benefit Fortune 50 Companies and we benefit new businesses.
                             We benefit office cooking and local gatherings.
                             </p>
                             <!-- <p class="about_text2">
